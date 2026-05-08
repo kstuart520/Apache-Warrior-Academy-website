@@ -8,37 +8,6 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// ── Smart Nav CTA — changes label based on visible section ─
-const navCta = document.getElementById('navCta');
-const ctaMap = [
-  { id: 'contact',  label: 'Get In Touch',    href: '#contact'  },
-  { id: 'trial',    label: 'Claim Free Class', href: '#trial'    },
-  { id: 'pricing',  label: 'View Pricing',     href: '#pricing'  },
-  { id: 'programs', label: 'Our Programs',     href: '#programs' },
-  { id: 'about',    label: 'Our Mission',      href: '#about'    },
-  { id: 'home',     label: 'Free Trial',       href: '#trial'    },
-];
-
-if (navCta) {
-  const sectionEls = ctaMap
-    .map(c => ({ ...c, el: document.getElementById(c.id) }))
-    .filter(c => c.el);
-
-  const ctaObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const match = sectionEls.find(c => c.el === entry.target);
-        if (match) {
-          navCta.textContent = match.label;
-          navCta.href = match.href;
-        }
-      }
-    });
-  }, { threshold: 0.3 });
-
-  sectionEls.forEach(c => ctaObserver.observe(c.el));
-}
-
 // ── Hamburger menu ─────────────────────────────────────────
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
