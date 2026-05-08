@@ -1092,3 +1092,314 @@ footer {
   .price-tabs { gap: 0; }
   .price-tab { padding: 0.6rem 1rem; font-size: 0.75rem; }
 }
+
+/* ============================================================
+   SCHEDULE TOGGLE + CALENDAR + MODAL + MILITARY SOLO CARD
+   ============================================================ */
+
+/* ── Schedule header with toggle ── */
+.schedule-header {
+  display: flex; align-items: flex-end;
+  justify-content: space-between; flex-wrap: wrap;
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.sched-view-toggle {
+  display: flex; gap: 0.4rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: 6px; padding: 4px;
+}
+.sched-toggle {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-cond);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--cream-dim);
+  padding: 0.5rem 1rem; border-radius: 4px;
+  transition: all var(--transition);
+}
+.sched-toggle.active {
+  background: var(--red);
+  color: var(--white);
+}
+.sched-toggle:hover:not(.active) { color: var(--cream); }
+
+/* List view reserve button */
+.register-btn {
+  background: transparent;
+  border: 1px solid rgba(192,57,43,0.35);
+  color: var(--red);
+  font-family: var(--font-cond);
+  font-size: 0.7rem; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem; border-radius: 100px;
+  cursor: pointer; white-space: nowrap;
+  transition: all var(--transition);
+}
+.register-btn:hover {
+  background: var(--red); color: var(--white);
+  border-color: var(--red);
+}
+
+/* ── Calendar view ── */
+.cal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.cal-day {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px; overflow: hidden;
+}
+.cal-day-header {
+  background: rgba(255,255,255,0.04);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cal-day-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem; letter-spacing: 0.06em;
+  color: var(--cream);
+}
+.cal-day-sub {
+  font-family: var(--font-cond);
+  font-size: 0.65rem; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--cream-dim); opacity: 0.4;
+}
+.cal-slots { padding: 0.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+
+.cal-slot {
+  border-radius: 4px; padding: 1rem 1.1rem;
+  display: flex; flex-direction: column; gap: 0.2rem;
+}
+.kids-slot  { background: rgba(192,57,43,0.1); border: 1px solid rgba(192,57,43,0.2); }
+.adult-slot { background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.18); }
+
+.cal-slot-time {
+  font-family: var(--font-cond);
+  font-size: 0.72rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--cream-dim); opacity: 0.6;
+}
+.cal-slot-name {
+  font-family: var(--font-cond);
+  font-size: 1rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--cream);
+}
+.cal-slot-ages {
+  font-size: 0.8rem; font-weight: 300;
+  color: var(--cream-dim); opacity: 0.6;
+  margin-bottom: 0.6rem;
+}
+.cal-register-btn {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--cream);
+  font-family: var(--font-cond);
+  font-size: 0.68rem; letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem; border-radius: 100px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.cal-register-btn:hover { background: var(--red); border-color: var(--red); }
+
+.cal-legend {
+  grid-column: 1 / -1;
+  display: flex; gap: 1.5rem; align-items: center;
+  padding: 0.5rem 0;
+}
+.cal-legend-item {
+  font-family: var(--font-cond);
+  font-size: 0.72rem; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--cream-dim);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.cal-legend-item::before {
+  content: ''; display: block;
+  width: 10px; height: 10px; border-radius: 2px;
+}
+.kids-dot::before  { background: rgba(192,57,43,0.6); }
+.adult-dot::before { background: rgba(201,168,76,0.6); }
+
+/* ── MODAL ── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 1.5rem;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.open {
+  opacity: 1; pointer-events: all;
+}
+.modal-box {
+  background: var(--near-black);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 2.5rem;
+  width: 100%; max-width: 520px;
+  max-height: 90vh; overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+.modal-overlay.open .modal-box { transform: translateY(0); }
+
+.modal-close {
+  position: absolute; top: 1rem; right: 1.2rem;
+  background: none; border: none; cursor: pointer;
+  color: var(--cream-dim); font-size: 1.5rem;
+  line-height: 1; opacity: 0.5;
+  transition: opacity var(--transition);
+}
+.modal-close:hover { opacity: 1; }
+
+.modal-label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem; letter-spacing: 0.05em;
+  color: var(--cream); margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+.modal-sub {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.modal-form { display: flex; flex-direction: column; gap: 0.8rem; }
+.modal-row { display: flex; gap: 0.8rem; }
+.modal-row input { flex: 1; }
+.modal-chips-label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+}
+.modal-chips { margin-bottom: 0.4rem; }
+
+/* Waiver */
+.waiver-block {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: 1rem;
+}
+.waiver-check {
+  display: flex; gap: 0.8rem; align-items: flex-start; cursor: pointer;
+}
+.waiver-check input[type="checkbox"] {
+  flex-shrink: 0; width: 16px; height: 16px;
+  margin-top: 2px; accent-color: var(--red); cursor: pointer;
+}
+.waiver-text {
+  font-size: 0.82rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.6;
+}
+.waiver-link {
+  background: none; border: none; cursor: pointer;
+  color: var(--gold); font-size: inherit;
+  text-decoration: underline; text-underline-offset: 2px;
+  padding: 0;
+}
+.waiver-full {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: 1rem;
+  font-size: 0.8rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.7;
+}
+.waiver-close-link {
+  background: none; border: none; cursor: pointer;
+  color: var(--gold); font-size: 0.78rem;
+  display: block; margin-top: 0.8rem; padding: 0;
+  text-decoration: underline;
+}
+.modal-submit { margin-top: 0.5rem; }
+.modal-success {
+  display: none; text-align: center;
+  color: #81c784; font-family: var(--font-cond);
+  font-size: 0.9rem; letter-spacing: 0.1em;
+  padding: 1rem; margin-top: 0.5rem;
+  border: 1px solid rgba(129,199,132,0.25);
+  border-radius: 4px; background: rgba(129,199,132,0.06);
+}
+
+/* ── Military solo card ── */
+.military-card-wrap {
+  display: flex; justify-content: center;
+  margin-bottom: 1.5rem;
+}
+.military-solo {
+  max-width: 480px; width: 100%;
+}
+.military-badge-row {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-bottom: 1.2rem; padding-top: 0.5rem;
+}
+.mil-badge {
+  font-family: var(--font-cond);
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border);
+  color: var(--cream-dim);
+  padding: 0.3rem 0.7rem; border-radius: 100px;
+}
+.military-compare {
+  display: flex; gap: 1rem; align-items: center;
+  margin-bottom: 1.2rem; flex-wrap: wrap;
+}
+.mil-was {
+  font-family: var(--font-cond);
+  font-size: 0.8rem; letter-spacing: 0.1em;
+  text-decoration: line-through; color: var(--cream-dim); opacity: 0.4;
+}
+.mil-save {
+  font-family: var(--font-cond);
+  font-size: 0.78rem; letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 0.2rem 0.7rem; border-radius: 100px;
+}
+
+/* ── Kenneth photo ── */
+.founder-photo {
+  aspect-ratio: 3/4;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.kenneth-photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.founder-photo-fallback {
+  position: absolute; inset: 0;
+  display: flex; align-items: flex-end; justify-content: center;
+}
+
+/* ── Mobile additions ── */
+@media (max-width: 768px) {
+  .schedule-header { flex-direction: column; align-items: flex-start; }
+  .cal-grid { grid-template-columns: 1fr; }
+  .modal-row { flex-direction: column; }
+  .modal-box { padding: 1.5rem; }
+  .military-badge-row { gap: 0.4rem; }
+}
