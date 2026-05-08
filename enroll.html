@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enroll | Apache Warrior Academy</title>
+<meta name="description" content="Sign up for a free trial class at Apache Warrior Academy — Brazilian Jiu-Jitsu in Gonzales, TX. No commitment required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* ── Enroll page layout ── */
+.enroll-hero {
+  padding: 9rem 2rem 4rem;
+  background: var(--black);
+  position: relative; overflow: hidden;
+}
+.enroll-hero-geo {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 85% 40%, rgba(192,57,43,0.14) 0%, transparent 55%);
+}
+.enroll-hero-geo .geo-ring-1 { width: 520px; height: 520px; right: -100px; top: 50%; transform: translateY(-50%); }
+.enroll-hero-geo .geo-ring-2 { width: 340px; height: 340px; right: 0; top: 50%; transform: translateY(-50%); border-color: rgba(201,168,76,0.07); animation-direction: reverse; animation-duration: 60s; }
+.enroll-hero-geo .geo-ring-3 { width: 170px; height: 170px; right: 85px; top: 50%; transform: translateY(-50%); animation-duration: 25s; }
+
+.enroll-hero-content { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; }
+.enroll-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.92; color: var(--cream);
+  margin-bottom: 1rem;
+}
+.enroll-hero h1 em { color: var(--red); font-style: normal; }
+.enroll-hero p {
+  font-size: 1.1rem; font-weight: 300;
+  color: var(--cream-dim); max-width: 540px;
+  line-height: 1.75; margin-bottom: 0;
+}
+
+/* ── Main enroll grid ── */
+.enroll-section { padding: 5rem 0 7rem; }
+.enroll-inner { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+.enroll-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Left info panel */
+.enroll-info { }
+.enroll-info h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1; color: var(--cream);
+  margin-bottom: 1.5rem;
+}
+.enroll-info h2 em { color: var(--red); font-style: normal; }
+
+.enroll-benefit {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+.enroll-benefit-dot {
+  flex-shrink: 0; width: 8px; height: 8px;
+  border-radius: 50%; background: var(--red);
+  margin-top: 6px;
+}
+.enroll-benefit-text strong {
+  font-family: var(--font-cond);
+  font-size: 0.9rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--cream);
+  display: block; margin-bottom: 0.2rem;
+}
+.enroll-benefit-text p {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.6;
+}
+
+.enroll-schedule-mini {
+  margin-top: 2.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: 1.5rem;
+}
+.esm-label {
+  font-family: var(--font-cond);
+  font-size: 0.7rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  margin-bottom: 1rem; display: block;
+}
+.esm-row {
+  display: flex; justify-content: space-between;
+  align-items: center; padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.esm-row:last-child { border-bottom: none; }
+.esm-day { font-family: var(--font-cond); font-weight: 600; letter-spacing: 0.08em; color: var(--cream); }
+.esm-time { font-weight: 300; color: var(--cream-dim); font-size: 0.85rem; }
+.esm-tag { }
+
+/* Right form panel */
+.enroll-form-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px; padding: 2.5rem;
+}
+.enroll-form-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem; letter-spacing: 0.05em;
+  text-transform: uppercase; color: var(--cream);
+  margin-bottom: 0.4rem;
+}
+.enroll-form-sub {
+  font-size: 0.88rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.enroll-form { display: flex; flex-direction: column; gap: 0.9rem; }
+.enroll-form input,
+.enroll-form select,
+.enroll-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.9rem 1rem;
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 0.95rem; font-weight: 300;
+  transition: border-color var(--transition);
+  -webkit-appearance: none;
+}
+.enroll-form input:focus,
+.enroll-form select:focus,
+.enroll-form textarea:focus {
+  outline: none; border-color: var(--red);
+  background: rgba(192,57,43,0.04);
+}
+.enroll-form input::placeholder,
+.enroll-form textarea::placeholder { color: rgba(242,237,228,0.25); }
+.enroll-form select option { background: var(--near-black); }
+.ef-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
+.enroll-form textarea { min-height: 90px; resize: vertical; }
+
+/* Section divider in form */
+.ef-divider {
+  font-family: var(--font-cond);
+  font-size: 0.68rem; letter-spacing: 0.3em;
+  text-transform: uppercase; color: var(--gold);
+  padding-top: 0.5rem; border-top: 1px solid var(--border);
+  margin-top: 0.3rem;
+}
+
+/* Minor guardian field (shown/hidden by JS) */
+.guardian-block { display: none; }
+.guardian-block.visible { display: flex; flex-direction: column; gap: 0.9rem; }
+
+/* Waiver */
+.enroll-waiver-block {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 4px; padding: 1.2rem;
+}
+.enroll-waiver-check {
+  display: flex; gap: 0.8rem; align-items: flex-start; cursor: pointer;
+}
+.enroll-waiver-check input[type="checkbox"] {
+  flex-shrink: 0; width: 16px; height: 16px;
+  margin-top: 3px; accent-color: var(--red); cursor: pointer;
+}
+.enroll-waiver-text {
+  font-size: 0.82rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.65;
+}
+.enroll-waiver-link {
+  background: none; border: none; cursor: pointer;
+  color: var(--gold); font-size: inherit;
+  text-decoration: underline; text-underline-offset: 2px; padding: 0;
+}
+.enroll-waiver-full {
+  display: none;
+  margin-top: 1rem;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px; padding: 1.2rem;
+  font-size: 0.78rem; font-weight: 300;
+  color: var(--cream-dim); line-height: 1.8;
+  max-height: 320px; overflow-y: auto;
+}
+.enroll-waiver-full strong { color: var(--cream); display: block; margin-top: 0.8rem; }
+.enroll-waiver-full strong:first-child { margin-top: 0; }
+.waiver-close-btn {
+  background: none; border: none; cursor: pointer;
+  color: var(--gold); font-size: 0.78rem;
+  display: block; margin-top: 1rem; padding: 0;
+  text-decoration: underline;
+}
+
+.enroll-submit { margin-top: 0.5rem; }
+.enroll-disclaimer {
+  font-size: 0.76rem; text-align: center;
+  color: var(--cream-dim); opacity: 0.4;
+  font-style: italic; margin-top: 0.5rem;
+}
+.enroll-success {
+  display: none; text-align: center;
+  background: rgba(129,199,132,0.06);
+  border: 1px solid rgba(129,199,132,0.2);
+  border-radius: 4px; padding: 2rem;
+  margin-top: 1rem;
+}
+.enroll-success-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+.enroll-success h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem; color: #81c784;
+  margin-bottom: 0.5rem; text-transform: uppercase;
+}
+.enroll-success p { font-size: 0.9rem; font-weight: 300; color: var(--cream-dim); }
+
+@media (max-width: 900px) {
+  .enroll-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .ef-two { grid-template-columns: 1fr; }
+  .enroll-form-wrap { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Apache Warrior Academy" class="logo-img" onerror="this.style.display='none';document.querySelector('.logo-text').style.display='block'">
+      <span class="logo-text" style="display:none;">APACHE WARRIOR ACADEMY</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#programs">Programs</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#schedule">Schedule</a></li>
+      <li><a href="index.html#founder">Instructor</a></li>
+      <li><a href="videos.html">Videos</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="enroll.html" class="nav-cta active-page">Enroll Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="enroll-hero">
+  <div class="enroll-hero-geo">
+    <div class="geo-ring geo-ring-1"></div>
+    <div class="geo-ring geo-ring-2"></div>
+    <div class="geo-ring geo-ring-3"></div>
+  </div>
+  <div class="enroll-hero-content">
+    <span class="label">Get Started</span>
+    <h1>YOUR FIRST<br>CLASS IS <em>FREE</em></h1>
+    <p>No commitment. No pressure. Just show up, try a class, and see what you're made of. Fill out the form below and we'll reach out within 24 hours.</p>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>First Class Free</span><span class="sep">✦</span>
+    <span>No Commitment</span><span class="sep">✦</span>
+    <span>Kids & Adults</span><span class="sep">✦</span>
+    <span>Veteran-Owned</span><span class="sep">✦</span>
+    <span>Gonzales, TX</span><span class="sep">✦</span>
+    <span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span>
+    <span>First Class Free</span><span class="sep">✦</span>
+    <span>No Commitment</span><span class="sep">✦</span>
+    <span>Kids & Adults</span><span class="sep">✦</span>
+    <span>Veteran-Owned</span><span class="sep">✦</span>
+    <span>Gonzales, TX</span><span class="sep">✦</span>
+    <span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- ENROLL FORM -->
+<section class="enroll-section">
+  <div class="enroll-inner">
+    <div class="enroll-grid">
+
+      <!-- Left: benefits + mini schedule -->
+      <div class="enroll-info reveal">
+        <span class="label">Why AWA</span>
+        <h2>WHAT YOU<br>GET ON DAY <em>ONE</em></h2>
+
+        <div class="enroll-benefit">
+          <div class="enroll-benefit-dot"></div>
+          <div class="enroll-benefit-text">
+            <strong>Your first class is completely free</strong>
+            <p>No credit card, no contract, no pressure. Walk in, train, and decide if it's right for you.</p>
+          </div>
+        </div>
+        <div class="enroll-benefit">
+          <div class="enroll-benefit-dot"></div>
+          <div class="enroll-benefit-text">
+            <strong>World-class instruction in a small-town gym</strong>
+            <p>Kenneth trained and taught across the globe. He brought that experience back home to Gonzales County.</p>
+          </div>
+        </div>
+        <div class="enroll-benefit">
+          <div class="enroll-benefit-dot"></div>
+          <div class="enroll-benefit-text">
+            <strong>Programs for every age and goal</strong>
+            <p>Youth (5–13), adults (13+), families, first responders, and homeschool students. All skill levels welcome.</p>
+          </div>
+        </div>
+        <div class="enroll-benefit">
+          <div class="enroll-benefit-dot"></div>
+          <div class="enroll-benefit-text">
+            <strong>Only 11 Founding Member spots left</strong>
+            <p>Lock in $20 off your monthly rate for life. Sign up now before they're gone.</p>
+          </div>
+        </div>
+
+        <div class="enroll-schedule-mini">
+          <span class="esm-label">📍 Current Class Schedule — Diamond Gymnastics, 801 Oil Patch Ln</span>
+          <div class="esm-row">
+            <span class="esm-day">Saturday</span>
+            <span class="esm-time">5:00–6:00 PM</span>
+            <span class="esm-tag"><span class="class-tag kids">Youth</span></span>
+          </div>
+          <div class="esm-row">
+            <span class="esm-day">Saturday</span>
+            <span class="esm-time">6:00–7:00 PM</span>
+            <span class="esm-tag"><span class="class-tag adult">Adult</span></span>
+          </div>
+          <div class="esm-row">
+            <span class="esm-day">Sunday</span>
+            <span class="esm-time">2:00–3:00 PM</span>
+            <span class="esm-tag"><span class="class-tag kids">Youth</span></span>
+          </div>
+          <div class="esm-row">
+            <span class="esm-day">Sunday</span>
+            <span class="esm-time">3:00–4:00 PM</span>
+            <span class="esm-tag"><span class="class-tag adult">Adult</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: enrollment form with full waiver -->
+      <div class="enroll-form-wrap reveal">
+        <div class="enroll-form-title">Claim Your Spot</div>
+        <div class="enroll-form-sub">Fill this out and we'll contact you within 24 hours to confirm your first class.</div>
+
+        <form class="enroll-form" id="enrollForm" action="https://formspree.io/f/mgodlnrg" method="POST">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="form_type" value="Free Trial Enrollment">
+
+          <div class="ef-divider">Your Information</div>
+          <div class="ef-two">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="date" name="dob" title="Date of Birth" aria-label="Date of Birth" required>
+          </div>
+          <div class="ef-two">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="tel" name="phone" placeholder="Phone Number">
+          </div>
+          <input type="text" name="address" placeholder="Address (Street, City, State, ZIP)">
+          <input type="text" name="emergency_contact" placeholder="Emergency Contact Name & Phone">
+          <input type="text" name="medical_conditions" placeholder="Medical Conditions / Allergies (or 'None')">
+
+          <div class="ef-divider">Enrollment Details</div>
+
+          <!-- Who is this for chip group -->
+          <div class="faq-group">
+            <div class="faq-label">Who are you signing up?</div>
+            <div class="faq-chips" data-name="enroll-who" id="enrollWhoChips">
+              <button type="button" class="chip" data-val="Myself (Adult 18+)">Myself (Adult 18+)</button>
+              <button type="button" class="chip" data-val="My Child (Under 18)">My Child (Under 18)</button>
+              <button type="button" class="chip" data-val="Both of Us">Both of Us</button>
+            </div>
+            <input type="hidden" name="enrolling_for" id="val-enroll-who">
+          </div>
+
+          <!-- Guardian block — shown when child is selected -->
+          <div class="guardian-block" id="guardianBlock">
+            <div class="ef-divider">Parent / Guardian Information (Required for Minors)</div>
+            <input type="text" name="participant_name" placeholder="Child's Full Name">
+            <input type="date" name="participant_dob" aria-label="Child's Date of Birth" title="Child's Date of Birth">
+            <div class="ef-two">
+              <input type="text" name="guardian_name" placeholder="Parent / Guardian Name">
+              <input type="text" name="guardian_relationship" placeholder="Relationship to Minor">
+            </div>
+          </div>
+
+          <div class="faq-group">
+            <div class="faq-label">Preferred class day?</div>
+            <div class="faq-chips" data-name="enroll-day">
+              <button type="button" class="chip" data-val="Saturday">Saturday</button>
+              <button type="button" class="chip" data-val="Sunday">Sunday</button>
+              <button type="button" class="chip" data-val="Either Works">Either Works</button>
+            </div>
+            <input type="hidden" name="preferred_day" id="val-enroll-day">
+          </div>
+
+          <div class="faq-group">
+            <div class="faq-label">What brings you to AWA?</div>
+            <div class="faq-chips" data-name="enroll-goal">
+              <button type="button" class="chip" data-val="Self-Defense">Self-Defense</button>
+              <button type="button" class="chip" data-val="Get Fit">Get Fit</button>
+              <button type="button" class="chip" data-val="Confidence / Discipline">Confidence</button>
+              <button type="button" class="chip" data-val="Competition">Competition</button>
+              <button type="button" class="chip" data-val="Fun / Social">Fun / Social</button>
+            </div>
+            <input type="hidden" name="goal" id="val-enroll-goal">
+          </div>
+
+          <textarea name="message" placeholder="Any questions or anything we should know? (optional)" rows="3"></textarea>
+
+          <!-- Full official waiver -->
+          <div class="ef-divider">Waiver &amp; Release of Liability</div>
+          <div class="enroll-waiver-block">
+            <label class="enroll-waiver-check">
+              <input type="checkbox" name="waiver_agreed" value="yes — Full AWA Waiver" required>
+              <span class="enroll-waiver-text">
+                I have read, understand, and agree to the <button type="button" class="enroll-waiver-link" id="showEnrollWaiver">Apache Warrior Academy Assumption of Risk, Waiver of Liability, and Indemnification Agreement</button>. I acknowledge this is a legally binding document and I am voluntarily waiving certain legal rights including the right to sue.
+              </span>
+            </label>
+
+            <div class="enroll-waiver-full" id="enrollWaiverFull">
+              <strong>APACHE WARRIOR ACADEMY<br>ASSUMPTION OF RISK, WAIVER OF LIABILITY, AND INDEMNIFICATION AGREEMENT</strong>
+              801 Oil Patch Ln, Gonzales, TX 78629 | apachewarrioracademy@gmail.com | (508) 905-9867<br><br>
+              PLEASE READ THIS DOCUMENT CAREFULLY BEFORE SIGNING. BY SIGNING THIS AGREEMENT, YOU ARE WAIVING CERTAIN LEGAL RIGHTS, INCLUDING THE RIGHT TO SUE OR RECOVER DAMAGES IN CASE OF INJURY, DEATH, OR PROPERTY LOSS.<br><br>
+
+              <strong>1. ASSUMPTION OF RISK</strong>
+              I, the undersigned participant (or parent/legal guardian of the minor participant named below), acknowledge that participation in Brazilian Jiu-Jitsu, martial arts, grappling, self-defense training, and related physical activities (collectively, "Activities") involves inherent risks of physical injury, including but not limited to: sprains, strains, fractures, dislocations, concussions, lacerations, contusions, muscle tears, ligament damage, spinal injuries, paralysis, cardiovascular events, and in rare cases, death. I understand that these risks may arise from the actions, inactions, or negligence of myself, other participants, instructors, or third parties, and that not all risks can be foreseen or eliminated. I voluntarily choose to participate in the Activities with full knowledge and acceptance of these risks. I certify that I (or the minor participant) am physically fit and have no medical conditions that would prevent safe participation, or I have obtained physician approval to participate.<br><br>
+
+              <strong>2. WAIVER AND RELEASE OF LIABILITY</strong>
+              In consideration of being permitted to participate in the Activities, I hereby voluntarily release, forever discharge, and agree to hold harmless Apache Warrior Academy, Apache Warrior Youth Foundation, Inc., their owners, officers, directors, employees, agents, instructors, volunteers, affiliates, and assigns (collectively, "Released Parties") from any and all claims, demands, causes of action, damages, losses, or liabilities of any kind, whether known or unknown, arising out of or in any way connected with my participation in the Activities, including but not limited to claims arising from the negligence of the Released Parties. This release does not apply to claims arising from the gross negligence or willful misconduct of the Released Parties.<br><br>
+
+              <strong>3. INDEMNIFICATION</strong>
+              I agree to indemnify, defend, and hold harmless the Released Parties from and against any and all claims, damages, losses, costs, and expenses (including reasonable attorney's fees) arising out of or relating to my participation in the Activities, or any breach of this Agreement, whether caused by my acts or omissions or those of third parties.<br><br>
+
+              <strong>4. MEDICAL AUTHORIZATION AND EMERGENCY TREATMENT</strong>
+              I authorize the Released Parties to seek and obtain emergency medical treatment on my behalf (or on behalf of the minor participant) in the event of injury or illness during participation in the Activities. I understand that I am solely responsible for all costs associated with such medical treatment. I agree to disclose any relevant medical conditions, allergies, or medications to the instructors prior to participation.<br><br>
+
+              <strong>5. RULES AND CONDUCT</strong>
+              I agree to abide by all rules, regulations, and instructions provided by Apache Warrior Academy instructors and staff. I understand that failure to comply with safety rules may result in immediate removal from the Activities without refund. I agree to report any unsafe conditions or injuries to the instructors immediately.<br><br>
+
+              <strong>6. PHOTOGRAPHY AND MEDIA RELEASE</strong>
+              I grant Apache Warrior Academy and its affiliates the irrevocable right to photograph, video record, and use my image and likeness (or that of the minor participant) in any media format for promotional, advertising, educational, and commercial purposes without further notice, compensation, or consent. I waive any right to inspect or approve the use of such images.<br><br>
+
+              <strong>7. MINOR PARTICIPANTS</strong>
+              If the participant is under the age of 18, I, as the parent or legal guardian, represent that I have the legal authority to execute this Agreement on behalf of the minor. I agree that the terms of this Agreement shall be binding upon the minor, myself, and our respective heirs, estates, and assigns. I accept full responsibility for the minor's conduct and participation in the Activities.<br><br>
+
+              <strong>8. GOVERNING LAW AND DISPUTE RESOLUTION</strong>
+              This Agreement shall be governed by and construed in accordance with the laws of the State of Texas. Any dispute arising under this Agreement shall be resolved exclusively in the courts of Gonzales County, Texas. If any provision of this Agreement is found to be unenforceable, the remaining provisions shall continue in full force and effect.<br><br>
+
+              <strong>9. ENTIRE AGREEMENT AND ACKNOWLEDGMENT</strong>
+              This Agreement constitutes the entire agreement between the parties concerning the subject matter hereof and supersedes all prior agreements, representations, or understandings. I acknowledge that I have read this Agreement in its entirety, understand its contents, and sign it voluntarily. I understand that this is a legally binding document and that I am giving up substantial legal rights.<br><br>
+
+              <em>Electronic submission of this form constitutes your electronic signature and is legally binding under applicable Texas law.</em>
+
+              <button type="button" class="waiver-close-btn" id="hideEnrollWaiver">Close Waiver ↑</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary full enroll-submit">Submit Enrollment →</button>
+          <p class="enroll-disclaimer">We'll confirm your spot within 24 hours. No payment required today. First class is always free.</p>
+
+          <div class="enroll-success" id="enrollSuccess">
+            <div class="enroll-success-icon">✓</div>
+            <h3>You're Enrolled!</h3>
+            <p>We'll reach out within 24 hours to confirm your first class.<br>Questions? Call <a href="tel:5089059867" style="color:var(--gold);">(508) 905-9867</a> or email <a href="mailto:apachewarrioracademy@gmail.com" style="color:var(--gold);">apachewarrioracademy@gmail.com</a></p>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Apache Warrior Academy" onerror="this.style.display='none';document.querySelector('.footer-logo-text').style.display='block'">
+      <span class="footer-logo-text" style="display:none;">APACHE WARRIOR ACADEMY</span>
+    </div>
+    <div class="footer-tagline">Brazilian Jiu-Jitsu · Gonzales, Texas</div>
+    <nav class="footer-nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="videos.html">Videos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="footer-copy">© 2025 Apache Warrior Academy. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Scroll reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// FAQ chips
+document.querySelectorAll('.faq-chips').forEach(group => {
+  const name = group.dataset.name;
+  const hidden = document.getElementById('val-' + name);
+  group.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+      if (hidden) hidden.value = chip.dataset.val;
+    });
+  });
+});
+
+// Show guardian block when child is selected
+document.querySelectorAll('#enrollWhoChips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const val = chip.dataset.val;
+    const block = document.getElementById('guardianBlock');
+    if (val.includes('Child') || val.includes('Both')) {
+      block.classList.add('visible');
+    } else {
+      block.classList.remove('visible');
+    }
+  });
+});
+
+// Waiver toggle
+const showBtn  = document.getElementById('showEnrollWaiver');
+const hideBtn  = document.getElementById('hideEnrollWaiver');
+const waiverEl = document.getElementById('enrollWaiverFull');
+if (showBtn) showBtn.addEventListener('click', () => { waiverEl.style.display = 'block'; });
+if (hideBtn) hideBtn.addEventListener('click', () => { waiverEl.style.display = 'none'; });
+
+// Form submit
+const enrollForm    = document.getElementById('enrollForm');
+const enrollSuccess = document.getElementById('enrollSuccess');
+if (enrollForm) {
+  enrollForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = enrollForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(enrollForm.action, {
+        method: 'POST',
+        body: new FormData(enrollForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        enrollForm.reset();
+        document.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        document.getElementById('guardianBlock').classList.remove('visible');
+        enrollForm.style.display = 'none';
+        enrollSuccess.style.display = 'block';
+      } else {
+        alert('Something went wrong. Please call (508) 905-9867 or email apachewarrioracademy@gmail.com');
+        btn.textContent = 'Submit Enrollment →';
+        btn.disabled = false;
+      }
+    } catch {
+      alert('Network error. Please contact us directly at (508) 905-9867.');
+      btn.textContent = 'Submit Enrollment →';
+      btn.disabled = false;
+    }
+  });
+}
+</script>
+</body>
+</html>

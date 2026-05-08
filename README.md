@@ -1,77 +1,167 @@
-# Apache Warrior Academy
-
-Website for Apache Warrior Academy — Brazilian Jiu-Jitsu in Gonzales, TX.
+# Apache Warrior Academy — Website Reference
 
 **Live URL:** https://kstuart520.github.io/apache-warrior-academy/
-**Custom domain (when ready):** TBD
+**Custom domain (pending):** TBD — add after confirming github.io URL works
+**Formspree ID:** mgodlnrg → https://formspree.io/f/mgodlnrg
+**Facebook:** https://www.facebook.com/profile.php?id=61588543511512
 
 ---
 
-## Project Structure
+## File Structure
 
 ```
 apache-warrior-academy/
-├── index.html          # Main page
-├── css/
-│   └── style.css       # All styles
-├── js/
-│   └── main.js         # Nav, animations, form
+├── index.html        Main homepage (scrollable, all sections)
+├── enroll.html       Standalone enrollment + waiver page (nav CTA destination)
+├── videos.html       Video gallery page
+├── css/style.css     All styles for all pages
+├── js/main.js        Homepage JS (nav, schedule toggle, modal, chips, form)
 ├── images/
-│   ├── logo.png        # Academy logo (client to provide)
-│   ├── hero.jpg        # Hero background photo (client to provide)
-│   ├── about.jpg       # About section photo (client to provide)
-│   └── kenneth.jpg     # Instructor photo (client to provide)
-└── CNAME               # Add when custom domain is confirmed
+│   ├── logo.png      Academy logo — PNG with transparent background
+│   ├── about.jpg     About section photo — portrait orientation (PENDING)
+│   ├── kenneth.jpg   Instructor photo — EXACT filename, .jpg extension
+│   └── hero.jpg      Hero background — wide/landscape (OPTIONAL — geo design used instead)
+└── CNAME             Add when custom domain is confirmed (bare domain, no extension)
 ```
 
 ---
 
-## Images Needed From Client
+## Image Reference — Critical Rules
 
-| File | Description | Notes |
-|------|-------------|-------|
-| `images/logo.png` | Academy logo | PNG with transparent background preferred |
-| `images/hero.jpg` | Hero background photo | Action shot or mats, wide/landscape |
-| `images/about.jpg` | About section photo | Portrait orientation preferred |
-| `images/kenneth.jpg` | Kenneth in his gi | Portrait, 3:4 ratio ideal |
+| File | Status | Notes |
+|------|--------|-------|
+| `images/logo.png` | Pending | PNG transparent background preferred |
+| `images/kenneth.jpg` | Pending | **Must be .jpg** — referenced in index.html founder section |
+| `images/about.jpg` | Pending | Portrait orientation, training photo |
+| `images/hero.jpg` | Optional | Geo CSS design used until real photo provided |
 
-All images are case-sensitive. Drop files directly into the `images/` folder with these exact filenames.
-
----
-
-## Formspree Setup (Contact Form)
-
-1. Go to [formspree.io](https://formspree.io) and create a free account
-2. Create a new form — set the email to `apachewarrioracademy@gmail.com`
-3. Copy your Form ID (looks like `xpwqabcd`)
-4. In `index.html`, find this line:
-   ```html
-   action="https://formspree.io/f/YOUR_FORM_ID"
-   ```
-5. Replace `YOUR_FORM_ID` with your actual Form ID
-6. Save and push — the form is live
+**All image filenames are case-sensitive on GitHub Pages.** Drop files into the `images/` folder with exact filenames above. The site handles missing images gracefully with geo placeholders — no blank boxes.
 
 ---
 
-## Deployment
+## Pages Overview
 
-1. Push all files to `main` branch
+### index.html — Homepage
+Single-page scroll with sections: Hero → Marquee → About → Programs → Pricing → Schedule → Instructor → CTA → Contact → Footer.
+
+**Nav CTA button** (`Enroll Now`) links to `enroll.html`.
+
+**Schedule section** has two view modes toggled by buttons:
+- List view — table format with Reserve Spot buttons
+- Calendar view — visual day cards with Reserve buttons
+Clicking any Reserve button opens the registration modal.
+
+**Registration modal** (on index.html):
+- Pre-fills class name, day, time from whichever button was clicked
+- Collects name, phone, email, who they're registering
+- Includes full waiver with checkbox (required)
+- Submits to Formspree with `form_type: Class Registration`
+
+### enroll.html — Enrollment Page
+Full standalone enrollment form. Linked from nav CTA on all pages.
+- Collects: name, DOB, email, phone, address, emergency contact, medical conditions
+- Guardian block appears automatically when "My Child" or "Both of Us" is selected
+- Full official AWA waiver (all 9 sections, verbatim from PDF)
+- Submits to Formspree with `form_type: Free Trial Enrollment`
+
+### videos.html — Video Gallery
+6-slot video grid. Slots 2–6 are geo placeholders.
+**Slot 1** has the Facebook Reel embed (reel ID: 2663422537375175).
+
+**To add a video:** replace the `<div class="video-placeholder">...</div>` block in any slot with:
+```html
+<div class="video-embed">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+</div>
+```
+For Facebook videos: Video → ··· → Embed → copy `src` URL → use same iframe pattern.
+
+---
+
+## Waiver — Official Text
+
+The full waiver is embedded in two places:
+1. **Registration modal** on `index.html` (class reservations)
+2. **Enrollment form** on `enroll.html` (full trial sign-up)
+
+Both use the complete 9-section AWA Assumption of Risk, Waiver of Liability, and Indemnification Agreement verbatim from the signed PDF. If the waiver document is ever updated, update both locations.
+
+---
+
+## Formspree — Contact Form & Registrations
+
+All forms submit to: `https://formspree.io/f/mgodlnrg`
+
+**Spam protection in place:**
+- Honeypot field (`name="_gotcha"`) on all forms — bots fill it, Formspree rejects
+- Log into formspree.io → Settings → enable reCAPTCHA for additional protection
+
+**Form types Kenneth will receive:**
+- `form_type: Contact Inquiry` — from the homepage contact form
+- `form_type: Class Registration` — from the schedule Reserve Spot modal
+- `form_type: Free Trial Enrollment` — from enroll.html
+
+---
+
+## Pricing (Current)
+
+### Individual
+| Plan | Rate |
+|------|------|
+| Youth (Ages 5–13) | $110/mo |
+| Adult (Ages 13+) | $120/mo |
+
+### Military / First Responder (Adults 18+ only)
+| Plan | Rate |
+|------|------|
+| Adult — Military Rate | $100/mo ($20 off) |
+Active military, veterans, law enforcement, fire, EMS. Valid ID required. Not combinable with Founding Member discount.
+
+### Family Plan
+| Member | Rate |
+|--------|------|
+| First Adult | $120/mo |
+| Second Adult | $110/mo |
+| First Youth | $110/mo |
+| Second Youth | $100/mo |
+| Third Youth & Beyond | $90/mo |
+
+### Discounts
+- Military / First Responder: $20 OFF/mo (adults only)
+- Founding Member: $20 OFF/mo for life — 11 spots remaining
+
+---
+
+## Schedule (Current)
+
+| Day | Time | Class |
+|-----|------|-------|
+| Saturday | 5:00–6:00 PM | Youth BJJ (Ages 5–13) |
+| Saturday | 6:00–7:00 PM | Adult BJJ (Ages 13+) |
+| Sunday | 2:00–3:00 PM | Youth BJJ (Ages 5–13) |
+| Sunday | 3:00–4:00 PM | Adult BJJ (Ages 13+) |
+
+Location: Inside Diamond Gymnastics, 801 Oil Patch Ln, Gonzales, TX 78629
+
+---
+
+## Deployment Checklist
+
+1. Push all files to `main` branch (`git add -A → commit → push`)
 2. GitHub → Settings → Pages → Source: `main` / `/(root)` → Save
-3. Site goes live at: `https://kstuart520.github.io/apache-warrior-academy/`
-4. Add custom domain after confirming the github.io URL works
+3. Confirm live at `https://kstuart520.github.io/apache-warrior-academy/`
+4. **Only after confirming github.io URL works** → add custom domain
+5. For custom domain: add CNAME file (bare domain, no extension) + update DNS A records:
+   - 185.199.108.153 / 185.199.109.153 / 185.199.110.153 / 185.199.111.153
+   - CNAME: `www` → `kstuart520.github.io`
 
 ---
 
-## Custom Domain (When Ready)
+## Pending From Client
 
-1. Add CNAME file to repo root with just the domain on line 1:
-   ```
-   apachewarrioracademy.com
-   ```
-2. At DNS registrar, add A records pointing to GitHub:
-   - 185.199.108.153
-   - 185.199.109.153
-   - 185.199.110.153
-   - 185.199.111.153
-3. Add CNAME: `www` → `kstuart520.github.io`
-4. In GitHub Pages settings, enter the custom domain
+- [ ] `images/kenneth.jpg` — instructor photo
+- [ ] `images/about.jpg` — training photo for About section
+- [ ] `images/logo.png` — academy logo
+- [ ] Additional Facebook/YouTube video URLs for videos.html slots 2–6
+- [ ] Custom domain name confirmed
+- [ ] Formspree reCAPTCHA enabled (client logs into formspree.io)
