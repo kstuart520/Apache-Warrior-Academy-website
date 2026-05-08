@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videos | Apache Warrior Academy</title>
+<meta name="description" content="Watch training videos and reels from Apache Warrior Academy — Brazilian Jiu-Jitsu in Gonzales, TX.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* ── Videos page specific ── */
+  .videos-hero {
+    padding: 9rem 2rem 5rem;
+    background: var(--black);
+    position: relative; overflow: hidden;
+  }
+  .videos-hero-geo {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 80% 50%, rgba(192,57,43,0.12) 0%, transparent 55%);
+  }
+  .videos-hero-geo .geo-ring { animation: slowSpin 40s linear infinite; }
+  .videos-hero-geo .geo-ring-1 { width: 500px; height: 500px; right: -80px; top: 50%; transform: translateY(-50%); }
+  .videos-hero-geo .geo-ring-2 { width: 340px; height: 340px; right: 10px; top: 50%; transform: translateY(-50%); border-color: rgba(201,168,76,0.08); animation-duration: 60s; animation-direction: reverse; }
+  .videos-hero-geo .geo-ring-3 { width: 180px; height: 180px; right: 90px; top: 50%; transform: translateY(-50%); border-color: rgba(192,57,43,0.18); animation-duration: 25s; }
+
+  .videos-hero-content { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; }
+  .videos-hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 0.95; color: var(--cream);
+    margin-bottom: 1rem;
+  }
+  .videos-hero h1 em { color: var(--red); font-style: normal; }
+  .videos-hero p {
+    font-size: 1.05rem; font-weight: 300;
+    color: var(--cream-dim); max-width: 520px; line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+  .fb-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    font-family: var(--font-cond);
+    font-size: 0.82rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); text-decoration: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.6rem 1.2rem; border-radius: 100px;
+    transition: border-color var(--transition), background var(--transition);
+  }
+  .fb-link:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); }
+
+  /* ── Video Grid ── */
+  .videos-section { padding: 5rem 0 7rem; }
+  .videos-inner { max-width: 1180px; margin: 0 auto; padding: 0 1.5rem; }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .video-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .video-card:hover { border-color: rgba(192,57,43,0.35); transform: translateY(-3px); }
+
+  .video-embed {
+    position: relative; padding-bottom: 56.25%;
+    background: var(--black); overflow: hidden;
+  }
+  .video-embed iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; border: none;
+  }
+
+  /* Placeholder for empty slots */
+  .video-placeholder {
+    position: relative; padding-bottom: 56.25%;
+    background: var(--near-black);
+    overflow: hidden;
+  }
+  .video-placeholder-inner {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 0.8rem;
+  }
+  .vp-geo {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(192,57,43,0.1) 0%, transparent 65%);
+  }
+  .vp-geo .pg-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(192,57,43,0.1); }
+  .vp-geo .pg-ring-1 { width: 200px; height: 200px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+  .vp-geo .pg-ring-2 { width: 130px; height: 130px; top: 50%; left: 50%; transform: translate(-50%,-50%); border-color: rgba(201,168,76,0.08); }
+  .vp-geo .pg-ring-3 { width: 60px; height: 60px; top: 50%; left: 50%; transform: translate(-50%,-50%); border-color: rgba(192,57,43,0.2); }
+  .vp-label {
+    position: relative; z-index: 2; text-align: center;
+    font-family: var(--font-cond);
+    font-size: 0.7rem; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(255,255,255,0.2);
+  }
+  .vp-icon { position: relative; z-index: 2; font-size: 1.5rem; opacity: 0.2; }
+
+  .video-info { padding: 1.2rem 1.4rem; }
+  .video-title {
+    font-family: var(--font-cond);
+    font-size: 1rem; font-weight: 700;
+    letter-spacing: 0.06em; text-transform: uppercase;
+    color: var(--cream); margin-bottom: 0.4rem;
+  }
+  .video-desc {
+    font-size: 0.85rem; font-weight: 300;
+    color: var(--cream-dim); line-height: 1.6;
+  }
+  .video-tag {
+    display: inline-block; margin-top: 0.8rem;
+    font-family: var(--font-cond);
+    font-size: 0.65rem; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.15);
+    padding: 0.2rem 0.6rem; border-radius: 100px;
+  }
+
+  /* ── Add video CTA ── */
+  .add-video-cta {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: 4px;
+    background: rgba(255,255,255,0.02);
+  }
+  .add-video-cta h3 {
+    font-family: var(--font-cond);
+    font-size: 1rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--cream-dim);
+    margin-bottom: 0.5rem;
+  }
+  .add-video-cta p {
+    font-size: 0.88rem; font-weight: 300;
+    color: var(--cream-dim); opacity: 0.5;
+    line-height: 1.6; margin-bottom: 1.2rem;
+  }
+  .add-video-cta code {
+    display: block;
+    background: rgba(192,57,43,0.08);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: 3px; padding: 0.8rem 1rem;
+    font-size: 0.8rem; color: var(--red);
+    letter-spacing: 0.05em; text-align: left;
+    max-width: 500px; margin: 0 auto;
+    white-space: pre;
+  }
+
+  @media (max-width: 900px) {
+    .video-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 580px) {
+    .video-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar" class="scrolled">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo.png" alt="Apache Warrior Academy" class="logo-img" onerror="this.style.display='none';document.querySelector('.logo-text').style.display='block'">
+      <span class="logo-text" style="display:none;">APACHE WARRIOR ACADEMY</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#programs">Programs</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="index.html#schedule">Schedule</a></li>
+      <li><a href="index.html#founder">Instructor</a></li>
+      <li><a href="videos.html" class="active-page">Videos</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="index.html#trial" class="nav-cta">Free Trial</a>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="videos-hero">
+  <div class="videos-hero-geo">
+    <div class="geo-ring geo-ring-1"></div>
+    <div class="geo-ring geo-ring-2"></div>
+    <div class="geo-ring geo-ring-3"></div>
+  </div>
+  <div class="videos-hero-content">
+    <span class="label">On The Mats</span>
+    <h1>TRAINING<br><em>VIDEOS</em></h1>
+    <p>Watch Kenneth and the AWA team in action. Real training, real techniques, real results — straight from the mats in Gonzales.</p>
+    <a href="https://www.facebook.com/profile.php?id=61588543511512" target="_blank" rel="noopener" class="fb-link">
+      📘 &nbsp;See more on Facebook
+    </a>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span>
+    <span>Gonzales, TX</span><span class="sep">✦</span>
+    <span>Veteran-Owned</span><span class="sep">✦</span>
+    <span>Kids & Adults</span><span class="sep">✦</span>
+    <span>First Class Free</span><span class="sep">✦</span>
+    <span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span>
+    <span>Gonzales, TX</span><span class="sep">✦</span>
+    <span>Veteran-Owned</span><span class="sep">✦</span>
+    <span>Kids & Adults</span><span class="sep">✦</span>
+    <span>First Class Free</span><span class="sep">✦</span>
+  </div>
+</div>
+
+<!-- VIDEOS -->
+<section class="videos-section">
+  <div class="videos-inner">
+    <div class="section-head reveal">
+      <span class="label">From The Academy</span>
+      <h2>WATCH US<br><em>TRAIN</em></h2>
+    </div>
+
+    <div class="video-grid">
+
+      <!--
+        ╔══════════════════════════════════════════════════════╗
+        ║  HOW TO ADD A VIDEO:                                ║
+        ║                                                      ║
+        ║  Facebook video:                                     ║
+        ║  1. Open video on Facebook                          ║
+        ║  2. Click ··· → Embed → copy the src URL           ║
+        ║  3. Replace the placeholder below with:             ║
+        ║     <div class="video-embed">                       ║
+        ║       <iframe src="PASTE_URL_HERE"                  ║
+        ║         allowfullscreen></iframe>                    ║
+        ║     </div>                                          ║
+        ║                                                      ║
+        ║  YouTube video:                                      ║
+        ║  src="https://www.youtube.com/embed/VIDEO_ID"       ║
+        ╚══════════════════════════════════════════════════════╝
+      -->
+
+      <!-- SLOT 1 — Replace with real video embed -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Class Highlight</div>
+          <div class="video-desc">Add your first Facebook or YouTube video here.</div>
+          <span class="video-tag">Training</span>
+        </div>
+      </div>
+
+      <!-- SLOT 2 -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Kids Program</div>
+          <div class="video-desc">Youth class in action — discipline and technique in every rep.</div>
+          <span class="video-tag">Youth</span>
+        </div>
+      </div>
+
+      <!-- SLOT 3 -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Technique Breakdown</div>
+          <div class="video-desc">Step-by-step instruction from purple belt Kenneth Stuart.</div>
+          <span class="video-tag">Technique</span>
+        </div>
+      </div>
+
+      <!-- SLOT 4 -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Self-Defense Workshop</div>
+          <div class="video-desc">Real-world techniques for women and families.</div>
+          <span class="video-tag">Self-Defense</span>
+        </div>
+      </div>
+
+      <!-- SLOT 5 -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">Open Mat</div>
+          <div class="video-desc">Saturday open mat — all levels rolling together.</div>
+          <span class="video-tag">Community</span>
+        </div>
+      </div>
+
+      <!-- SLOT 6 -->
+      <div class="video-card reveal">
+        <div class="video-placeholder">
+          <div class="vp-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+          </div>
+          <div class="video-placeholder-inner">
+            <div class="vp-icon">▶</div>
+            <div class="vp-label">Video Coming Soon</div>
+          </div>
+        </div>
+        <div class="video-info">
+          <div class="video-title">From the Instructor</div>
+          <div class="video-desc">Kenneth on what AWA means to him and the community.</div>
+          <span class="video-tag">Academy</span>
+        </div>
+      </div>
+
+    </div><!-- /video-grid -->
+
+    <!-- Instructions for adding videos -->
+    <div class="add-video-cta reveal">
+      <h3>Adding Videos Is Easy</h3>
+      <p>When Kenneth shares a Facebook Reel or YouTube video, just swap in the embed URL. Each card accepts any iframe.</p>
+      <code>&lt;div class="video-embed"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"
+    allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="images/logo.png" alt="Apache Warrior Academy" onerror="this.style.display='none';document.querySelector('.footer-logo-text').style.display='block'">
+      <span class="footer-logo-text" style="display:none;">APACHE WARRIOR ACADEMY</span>
+    </div>
+    <div class="footer-tagline">Brazilian Jiu-Jitsu · Gonzales, Texas</div>
+    <nav class="footer-nav">
+      <a href="index.html#about">About</a>
+      <a href="index.html#programs">Programs</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#schedule">Schedule</a>
+      <a href="videos.html">Videos</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <div class="footer-copy">© 2025 Apache Warrior Academy. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+// Nav scroll
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
+
+// Hamburger
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+  document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+});
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// Reveal
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Active nav link
+document.querySelectorAll('.nav-links a').forEach(a => {
+  if (a.href === window.location.href) a.style.color = 'var(--cream)';
+});
+</script>
+
+</body>
+</html>

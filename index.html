@@ -24,9 +24,10 @@
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#schedule">Schedule</a></li>
       <li><a href="#founder">Instructor</a></li>
+      <li><a href="videos.html">Videos</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#trial" class="nav-cta">Free Trial</a>
+    <a href="#trial" class="nav-cta" id="navCta">Free Trial</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -36,7 +37,13 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="images/hero.jpg" alt="" class="hero-img" onerror="this.style.display='none'">
+    <div class="hero-geo">
+      <div class="geo-ring geo-ring-1"></div>
+      <div class="geo-ring geo-ring-2"></div>
+      <div class="geo-ring geo-ring-3"></div>
+      <div class="geo-slash"></div>
+      <div class="geo-slash geo-slash-2"></div>
+    </div>
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
@@ -87,8 +94,14 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-media reveal">
-        <div class="about-img-wrap">
-          <img src="images/about.jpg" alt="Apache Warrior Academy training" onerror="this.parentElement.classList.add('img-fallback')">
+        <div class="about-img-wrap geo-placeholder">
+          <div class="placeholder-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+            <div class="pg-slash"></div>
+            <div class="pg-slash pg-slash-2"></div>
+          </div>
           <div class="about-badge">
             <div class="badge-num">5+</div>
             <div class="badge-label">Years Teaching</div>
@@ -106,12 +119,8 @@
             <div class="stat-lbl">Years Teaching</div>
           </div>
           <div class="stat">
-            <div class="stat-num">0</div>
-            <div class="stat-lbl">Competitors Nearby</div>
-          </div>
-          <div class="stat">
-            <div class="stat-num">25+</div>
-            <div class="stat-lbl">Families Interested</div>
+            <div class="stat-num">USAF</div>
+            <div class="stat-lbl">Veteran-Owned</div>
           </div>
         </div>
         <a href="#trial" class="btn-primary">Claim Your Free Class</a>
@@ -129,39 +138,39 @@
     </div>
     <div class="programs-grid">
       <div class="prog-card reveal">
-        <div class="prog-icon">🥋</div>
+        <div class="prog-num">01</div>
         <h3>Kids Jiu-Jitsu</h3>
-        <p>Character-building martial arts for young warriors. Discipline, respect, anti-bullying, and confidence through structured BJJ training.</p>
+        <p>Most kids won't face a tournament — but they will face a bully, a hard day, or a moment that tests their character. Our youth program teaches BJJ as a tool for life: how to stay calm under pressure, respect others, and carry themselves with confidence.</p>
         <div class="prog-tag">Ages 5–17</div>
       </div>
       <div class="prog-card reveal">
-        <div class="prog-icon">⚔️</div>
+        <div class="prog-num">02</div>
         <h3>Adult Jiu-Jitsu</h3>
-        <p>Practical self-defense and fitness for all skill levels. Real techniques in a welcoming environment — new or experienced.</p>
+        <p>You don't need experience — just the willingness to show up. Whether you're here to get fit, learn to defend yourself, or find something that challenges you like nothing else, adult BJJ at AWA meets you where you are and pushes you forward.</p>
         <div class="prog-tag">Ages 18+</div>
       </div>
       <div class="prog-card reveal">
-        <div class="prog-icon">🏆</div>
+        <div class="prog-num">03</div>
         <h3>Competition Team</h3>
-        <p>For those ready to test themselves. Advanced training, strategy, and live sparring to prepare for tournaments.</p>
+        <p>For athletes who want to test what they've built. Competition training is structured, demanding, and not for everyone — and that's exactly the point. If you want to compete, we'll prepare you to walk onto that mat ready.</p>
         <div class="prog-tag">All Ages · By Invitation</div>
       </div>
       <div class="prog-card reveal">
-        <div class="prog-icon">🛡️</div>
-        <h3>Self-Defense</h3>
-        <p>Practical workshops for women, families, and community groups. Real-world techniques that work when it matters most.</p>
+        <div class="prog-num">04</div>
+        <h3>Women's Self-Defense</h3>
+        <p>Situational awareness, boundary-setting, and real escape techniques — no uniform required. This isn't a seminar full of hypotheticals. It's hands-on training built around the scenarios women actually face, taught in a respectful environment.</p>
         <div class="prog-tag">Community Workshops</div>
       </div>
       <div class="prog-card reveal">
-        <div class="prog-icon">📚</div>
+        <div class="prog-num">05</div>
         <h3>Homeschool Program</h3>
-        <p>Morning and midday classes built for homeschool families — where physical education meets character development.</p>
+        <p>Physical education that actually develops something. Homeschool families get dedicated morning class times — structured BJJ instruction that builds focus, coordination, and the ability to work through difficulty alongside other kids.</p>
         <div class="prog-tag">Weekday Mornings</div>
       </div>
       <div class="prog-card reveal">
-        <div class="prog-icon">🎖️</div>
-        <h3>First Responder</h3>
-        <p>Specialized defensive tactics for law enforcement, firefighters, and EMS. Discounted rates for those who serve.</p>
+        <div class="prog-num">06</div>
+        <h3>First Responder Training</h3>
+        <p>Law enforcement, firefighters, and EMS deal with physical altercations in full gear, under stress, with lives on the line. This program teaches control techniques and defensive tactics built for those real-world conditions — with discounted rates for those who serve.</p>
         <div class="prog-tag">LEO · Fire · EMS</div>
       </div>
     </div>
@@ -175,53 +184,131 @@
       <span class="label">Investment</span>
       <h2>MEMBERSHIP<br><em>PRICING</em></h2>
     </div>
-    <div class="pricing-grid">
-      <div class="price-card reveal">
-        <div class="price-header">
-          <h3>Kids</h3>
-          <div class="price-tag"><sup>$</sup>100<span>/mo</span></div>
+
+    <!-- Individual Memberships -->
+    <div class="price-tabs reveal">
+      <button class="price-tab active" data-tab="individual">Individual</button>
+      <button class="price-tab" data-tab="military">Military / First Responder</button>
+      <button class="price-tab" data-tab="family">Family Plan</button>
+    </div>
+
+    <!-- Individual -->
+    <div class="price-panel active" id="tab-individual">
+      <div class="pricing-grid two-col">
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h3>Youth Membership</h3>
+            <div class="price-tag"><sup>$</sup>110<span>/mo</span></div>
+          </div>
+          <ul class="price-list">
+            <li>Ages 5–13</li>
+            <li>Saturday 5–6 PM class</li>
+            <li>Sunday 2–3 PM class</li>
+            <li>Belt progression tracking</li>
+            <li>Character development focus</li>
+          </ul>
+          <a href="#contact" class="btn-primary full">Get Started</a>
         </div>
-        <ul class="price-list">
-          <li>Unlimited kids classes</li>
-          <li>Ages 5–17</li>
-          <li>Character development focus</li>
-          <li>Belt progression tracking</li>
-        </ul>
-        <a href="#trial" class="btn-primary full">Get Started</a>
+        <div class="price-card featured reveal">
+          <div class="featured-badge">Most Popular</div>
+          <div class="price-header">
+            <h3>Adult Membership</h3>
+            <div class="price-tag"><sup>$</sup>120<span>/mo</span></div>
+          </div>
+          <ul class="price-list">
+            <li>Ages 13+</li>
+            <li>Saturday 6–7 PM class</li>
+            <li>Sunday 3–4 PM class</li>
+            <li>All skill levels welcome</li>
+            <li>Competition team eligibility</li>
+          </ul>
+          <a href="#contact" class="btn-primary full">Get Started</a>
+        </div>
       </div>
-      <div class="price-card featured reveal">
-        <div class="featured-badge">Most Popular</div>
-        <div class="price-header">
-          <h3>Adults</h3>
-          <div class="price-tag"><sup>$</sup>120<span>/mo</span></div>
+      <div class="founding-banner reveal">
+        <div class="founding-inner">
+          <span class="founding-icon">⭐</span>
+          <div>
+            <strong>Only 11 Founding Member Spots Remaining</strong>
+            <p>Lock in $20 off your monthly rate — for life. First come, first served. Sign the waiver to reserve your spot.</p>
+          </div>
+          <a href="#contact" class="btn-primary">Reserve Spot</a>
         </div>
-        <ul class="price-list">
-          <li>Unlimited adult classes</li>
-          <li>Ages 18+</li>
-          <li>All skill levels welcome</li>
-          <li>Open mat access</li>
-          <li>Competition team eligibility</li>
-        </ul>
-        <a href="#trial" class="btn-primary full">Get Started</a>
-      </div>
-      <div class="price-card reveal">
-        <div class="price-header">
-          <h3>Family</h3>
-          <div class="price-tag"><sup>$</sup>200<span>+/mo</span></div>
-        </div>
-        <ul class="price-list">
-          <li>Unlimited family access</li>
-          <li>Kids + Adults combined</li>
-          <li>$10 off each additional member</li>
-          <li>Train together, grow together</li>
-        </ul>
-        <a href="#trial" class="btn-primary full">Get Started</a>
       </div>
     </div>
-    <div class="discounts reveal">
-      <div class="discount-pill">🎖️ Military / First Responder — $20 OFF</div>
-      <div class="discount-pill">⭐ Founding Member — $20 OFF</div>
+
+    <!-- Military / First Responder -->
+    <div class="price-panel" id="tab-military">
+      <div class="pricing-grid two-col">
+        <div class="price-card reveal">
+          <div class="price-header">
+            <h3>Youth — Military Discount</h3>
+            <div class="price-tag"><sup>$</sup>90<span>/mo</span></div>
+          </div>
+          <ul class="price-list">
+            <li>Ages 5–13</li>
+            <li>$20/mo off standard rate</li>
+            <li>Valid military/first responder ID required</li>
+            <li>Active military, veterans, law enforcement, fire, and EMS</li>
+          </ul>
+          <a href="#contact" class="btn-primary full">Get Started</a>
+        </div>
+        <div class="price-card featured reveal">
+          <div class="featured-badge">Serving Those Who Serve</div>
+          <div class="price-header">
+            <h3>Adult — Military Discount</h3>
+            <div class="price-tag"><sup>$</sup>100<span>/mo</span></div>
+          </div>
+          <ul class="price-list">
+            <li>Ages 13+</li>
+            <li>$20/mo off standard rate</li>
+            <li>Valid military/first responder ID required</li>
+            <li>Active military, veterans, law enforcement, fire, and EMS</li>
+          </ul>
+          <a href="#contact" class="btn-primary full">Get Started</a>
+        </div>
+      </div>
+      <p class="price-note reveal">Valid ID required at sign-up. Discount applies to active military, veterans, law enforcement, firefighters, and EMS personnel.</p>
     </div>
+
+    <!-- Family Plan -->
+    <div class="price-panel" id="tab-family">
+      <div class="family-table reveal">
+        <div class="family-header">
+          <h3>Family Plan</h3>
+          <p>Each family member gets their own membership — rates decrease as your family grows.</p>
+        </div>
+        <div class="family-rows">
+          <div class="family-row">
+            <span>First Adult</span>
+            <span class="family-price">$120<small>/mo</small></span>
+          </div>
+          <div class="family-row">
+            <span>Second Adult</span>
+            <span class="family-price">$110<small>/mo</small></span>
+          </div>
+          <div class="family-row">
+            <span>First Youth</span>
+            <span class="family-price">$110<small>/mo</small></span>
+          </div>
+          <div class="family-row">
+            <span>Second Youth</span>
+            <span class="family-price">$100<small>/mo</small></span>
+          </div>
+          <div class="family-row highlight">
+            <span>Third Youth &amp; Beyond</span>
+            <span class="family-price">$90<small>/mo</small></span>
+          </div>
+        </div>
+        <div class="family-example">
+          <strong>Example — Family of 4 (2 Adults + 2 Youth)</strong><br>
+          $120 + $110 + $110 + $100 = <strong>$440/month</strong><br>
+          <span>Save $20/month compared to individual memberships</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="margin-top:1.5rem;display:inline-block;">Build My Family Plan</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -243,38 +330,28 @@
         </thead>
         <tbody>
           <tr>
-            <td>Thursday</td>
+            <td>Saturday</td>
             <td>5:00 – 6:00 PM</td>
-            <td><span class="class-tag kids">Kids BJJ</span></td>
+            <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
           </tr>
           <tr>
-            <td>Thursday</td>
-            <td>6:00 – 7:30 PM</td>
-            <td><span class="class-tag adult">Adult BJJ</span></td>
-          </tr>
-          <tr>
-            <td>Friday</td>
-            <td>5:00 – 6:00 PM</td>
-            <td><span class="class-tag kids">Kids BJJ</span></td>
-          </tr>
-          <tr>
-            <td>Friday</td>
+            <td>Saturday</td>
             <td>6:00 – 7:00 PM</td>
-            <td><span class="class-tag adult">Adult BJJ</span></td>
+            <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
           </tr>
           <tr>
-            <td>Saturday</td>
-            <td>9:00 – 10:00 AM</td>
-            <td><span class="class-tag open">All Ages Open Mat</span></td>
+            <td>Sunday</td>
+            <td>2:00 – 3:00 PM</td>
+            <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
           </tr>
           <tr>
-            <td>Saturday</td>
-            <td>10:00 – 11:00 AM</td>
-            <td><span class="class-tag self">Self-Defense Workshop</span></td>
+            <td>Sunday</td>
+            <td>3:00 – 4:00 PM</td>
+            <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
           </tr>
         </tbody>
       </table>
-      <p class="sched-note">📍 Inside Diamond Gymnastics — 801 Oil Patch Ln, Gonzales, TX 78629<br>Schedule is expanding. Homeschool morning classes coming soon.</p>
+      <p class="sched-note">📍 Inside Diamond Gymnastics — 801 Oil Patch Ln, Gonzales, TX 78629<br>Only <strong>11 Founding Member spots</strong> remaining at $20 off/month for life. First come, first served.</p>
     </div>
   </div>
 </section>
@@ -284,10 +361,16 @@
   <div class="container">
     <div class="founder-grid">
       <div class="founder-photo-wrap reveal">
-        <div class="founder-photo">
-          <img src="images/kenneth.jpg" alt="Kenneth Stuart — Head Instructor" onerror="this.parentElement.classList.add('photo-fallback')">
-          <div class="photo-overlay">
-            <span>UPLOAD GI PHOTO</span>
+        <div class="founder-photo geo-placeholder">
+          <div class="placeholder-geo">
+            <div class="pg-ring pg-ring-1"></div>
+            <div class="pg-ring pg-ring-2"></div>
+            <div class="pg-ring pg-ring-3"></div>
+            <div class="pg-slash"></div>
+            <div class="pg-slash pg-slash-2"></div>
+          </div>
+          <div class="photo-label-overlay">
+            <span>PHOTO COMING SOON</span>
           </div>
         </div>
         <div class="founder-name-plate">
@@ -346,30 +429,72 @@
         </div>
       </div>
       <div class="contact-form-wrap reveal">
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="form-row">
-            <input type="text" name="name" placeholder="Your Name" required>
-          </div>
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mgodlnrg" method="POST">
+          <!-- Honeypot spam trap -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
           <div class="form-row two-col">
-            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="name" placeholder="Your Name" required>
             <input type="tel" name="phone" placeholder="Phone Number">
           </div>
           <div class="form-row">
-            <select name="interest">
-              <option value="" disabled selected>I'm interested in...</option>
-              <option>Kids Jiu-Jitsu</option>
-              <option>Adult Jiu-Jitsu</option>
-              <option>Family Membership</option>
-              <option>Self-Defense Workshop</option>
-              <option>First Responder Training</option>
-              <option>Homeschool Program</option>
-            </select>
+            <input type="email" name="email" placeholder="Email Address" required>
           </div>
+
+          <!-- FAQ: Who is this for? -->
+          <div class="faq-group">
+            <div class="faq-label">Who are you signing up?</div>
+            <div class="faq-chips" data-name="who">
+              <button type="button" class="chip" data-val="Myself (Adult)">Myself (Adult)</button>
+              <button type="button" class="chip" data-val="My Child">My Child</button>
+              <button type="button" class="chip" data-val="My Family">My Family</button>
+              <button type="button" class="chip" data-val="Just Exploring">Just Exploring</button>
+            </div>
+            <input type="hidden" name="who" id="val-who">
+          </div>
+
+          <!-- FAQ: Experience level -->
+          <div class="faq-group">
+            <div class="faq-label">Experience level?</div>
+            <div class="faq-chips" data-name="experience">
+              <button type="button" class="chip" data-val="Complete Beginner">Complete Beginner</button>
+              <button type="button" class="chip" data-val="Some Experience">Some Experience</button>
+              <button type="button" class="chip" data-val="Trained Before">Trained Before</button>
+            </div>
+            <input type="hidden" name="experience" id="val-experience">
+          </div>
+
+          <!-- FAQ: What are you looking for? -->
+          <div class="faq-group">
+            <div class="faq-label">What brings you here?</div>
+            <div class="faq-chips" data-name="goal">
+              <button type="button" class="chip" data-val="Self-Defense">Self-Defense</button>
+              <button type="button" class="chip" data-val="Get Fit">Get Fit</button>
+              <button type="button" class="chip" data-val="Competition">Competition</button>
+              <button type="button" class="chip" data-val="Confidence / Discipline">Confidence / Discipline</button>
+              <button type="button" class="chip" data-val="Fun / Social">Fun / Social</button>
+            </div>
+            <input type="hidden" name="goal" id="val-goal">
+          </div>
+
+          <!-- FAQ: Schedule preference -->
+          <div class="faq-group">
+            <div class="faq-label">Preferred class day?</div>
+            <div class="faq-chips" data-name="schedule">
+              <button type="button" class="chip" data-val="Saturday">Saturday</button>
+              <button type="button" class="chip" data-val="Sunday">Sunday</button>
+              <button type="button" class="chip" data-val="Either Works">Either Works</button>
+            </div>
+            <input type="hidden" name="schedule" id="val-schedule">
+          </div>
+
           <div class="form-row">
-            <textarea name="message" placeholder="Any questions or details..." rows="4"></textarea>
+            <textarea name="message" placeholder="Any questions, details, or concerns? (optional)" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn-primary full">Send Message</button>
-          <div class="form-success" id="formSuccess">✓ Message sent! We'll be in touch within 24 hours.</div>
+
+          <button type="submit" class="btn-primary full">Send My Info →</button>
+          <p class="form-disclaimer">We'll reach out within 24 hours to get you set up. No pressure, no commitment.</p>
+          <div class="form-success" id="formSuccess">✓ Got it! We'll be in touch within 24 hours.</div>
         </form>
       </div>
     </div>
@@ -389,6 +514,7 @@
       <a href="#programs">Programs</a>
       <a href="#pricing">Pricing</a>
       <a href="#schedule">Schedule</a>
+      <a href="videos.html">Videos</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="footer-copy">© 2025 Apache Warrior Academy. All rights reserved.</div>
