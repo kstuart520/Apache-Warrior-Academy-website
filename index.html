@@ -239,36 +239,35 @@
 
     <!-- Military / First Responder -->
     <div class="price-panel" id="tab-military">
-      <div class="pricing-grid two-col">
-        <div class="price-card reveal">
-          <div class="price-header">
-            <h3>Youth — Military Discount</h3>
-            <div class="price-tag"><sup>$</sup>90<span>/mo</span></div>
-          </div>
-          <ul class="price-list">
-            <li>Ages 5–13</li>
-            <li>$20/mo off standard rate</li>
-            <li>Valid military/first responder ID required</li>
-            <li>Active military, veterans, law enforcement, fire, and EMS</li>
-          </ul>
-          <a href="#contact" class="btn-primary full">Get Started</a>
-        </div>
-        <div class="price-card featured reveal">
+      <div class="military-card-wrap">
+        <div class="price-card featured military-solo reveal">
           <div class="featured-badge">Serving Those Who Serve</div>
+          <div class="military-badge-row">
+            <span class="mil-badge">🎖️ Active Military</span>
+            <span class="mil-badge">🚔 Law Enforcement</span>
+            <span class="mil-badge">🚒 Fire</span>
+            <span class="mil-badge">🚑 EMS</span>
+            <span class="mil-badge">🪖 Veterans</span>
+          </div>
           <div class="price-header">
-            <h3>Adult — Military Discount</h3>
+            <h3>Adult Membership — Military Rate</h3>
             <div class="price-tag"><sup>$</sup>100<span>/mo</span></div>
           </div>
+          <div class="military-compare">
+            <span class="mil-was">Standard rate: $120/mo</span>
+            <span class="mil-save">You save $20/mo</span>
+          </div>
           <ul class="price-list">
-            <li>Ages 13+</li>
-            <li>$20/mo off standard rate</li>
-            <li>Valid military/first responder ID required</li>
-            <li>Active military, veterans, law enforcement, fire, and EMS</li>
+            <li>Ages 18+ (adults only)</li>
+            <li>All Saturday &amp; Sunday adult classes</li>
+            <li>All skill levels welcome</li>
+            <li>Competition team eligibility</li>
+            <li>Valid military or first responder ID required at sign-up</li>
           </ul>
-          <a href="#contact" class="btn-primary full">Get Started</a>
+          <a href="#contact" class="btn-primary full">Claim This Rate</a>
         </div>
       </div>
-      <p class="price-note reveal">Valid ID required at sign-up. Discount applies to active military, veterans, law enforcement, firefighters, and EMS personnel.</p>
+      <p class="price-note reveal">Discount applies to active duty military, veterans, law enforcement, firefighters, and EMS. Valid ID required at enrollment. Not combinable with Founding Member discount.</p>
     </div>
 
     <!-- Family Plan -->
@@ -315,62 +314,186 @@
 <!-- SCHEDULE -->
 <section class="schedule" id="schedule">
   <div class="container">
-    <div class="section-head reveal">
-      <span class="label">When We Train</span>
-      <h2>CLASS<br><em>SCHEDULE</em></h2>
+    <div class="schedule-header reveal">
+      <div>
+        <span class="label">When We Train</span>
+        <h2>CLASS<br><em>SCHEDULE</em></h2>
+      </div>
+      <div class="sched-view-toggle">
+        <button class="sched-toggle active" id="toggleList" aria-label="List view">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect y="2" width="18" height="2" rx="1" fill="currentColor"/><rect y="8" width="18" height="2" rx="1" fill="currentColor"/><rect y="14" width="18" height="2" rx="1" fill="currentColor"/></svg>
+          List
+        </button>
+        <button class="sched-toggle" id="toggleCal" aria-label="Calendar view">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M1 7h16" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="1.5" height="4" rx="0.75" fill="currentColor"/><rect x="11.5" y="1" width="1.5" height="4" rx="0.75" fill="currentColor"/></svg>
+          Calendar
+        </button>
+      </div>
     </div>
-    <div class="schedule-wrap reveal">
+
+    <!-- VIEW 1: List / Table -->
+    <div class="schedule-wrap reveal" id="schedList">
       <table class="sched-table">
         <thead>
-          <tr>
-            <th>Day</th>
-            <th>Time</th>
-            <th>Class</th>
-          </tr>
+          <tr><th>Day</th><th>Time</th><th>Class</th><th></th></tr>
         </thead>
         <tbody>
           <tr>
             <td>Saturday</td>
             <td>5:00 – 6:00 PM</td>
             <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
+            <td><button class="register-btn" data-class="Youth BJJ" data-day="Saturday" data-time="5:00 – 6:00 PM">Reserve Spot</button></td>
           </tr>
           <tr>
             <td>Saturday</td>
             <td>6:00 – 7:00 PM</td>
             <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
+            <td><button class="register-btn" data-class="Adult BJJ" data-day="Saturday" data-time="6:00 – 7:00 PM">Reserve Spot</button></td>
           </tr>
           <tr>
             <td>Sunday</td>
             <td>2:00 – 3:00 PM</td>
             <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
+            <td><button class="register-btn" data-class="Youth BJJ" data-day="Sunday" data-time="2:00 – 3:00 PM">Reserve Spot</button></td>
           </tr>
           <tr>
             <td>Sunday</td>
             <td>3:00 – 4:00 PM</td>
             <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
+            <td><button class="register-btn" data-class="Adult BJJ" data-day="Sunday" data-time="3:00 – 4:00 PM">Reserve Spot</button></td>
           </tr>
         </tbody>
       </table>
       <p class="sched-note">📍 Inside Diamond Gymnastics — 801 Oil Patch Ln, Gonzales, TX 78629<br>Only <strong>11 Founding Member spots</strong> remaining at $20 off/month for life. First come, first served.</p>
     </div>
+
+    <!-- VIEW 2: Calendar -->
+    <div class="schedule-wrap reveal" id="schedCal" style="display:none;">
+      <div class="cal-grid">
+        <!-- SAT -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <span class="cal-day-name">Saturday</span>
+            <span class="cal-day-sub">Weekly</span>
+          </div>
+          <div class="cal-slots">
+            <div class="cal-slot kids-slot">
+              <div class="cal-slot-time">5:00 – 6:00 PM</div>
+              <div class="cal-slot-name">Youth BJJ</div>
+              <div class="cal-slot-ages">Ages 5–13</div>
+              <button class="cal-register-btn" data-class="Youth BJJ" data-day="Saturday" data-time="5:00 – 6:00 PM">Reserve</button>
+            </div>
+            <div class="cal-slot adult-slot">
+              <div class="cal-slot-time">6:00 – 7:00 PM</div>
+              <div class="cal-slot-name">Adult BJJ</div>
+              <div class="cal-slot-ages">Ages 13+</div>
+              <button class="cal-register-btn" data-class="Adult BJJ" data-day="Saturday" data-time="6:00 – 7:00 PM">Reserve</button>
+            </div>
+          </div>
+        </div>
+        <!-- SUN -->
+        <div class="cal-day">
+          <div class="cal-day-header">
+            <span class="cal-day-name">Sunday</span>
+            <span class="cal-day-sub">Weekly</span>
+          </div>
+          <div class="cal-slots">
+            <div class="cal-slot kids-slot">
+              <div class="cal-slot-time">2:00 – 3:00 PM</div>
+              <div class="cal-slot-name">Youth BJJ</div>
+              <div class="cal-slot-ages">Ages 5–13</div>
+              <button class="cal-register-btn" data-class="Youth BJJ" data-day="Sunday" data-time="2:00 – 3:00 PM">Reserve</button>
+            </div>
+            <div class="cal-slot adult-slot">
+              <div class="cal-slot-time">3:00 – 4:00 PM</div>
+              <div class="cal-slot-name">Adult BJJ</div>
+              <div class="cal-slot-ages">Ages 13+</div>
+              <button class="cal-register-btn" data-class="Adult BJJ" data-day="Sunday" data-time="3:00 – 4:00 PM">Reserve</button>
+            </div>
+          </div>
+        </div>
+        <!-- Legend -->
+        <div class="cal-legend">
+          <span class="cal-legend-item kids-dot">Youth Classes</span>
+          <span class="cal-legend-item adult-dot">Adult Classes</span>
+        </div>
+      </div>
+      <p class="sched-note">📍 Inside Diamond Gymnastics — 801 Oil Patch Ln, Gonzales, TX 78629<br>Only <strong>11 Founding Member spots</strong> remaining at $20 off/month for life. First come, first served.</p>
+    </div>
+
   </div>
 </section>
+
+<!-- CLASS REGISTRATION MODAL -->
+<div class="modal-overlay" id="registerModal" aria-hidden="true">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <div class="modal-label">Reserve Your Spot</div>
+    <h3 class="modal-title" id="modalTitle">Youth BJJ — Saturday 5:00–6:00 PM</h3>
+    <p class="modal-sub">Fill out the form below and we'll confirm your spot within 24 hours. First class is always free.</p>
+    <form class="modal-form" id="registerForm" action="https://formspree.io/f/mgodlnrg" method="POST">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="form_type" value="Class Registration">
+      <input type="hidden" name="class_name" id="reg-class">
+      <input type="hidden" name="class_day" id="reg-day">
+      <input type="hidden" name="class_time" id="reg-time">
+
+      <div class="modal-row two-col">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+      </div>
+      <input type="email" name="email" placeholder="Email Address" required style="width:100%">
+
+      <div class="modal-chips-label">This is for:</div>
+      <div class="faq-chips modal-chips" data-name="reg-who">
+        <button type="button" class="chip" data-val="Myself">Myself</button>
+        <button type="button" class="chip" data-val="My Child">My Child</button>
+        <button type="button" class="chip" data-val="Both of us">Both of Us</button>
+      </div>
+      <input type="hidden" name="registering_for" id="val-reg-who">
+
+      <div class="waiver-block">
+        <label class="waiver-check">
+          <input type="checkbox" name="waiver_agreed" value="yes" required>
+          <span class="waiver-text">
+            I agree to the <button type="button" class="waiver-link" id="showWaiver">Apache Warrior Academy Waiver</button> and understand that participation in BJJ involves physical contact and inherent risk of injury. I participate voluntarily.
+          </span>
+        </label>
+      </div>
+
+      <!-- Waiver text (collapsed) -->
+      <div class="waiver-full" id="waiverFull" style="display:none;">
+        <strong>RELEASE OF LIABILITY WAIVER</strong><br><br>
+        By signing up, I acknowledge that Brazilian Jiu-Jitsu is a physical contact sport and that participation involves inherent risks including but not limited to bruises, sprains, fractures, and other injuries. I voluntarily choose to participate and agree to follow all instructor directions. I release Apache Warrior Academy, its instructors, and Diamond Gymnastics from any liability for injuries sustained during training. I confirm that I am physically able to participate or that I have disclosed any medical conditions that may affect my training. This waiver applies to all classes, workshops, and open mat sessions.<br><br>
+        <em>Electronic agreement by form submission is accepted in place of physical signature.</em>
+        <button type="button" class="waiver-close-link" id="hideWaiver">Close ↑</button>
+      </div>
+
+      <button type="submit" class="btn-primary full modal-submit">Reserve My Spot →</button>
+      <div class="form-success modal-success" id="registerSuccess">✓ You're registered! We'll confirm within 24 hours.</div>
+    </form>
+  </div>
+</div>
 
 <!-- FOUNDER -->
 <section class="founder" id="founder">
   <div class="container">
     <div class="founder-grid">
       <div class="founder-photo-wrap reveal">
-        <div class="founder-photo geo-placeholder">
-          <div class="placeholder-geo">
-            <div class="pg-ring pg-ring-1"></div>
-            <div class="pg-ring pg-ring-2"></div>
-            <div class="pg-ring pg-ring-3"></div>
-            <div class="pg-slash"></div>
-            <div class="pg-slash pg-slash-2"></div>
-          </div>
-          <div class="photo-label-overlay">
-            <span>PHOTO COMING SOON</span>
+        <div class="founder-photo">
+          <img src="images/kenneth.png"
+               alt="Kenneth Stuart — Head Instructor, Apache Warrior Academy"
+               class="kenneth-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="founder-photo-fallback" style="display:none;">
+            <div class="placeholder-geo">
+              <div class="pg-ring pg-ring-1"></div>
+              <div class="pg-ring pg-ring-2"></div>
+              <div class="pg-ring pg-ring-3"></div>
+              <div class="pg-slash"></div>
+              <div class="pg-slash pg-slash-2"></div>
+            </div>
+            <div class="photo-label-overlay"><span>PHOTO COMING SOON</span></div>
           </div>
         </div>
         <div class="founder-name-plate">

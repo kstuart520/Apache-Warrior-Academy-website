@@ -162,6 +162,21 @@
     .video-grid { grid-template-columns: 1fr; }
   }
 </style>
+  <style>
+    .fb-embed {
+      position: relative;
+      padding-bottom: 56.25%;
+      overflow: hidden;
+      background: #000;
+    }
+    .fb-embed iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100% !important;
+      height: 100% !important;
+      border: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -249,23 +264,22 @@
         ╚══════════════════════════════════════════════════════╝
       -->
 
-      <!-- SLOT 1 — Replace with real video embed -->
+      <!-- SLOT 1 — Facebook Reel embed -->
       <div class="video-card reveal">
-        <div class="video-placeholder">
-          <div class="vp-geo">
-            <div class="pg-ring pg-ring-1"></div>
-            <div class="pg-ring pg-ring-2"></div>
-            <div class="pg-ring pg-ring-3"></div>
-          </div>
-          <div class="video-placeholder-inner">
-            <div class="vp-icon">▶</div>
-            <div class="vp-label">Video Coming Soon</div>
-          </div>
+        <div class="video-embed fb-embed">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2663422537375175%2F&show_text=false&width=560&t=0"
+            width="560" height="314"
+            style="border:none;overflow:hidden"
+            scrolling="no" frameborder="0"
+            allowfullscreen="true"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
         </div>
         <div class="video-info">
-          <div class="video-title">Class Highlight</div>
-          <div class="video-desc">Add your first Facebook or YouTube video here.</div>
-          <span class="video-tag">Training</span>
+          <div class="video-title">AWA on the Mats</div>
+          <div class="video-desc">Apache Warrior Academy in action — real training, real technique, right here in Gonzales.</div>
+          <span class="video-tag">Training Reel</span>
         </div>
       </div>
 
