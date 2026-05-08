@@ -1403,3 +1403,17 @@ footer {
   .modal-box { padding: 1.5rem; }
   .military-badge-row { gap: 0.4rem; }
 }
+
+/* Hero background photo — sits behind geo overlay */
+.hero-bg-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block; z-index: 0;
+}
+/* Darken overlay more when photo is present */
+.hero-bg:has(.hero-bg-img:not([style*="none"])) .hero-overlay {
+  background:
+    linear-gradient(to right, rgba(12,12,12,0.88) 40%, rgba(12,12,12,0.5) 100%),
+    linear-gradient(to top, rgba(12,12,12,0.7) 0%, transparent 60%);
+}
