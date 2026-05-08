@@ -141,3 +141,120 @@ if (form) {
     }
   });
 }
+
+// ── Schedule view toggle (List ↔ Calendar) ─────────────────
+const toggleList = document.getElementById('toggleList');
+const toggleCal  = document.getElementById('toggleCal');
+const schedList  = document.getElementById('schedList');
+const schedCal   = document.getElementById('schedCal');
+
+if (toggleList && toggleCal) {
+  toggleList.addEventListener('click', () => {
+    toggleList.classList.add('active');
+    toggleCal.classList.remove('active');
+    schedList.style.display = 'block';
+    schedCal.style.display  = 'none';
+  });
+  toggleCal.addEventListener('click', () => {
+    toggleCal.classList.add('active');
+    toggleList.classList.remove('active');
+    schedCal.style.display  = 'block';
+    schedList.style.display = 'none';
+    // Ensure calendar reveals animate in
+    schedCal.querySelectorAll('.reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+  });
+}
+
+// ── Class Registration Modal ───────────────────────────────
+const modal       = document.getElementById('registerModal');
+const modalClose  = document.getElementById('modalClose');
+const modalTitle  = document.getElementById('modalTitle');
+const regClass    = document.getElementById('reg-class');
+const regDay      = document.getElementById('reg-day');
+const regTime     = document.getElementById('reg-time');
+const registerForm    = document.getElementById('registerForm');
+const registerSuccess = document.getElementById('registerSuccess');
+
+function openModal(className, day, time) {
+  if (!modal) return;
+  modalTitle.textContent = `${className} — ${day} ${time}`;
+  regClass.value = className;
+  regDay.value   = day;
+  regTime.value  = time;
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// All register buttons (list + calendar)
+document.querySelectorAll('.register-btn, .cal-register-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    openModal(btn.dataset.class, btn.dataset.day, btn.dataset.time);
+  });
+});
+
+if (modalClose) modalClose.addEventListener('click', closeModal);
+if (modal) {
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+}
+
+// Waiver toggle
+const showWaiver = document.getElementById('showWaiver');
+const hideWaiver = document.getElementById('hideWaiver');
+const waiverFull = document.getElementById('waiverFull');
+if (showWaiver) showWaiver.addEventListener('click', () => waiverFull.style.display = 'block');
+if (hideWaiver) hideWaiver.addEventListener('click', () => waiverFull.style.display = 'none');
+
+// Modal chips
+if (modal) {
+  modal.querySelectorAll('.faq-chips').forEach(group => {
+    const name = group.dataset.name;
+    const hiddenInput = document.getElementById('val-' + name);
+    group.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+        if (hiddenInput) hiddenInput.value = chip.dataset.val;
+      });
+    });
+  });
+}
+
+// Registration form submit
+if (registerForm) {
+  registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = registerForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+
+    try {
+      const res = await fetch(registerForm.action, {
+        method: 'POST',
+        body: new FormData(registerForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        registerForm.reset();
+        modal.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+        registerForm.style.display = 'none';
+        registerSuccess.style.display = 'block';
+        setTimeout(closeModal, 3500);
+      } else {
+        alert('Something went wrong. Please email apachewarrioracademy@gmail.com directly.');
+        btn.textContent = 'Reserve My Spot →';
+        btn.disabled = false;
+      }
+    } catch {
+      alert('Network error. Please call (508) 905-9867 to reserve your spot.');
+      btn.textContent = 'Reserve My Spot →';
+      btn.disabled = false;
+    }
+  });
+}
