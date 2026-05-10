@@ -233,3 +233,45 @@ Ask before pushing:
 - [ ] Did I add a new image? Confirm exact filename matches the `src=""` in HTML.
 - [ ] Did I edit CSS? Count `{` and `}` — they must be equal.
 - [ ] Did I edit JS? Check browser console after push for red errors.
+
+---
+
+## Claude Code — Session Starter
+
+Every time you open a new Claude Code session on this repo, paste this at the start:
+
+---
+
+> I'm working on a client website for Apache Warrior Academy, a veteran-owned Brazilian Jiu-Jitsu academy in Gonzales, TX. Please read README.md in full before making any changes. Key things to know:
+>
+> - All nav links go to standalone .html pages (not index.html#hash anchors)
+> - Formspree form ID is mgodlnrg — never change this
+> - Instructor photo is images/kenneth.jpg (not .png)
+> - The homepage (index.html) has class="light-mode" on the body — this controls the light/dark theme
+> - Run the pre-publish checklist from the README before every commit
+> - Commit messages should describe exactly what changed
+
+---
+
+## Theme Toggle — Light vs Dark
+
+The entire site theme is controlled by one word in `index.html`:
+
+| Want | Change `<body>` to |
+|------|-------------------|
+| Light background | `<body class="light-mode">` |
+| Dark background | `<body>` |
+
+To apply the same theme to ALL pages, add or remove `class="light-mode"` from the `<body>` tag in each `.html` file. The CSS for both themes lives in `css/style.css` at the bottom.
+
+## Client Contact
+
+- **Academy:** Apache Warrior Academy
+- **Owner:** Kenny Stuart
+- **Phone:** (508) 905-9867
+- **Email:** apachewarrioracademy@gmail.com
+- **Facebook:** https://www.facebook.com/profile.php?id=61588543511512
+- **Domain:** apachewarrioracademy.com (primary) + apachewarrioracademy.org
+- **GitHub repo:** kstuart520/Apache-Warrior-Academy-website
+- **Formspree:** https://formspree.io/f/mgodlnrg
+- **Google Search Console:** Verified via meta tag on index.html
