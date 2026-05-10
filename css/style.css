@@ -899,6 +899,7 @@ footer {
 /* ── PRICING TABS ── */
 .price-tabs {
   display: flex; gap: 0.5rem; flex-wrap: wrap;
+  justify-content: center;
   margin-bottom: 2.5rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 0;
