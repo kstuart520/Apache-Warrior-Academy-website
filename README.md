@@ -165,3 +165,71 @@ Location: Inside Diamond Gymnastics, 801 Oil Patch Ln, Gonzales, TX 78629
 - [ ] Additional Facebook/YouTube video URLs for videos.html slots 2–6
 - [ ] Custom domain name confirmed
 - [ ] Formspree reCAPTCHA enabled (client logs into formspree.io)
+
+---
+
+## Pre-Publish Code Verification (Run Before Every Push)
+
+**Always run these checks before uploading files to GitHub. Publishing broken code causes live site errors that are visible to users.**
+
+### Check 1 — HTML Structure
+Open each `.html` file and confirm:
+- One `<!DOCTYPE html>` at the top
+- `<meta charset="UTF-8">` present in `<head>`
+- `<meta name="viewport"...>` present in `<head>`
+- Every opened tag has a matching closing tag
+- No `index.html#section` hash links (all nav links go to `.html` pages)
+
+### Check 2 — Internal Links
+Every `href` pointing to a local file must match an actual filename exactly (case-sensitive):
+- `about.html` ✅ / `About.html` ❌
+- `kenneth.jpg` ✅ / `kenneth.png` ❌
+- `images/logo.png` ✅ / `images/Logo.png` ❌
+
+### Check 3 — CSS Brace Balance
+Open `css/style.css` and `css/pages.css`. The number of `{` must equal the number of `}`. One missing brace breaks all styles below it.
+
+### Check 4 — Required Links on Every Page
+Every `.html` file must have:
+```html
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pages.css">   ← all pages except index.html
+<link rel="icon" type="image/png" href="images/favicon.png">
+```
+
+### Check 5 — Formspree ID
+Every form `action` must be:
+```
+https://formspree.io/f/mgodlnrg
+```
+Never `YOUR_FORM_ID` or any other value.
+
+### Check 6 — Image Filenames (case-sensitive on GitHub)
+| File | Correct name |
+|------|-------------|
+| Logo | `images/logo.png` |
+| Hero | `images/hero.png` |
+| Instructor | `images/kenneth.jpg` |
+| Favicon | `images/favicon.png` |
+| Favicon large | `images/favicon-192.png` |
+| About photo | `images/about.jpg` |
+
+### Check 7 — Google Verification Tag (index.html only)
+```html
+<meta name="google-site-verification" content="LA4Jud9aWqhyvaogNPFyvFDFdin0RECuXeDa9Nnw45o">
+```
+Must appear only in `index.html`, nowhere else.
+
+### Check 8 — After Every Push
+1. Hard refresh the live site: `Ctrl+Shift+R` (Windows) / `Cmd+Shift+R` (Mac)
+2. Open browser DevTools (`F12`) → Console tab → confirm zero red errors
+3. Click through every nav link and confirm it opens the correct page
+4. Test on mobile (DevTools → toggle device toolbar)
+
+### Quick Self-Check Before Uploading
+Ask before pushing:
+- [ ] Did I change a filename? Update every reference to it.
+- [ ] Did I add a new page? Add it to `sitemap.xml` and all nav menus.
+- [ ] Did I add a new image? Confirm exact filename matches the `src=""` in HTML.
+- [ ] Did I edit CSS? Count `{` and `}` — they must be equal.
+- [ ] Did I edit JS? Check browser console after push for red errors.
