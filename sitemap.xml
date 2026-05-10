@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://apachewarrioracademy.com/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/about.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/programs.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/pricing.html</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/schedule.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/instructor.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/videos.html</loc><priority>0.7</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/contact.html</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://apachewarrioracademy.com/enroll.html</loc><priority>1.0</priority><changefreq>monthly</changefreq></url>
+</urlset>
