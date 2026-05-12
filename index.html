@@ -43,7 +43,6 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="instructor.html">Instructor</a></li>
-      <li><a href="videos.html">Videos</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <a href="enroll.html" class="nav-cta" id="navCta">Enroll Now</a>
@@ -106,15 +105,20 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-media reveal">
-        <div class="about-img-wrap geo-placeholder">
-          <div class="placeholder-geo">
-            <div class="pg-ring pg-ring-1"></div>
-            <div class="pg-ring pg-ring-2"></div>
-            <div class="pg-ring pg-ring-3"></div>
-            <div class="pg-slash"></div>
-            <div class="pg-slash pg-slash-2"></div>
+        <div class="about-img-wrap">
+          <img src="images/homepagemission.PNG"
+               alt="Apache Warrior Academy training"
+               class="about-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+          <div class="about-img-fallback geo-placeholder" style="display:none;position:absolute;inset:0;">
+            <div class="placeholder-geo">
+              <div class="pg-ring pg-ring-1"></div>
+              <div class="pg-ring pg-ring-2"></div>
+              <div class="pg-ring pg-ring-3"></div>
+              <div class="pg-slash"></div>
+              <div class="pg-slash pg-slash-2"></div>
+            </div>
           </div>
-
         </div>
       </div>
       <div class="about-text reveal">
@@ -132,7 +136,7 @@
             <div class="stat-lbl">Veteran-Owned</div>
           </div>
         </div>
-        <a href="#trial" class="btn-primary">Claim Your Free Class</a>
+        <a href="enroll.html" class="btn-primary">Claim Your Free Class</a>
       </div>
     </div>
   </div>
@@ -648,11 +652,11 @@
     </div>
     <div class="footer-tagline">Brazilian Jiu-Jitsu · Gonzales, Texas</div>
     <nav class="footer-nav">
-      <a href="about.html">About</a>
+    <a href="about.html">About</a>
       <a href="programs.html">Programs</a>
       <a href="pricing.html">Pricing</a>
       <a href="schedule.html">Schedule</a>
-      <a href="videos.html">Videos</a>
+      
       <a href="contact.html">Contact</a>
     </nav>
     <div class="footer-copy">© 2025 Apache Warrior Academy. All rights reserved.</div>
@@ -660,5 +664,9 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<!-- Back to Top -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
 </body>
 </html>
