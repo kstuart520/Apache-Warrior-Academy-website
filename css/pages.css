@@ -355,3 +355,18 @@
   .value-cards { grid-template-columns: 1fr; }
   .page-hero { padding: 8rem 1.5rem 4rem; min-height: 32vh; }
 }
+
+/* Three-column schedule grid (Tue + Wed + Sat) */
+.schedule-page-grid.three-col {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 900px) {
+  .schedule-page-grid.three-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 580px) {
+  .schedule-page-grid.three-col {
+    grid-template-columns: 1fr;
+  }
+}
