@@ -12,12 +12,13 @@
   --red-light:  rgba(122,23,27,0.12);
   --black:      #171719;
   --near-black: #1e1e20;
-  --surface:    #232325;
-  --border:     rgba(163,154,142,0.15);
+  --surface:    #FFFFFF;
+  --surface-alt:#F2ECE0;
+  --border:     rgba(23,23,25,0.12);
   --cream:      #E8DDC5;
-  --cream-dim:  rgba(232,221,197,0.60);
+  --cream-dim:  #171719;
   --stone:      #A39A8E;
-  --gold:       #A39A8E;   /* stone replaces gold in accents */
+  --gold:       #7A171B;   /* dark red as label/accent on light bg */
   --white:      #FFFFFF;
   --font-display: 'Bebas Neue', sans-serif;
   --font-cond:    'Barlow Condensed', sans-serif;
@@ -30,8 +31,8 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--font-body);
-  background: var(--black);
-  color: var(--cream);
+  background: #E8DDC5;
+  color: #171719;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -136,10 +137,14 @@ h2 em {
 /* ===== NAV ===== */
 #navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: transparent;
   transition: background 0.4s, box-shadow 0.4s;
 }
+/* Inner pages start with .scrolled class — keep cream bg on all states */
+#navbar.scrolled,
+.page-body ~ #navbar { background: rgba(232,221,197,0.98); }
 #navbar.scrolled {
-  background: rgba(12,12,12,0.96);
+  background: rgba(232,221,197,0.98);
   backdrop-filter: blur(16px);
   box-shadow: 0 1px 0 var(--border);
 }
@@ -159,7 +164,7 @@ h2 em {
   font-family: var(--font-display);
   font-size: 1.15rem;
   letter-spacing: 0.1em;
-  color: var(--cream);
+  color: #171719;
 }
 
 .nav-links {
@@ -172,10 +177,10 @@ h2 em {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--cream-dim);
+  color: #171719;
   transition: color var(--transition);
 }
-.nav-links a:hover { color: var(--cream); }
+.nav-links a:hover { color: #7A171B; }
 
 .nav-cta {
   font-family: var(--font-cond);
@@ -198,7 +203,7 @@ h2 em {
 }
 .hamburger span {
   display: block; width: 22px; height: 2px;
-  background: var(--cream); border-radius: 2px;
+  background: #171719; border-radius: 2px;
   transition: var(--transition);
 }
 .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
@@ -437,7 +442,7 @@ h2 em {
 /* ===== PROGRAMS ===== */
 .programs {
   padding: 7rem 0;
-  background: var(--near-black);
+  background: #FFFFFF;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -451,7 +456,7 @@ h2 em {
   overflow: hidden;
 }
 .prog-card {
-  background: var(--near-black);
+  background: #FFFFFF;
   padding: 2.5rem 2rem;
   transition: background var(--transition);
   position: relative;
@@ -562,9 +567,9 @@ h2 em {
   justify-content: center; margin-top: 2rem;
 }
 .discount-pill {
-  background: rgba(201,168,76,0.08);
-  border: 1px solid rgba(201,168,76,0.2);
-  color: var(--gold);
+  background: rgba(122,23,27,0.07);
+  border: 1px solid rgba(122,23,27,0.18);
+  color: var(--red);
   font-family: var(--font-cond);
   font-size: 0.82rem; letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -575,7 +580,7 @@ h2 em {
 /* ===== SCHEDULE ===== */
 .schedule {
   padding: 7rem 0;
-  background: var(--near-black);
+  background: var(--surface-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -588,7 +593,7 @@ h2 em {
   font-family: var(--font-cond);
   font-size: 0.72rem; letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   padding: 1rem 1.2rem;
   text-align: left;
   border-bottom: 2px solid rgba(201,168,76,0.25);
@@ -598,7 +603,7 @@ h2 em {
   border-bottom: 1px solid var(--border);
   font-weight: 300;
   font-size: 0.98rem;
-  color: var(--cream-dim);
+  color: #171719;
   vertical-align: middle;
 }
 .sched-table tbody tr { transition: background var(--transition); }
@@ -614,12 +619,12 @@ h2 em {
 }
 .class-tag.kids  { background: rgba(192,57,43,0.15); color: #e57373; border: 1px solid rgba(192,57,43,0.3); }
 .class-tag.adult { background: rgba(201,168,76,0.12); color: var(--gold); border: 1px solid rgba(201,168,76,0.25); }
-.class-tag.open  { background: rgba(255,255,255,0.06); color: var(--cream-dim); border: 1px solid var(--border); }
+.class-tag.open  { background: rgba(23,23,25,0.06); color: #A39A8E; border: 1px solid var(--border); }
 .class-tag.self  { background: rgba(100,180,100,0.1); color: #81c784; border: 1px solid rgba(100,180,100,0.25); }
 
 .sched-note {
   font-size: 0.88rem; font-weight: 300; font-style: italic;
-  color: var(--cream-dim); opacity: 0.6;
+  color: #A39A8E; opacity: 0.6;
   line-height: 1.7;
 }
 
@@ -636,7 +641,7 @@ h2 em {
   border-radius: 3px;
   overflow: hidden;
   position: relative;
-  background: var(--surface);
+  background: #F2ECE0;
   border: 1px solid var(--border);
 }
 .founder-photo img {
@@ -672,7 +677,7 @@ h2 em {
 .fn-name {
   font-family: var(--font-display);
   font-size: 1.3rem; letter-spacing: 0.08em;
-  color: var(--cream);
+  color: #171719;
 }
 .fn-rank {
   font-family: var(--font-cond);
@@ -684,18 +689,18 @@ h2 em {
 
 .founder-text p {
   font-weight: 300; line-height: 1.8;
-  color: var(--cream-dim); font-size: 1.05rem;
+  color: #A39A8E; font-size: 1.05rem;
   margin-bottom: 1.2rem;
 }
 .creds { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
 .cred {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
+  background: rgba(23,23,25,0.05);
+  border: 1px solid rgba(23,23,25,0.12);
   padding: 0.5rem 1rem;
   font-family: var(--font-cond);
   font-size: 0.72rem; letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--cream-dim);
+  color: #A39A8E;
   border-radius: 2px;
 }
 
@@ -742,15 +747,15 @@ h2 em {
   font-family: var(--font-cond);
   font-size: 0.7rem; letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--red);
   margin-bottom: 0.4rem;
 }
 .info-val {
   font-weight: 300; line-height: 1.7;
-  font-size: 1rem; color: var(--cream-dim);
+  font-size: 1rem; color: #A39A8E;
 }
 .info-val a {
-  color: var(--cream);
+  color: #171719;
   text-decoration: none;
   border-bottom: 1px solid rgba(242,237,228,0.2);
   transition: border-color var(--transition);
@@ -759,7 +764,7 @@ h2 em {
 
 /* Form */
 .contact-form-wrap {
-  background: var(--surface);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 4px;
   padding: 2.5rem;
@@ -773,11 +778,11 @@ h2 em {
 .contact-form select,
 .contact-form textarea {
   width: 100%;
-  background: rgba(255,255,255,0.04);
+  background: rgba(23,23,25,0.04);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 0.9rem 1rem;
-  color: var(--cream);
+  color: #171719;
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 300;
@@ -789,12 +794,12 @@ h2 em {
 .contact-form textarea:focus {
   outline: none;
   border-color: var(--red);
-  background: rgba(192,57,43,0.05);
+  background: rgba(122,23,27,0.04);
 }
 .contact-form input::placeholder,
-.contact-form textarea::placeholder { color: rgba(242,237,228,0.25); }
+.contact-form textarea::placeholder { color: rgba(23,23,25,0.3); }
 .contact-form select { cursor: pointer; }
-.contact-form select option { background: var(--near-black); }
+.contact-form select option { background: #FFFFFF; }
 .contact-form textarea { resize: vertical; min-height: 110px; }
 
 .form-success {
@@ -811,7 +816,7 @@ h2 em {
 
 /* ===== FOOTER ===== */
 footer {
-  background: #080808;
+  background: #171719;
   border-top: 1px solid var(--border);
   padding: 3rem 2rem;
   text-align: center;
@@ -870,7 +875,7 @@ footer {
   .nav-links.open {
     display: flex; flex-direction: column;
     position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
-    background: rgba(10,10,10,0.98);
+    background: rgba(232,221,197,0.98);
     backdrop-filter: blur(16px);
     padding: 3rem 2rem;
     gap: 2rem;
@@ -1021,7 +1026,7 @@ footer {
   display: flex; flex-wrap: wrap; gap: 0.5rem;
 }
 .chip {
-  background: rgba(255,255,255,0.04);
+  background: rgba(23,23,25,0.04);
   border: 1px solid var(--border);
   color: var(--cream-dim);
   font-family: var(--font-cond);
@@ -1111,7 +1116,7 @@ footer {
 }
 .sched-view-toggle {
   display: flex; gap: 0.4rem;
-  background: rgba(255,255,255,0.04);
+  background: rgba(23,23,25,0.04);
   border: 1px solid var(--border);
   border-radius: 6px; padding: 4px;
 }
@@ -1167,7 +1172,7 @@ footer {
   border-radius: 6px; overflow: hidden;
 }
 .cal-day-header {
-  background: rgba(255,255,255,0.04);
+  background: rgba(23,23,25,0.04);
   border-bottom: 1px solid var(--border);
   padding: 1rem 1.2rem;
   display: flex; align-items: center; justify-content: space-between;
@@ -1209,7 +1214,7 @@ footer {
 }
 .cal-register-btn {
   align-self: flex-start;
-  background: rgba(255,255,255,0.08);
+  background: rgba(23,23,25,0.08);
   border: 1px solid rgba(255,255,255,0.12);
   color: var(--cream);
   font-family: var(--font-cond);
@@ -1253,7 +1258,7 @@ footer {
   opacity: 1; pointer-events: all;
 }
 .modal-box {
-  background: var(--near-black);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 2.5rem;
@@ -1363,7 +1368,7 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.7rem; letter-spacing: 0.12em;
   text-transform: uppercase;
-  background: rgba(255,255,255,0.06);
+  background: rgba(23,23,25,0.06);
   border: 1px solid var(--border);
   color: var(--cream-dim);
   padding: 0.3rem 0.7rem; border-radius: 100px;
@@ -1393,7 +1398,7 @@ footer {
   border-radius: 3px;
   overflow: hidden;
   position: relative;
-  background: var(--surface);
+  background: #F2ECE0;
   border: 1px solid var(--border);
 }
 .kenneth-photo {
@@ -1458,7 +1463,7 @@ body.light-mode {
 
 /* Nav */
 body.light-mode #navbar.scrolled {
-  background: rgba(247,244,239,0.96);
+  background: rgba(232,221,197,0.98);
   box-shadow: 0 1px 0 rgba(44,36,22,0.1);
 }
 body.light-mode .nav-links a { color: rgba(44,36,22,0.65); }
