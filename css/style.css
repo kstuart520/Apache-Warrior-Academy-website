@@ -1490,9 +1490,9 @@ body.light-mode .hero-overlay {
     rgba(247,244,239,0.15) 100%
   );
 }
-body.light-mode .hero-eyebrow { color: #5C3D0E; }
-body.light-mode .dot { background: #5C3D0E; }
-body.light-mode .hero-sub { color: #1C1712; }
+body.light-mode .hero-eyebrow { color: var(--cream); }
+body.light-mode .dot { background: var(--cream); }
+body.light-mode .hero-sub { color: rgba(232,221,197,0.85); }
 body.light-mode .geo-ring { border-color: rgba(192,57,43,0.1); }
 
 /* Marquee — keep red */
@@ -1603,10 +1603,11 @@ body.light-mode .footer-logo-text { color: #1C1712; }
 
 /* Buttons — ghost needs contrast on light bg */
 body.light-mode .btn-ghost {
-  color: #1C1712;
-  border-color: rgba(44,36,22,0.3);
+  /* btn-ghost is only used on dark red backgrounds (hero, cta-banner) — keep cream */
+  color: #E8DDC5;
+  border-color: rgba(232,221,197,0.4);
 }
-body.light-mode .btn-ghost:hover { border-color: #1C1712; background: rgba(44,36,22,0.06); }
+body.light-mode .btn-ghost:hover { border-color: #E8DDC5; background: rgba(232,221,197,0.08); }
 
 /* Scroll hint */
 body.light-mode .scroll-line { background: linear-gradient(to bottom, #1C1712, transparent); }
