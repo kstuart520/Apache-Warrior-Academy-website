@@ -92,8 +92,8 @@ h2 em {
 
 .btn-ghost {
   display: inline-block;
-  background: transparent;
-  color: var(--cream);
+  background: var(--red);
+  color: #FFFFFF;
   font-family: var(--font-cond);
   font-size: 0.95rem;
   font-weight: 600;
@@ -101,12 +101,12 @@ h2 em {
   text-transform: uppercase;
   text-decoration: none;
   padding: 0.85rem 2.2rem;
-  border: 2px solid rgba(242,237,228,0.25);
+  border: 2px solid var(--red);
   border-radius: var(--radius);
   cursor: pointer;
   transition: var(--transition);
 }
-.btn-ghost:hover { border-color: var(--cream); background: rgba(242,237,228,0.06); }
+.btn-ghost:hover { background: var(--red-dark); border-color: var(--red-dark); color: #FFFFFF; }
 
 .btn-white {
   display: inline-block;
@@ -834,8 +834,7 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.75rem; letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--cream-dim);
-  opacity: 0.4;
+  color: rgba(232,221,197,0.5);
   margin-bottom: 1.5rem;
 }
 .footer-nav {
@@ -847,15 +846,13 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.78rem; letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--cream-dim);
+  color: rgba(232,221,197,0.55);
   text-decoration: none;
-  opacity: 0.4;
-  transition: opacity var(--transition);
+  transition: color var(--transition);
 }
-.footer-nav a:hover { opacity: 0.85; }
+.footer-nav a:hover { color: #E8DDC5; }
 .footer-copy {
-  font-size: 0.78rem; color: var(--cream-dim);
-  opacity: 0.25;
+  font-size: 0.78rem; color: rgba(232,221,197,0.35);
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1601,19 +1598,11 @@ body.light-mode .waiver-full { background: rgba(44,36,22,0.03); border-color: rg
 
 /* Footer */
 body.light-mode footer { background: #E4DFD6; border-color: rgba(44,36,22,0.1); }
-body.light-mode .footer-tagline { color: #4A3520; }
-body.light-mode .footer-nav a { color: #3D2B15; }
-body.light-mode .footer-nav a:hover { color: #1C1712; }
-body.light-mode .footer-copy { color: #5C4A32; }
-body.light-mode .footer-logo-text { color: #1C1712; }
+/* Footer always dark bg — light text regardless of page theme */
+body.light-mode .footer-logo-text { color: #E8DDC5; }
 
 /* Buttons — ghost needs contrast on light bg */
-body.light-mode .btn-ghost {
-  /* btn-ghost is only used on dark red backgrounds (hero, cta-banner) — keep cream */
-  color: #E8DDC5;
-  border-color: rgba(232,221,197,0.4);
-}
-body.light-mode .btn-ghost:hover { border-color: #E8DDC5; background: rgba(232,221,197,0.08); }
+/* btn-ghost is now solid dark red — no light-mode override needed */
 
 /* Scroll hint */
 body.light-mode .scroll-line { background: linear-gradient(to bottom, #1C1712, transparent); }
