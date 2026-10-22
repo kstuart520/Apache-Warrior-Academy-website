@@ -55,8 +55,10 @@
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg">
-    <img src="images/hero.png" alt="" class="hero-bg-img"
-         onerror="this.style.display='none'">
+    <picture>
+        <source srcset="images/hero-mobile.jpg" media="(max-width: 768px)">
+        <img src="images/hero.png" alt="Apache Warrior Academy training" class="hero-bg-img" loading="eager">
+      </picture>
     <div class="hero-geo">
       <div class="geo-ring geo-ring-1"></div>
       <div class="geo-ring geo-ring-2"></div>
@@ -298,62 +300,10 @@
         <span class="label">When We Train</span>
         <h2>CLASS<br><em>SCHEDULE</em></h2>
       </div>
-      <div class="sched-view-toggle">
-        <button class="sched-toggle active" id="toggleList" aria-label="List view">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect y="2" width="18" height="2" rx="1" fill="currentColor"/><rect y="8" width="18" height="2" rx="1" fill="currentColor"/><rect y="14" width="18" height="2" rx="1" fill="currentColor"/></svg>
-          List
-        </button>
-        <button class="sched-toggle" id="toggleCal" aria-label="Calendar view">
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="1" y="3" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M1 7h16" stroke="currentColor" stroke-width="1.5"/><rect x="5" y="1" width="1.5" height="4" rx="0.75" fill="currentColor"/><rect x="11.5" y="1" width="1.5" height="4" rx="0.75" fill="currentColor"/></svg>
-          Calendar
-        </button>
       </div>
-    </div>
 
-    <!-- VIEW 1: List / Table -->
-    <div class="schedule-wrap reveal" id="schedList">
-      <table class="sched-table">
-        <thead>
-          <tr><th>Day</th><th>Time</th><th>Class</th><th></th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tuesday</td>
-            <td>6:15 – 7:00 PM</td>
-            <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
-          </tr>
-          <tr>
-            <td>Tuesday</td>
-            <td>7:00 – 8:00 PM</td>
-            <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>6:15 – 7:00 PM</td>
-            <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
-          </tr>
-          <tr>
-            <td>Wednesday</td>
-            <td>7:00 – 8:00 PM</td>
-            <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>10:00 – 11:00 AM</td>
-            <td><span class="class-tag kids">Youth BJJ (Ages 5–13)</span></td>
-          </tr>
-          <tr>
-            <td>Saturday</td>
-            <td>11:00 AM – 12:00 PM</td>
-            <td><span class="class-tag adult">Adult BJJ (Ages 13+)</span></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="sched-note">📍 Inside Diamond Gymnastics — 803 Oil Patch Ln, Gonzales, TX 78629<br>Schedule effective <strong>August 11, 2025</strong>.</p>
-    </div>
-
-    <!-- VIEW 2: Calendar -->
-    <div class="schedule-wrap reveal" id="schedCal" style="display:none;">
+    <!-- Calendar View -->
+    <div class="schedule-wrap reveal" id="schedCal">
       <div class="cal-grid">
         <!-- TUE -->
         <div class="cal-day">
