@@ -816,7 +816,7 @@ h2 em {
 
 /* ===== FOOTER ===== */
 footer {
-  background: #171719;
+  background: #A39A8E;
   border-top: 1px solid var(--border);
   padding: 3rem 2rem;
   text-align: center;
@@ -826,7 +826,7 @@ footer {
 .footer-logo-text {
   font-family: var(--font-display);
   font-size: 1.1rem; letter-spacing: 0.15em;
-  color: var(--cream);
+  color: #171719;
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -834,7 +834,8 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.75rem; letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: rgba(232,221,197,0.5);
+  color: #171719;
+  opacity: 0.7;
   margin-bottom: 1.5rem;
 }
 .footer-nav {
@@ -846,13 +847,14 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.78rem; letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(232,221,197,0.55);
+  color: #171719;
   text-decoration: none;
-  transition: color var(--transition);
+  opacity: 0.75;
+  transition: color var(--transition), opacity var(--transition);
 }
-.footer-nav a:hover { color: #E8DDC5; }
+.footer-nav a:hover { color: #7A171B; opacity: 1; }
 .footer-copy {
-  font-size: 0.78rem; color: rgba(232,221,197,0.35);
+  font-size: 0.78rem; color: #171719; opacity: 0.55;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1596,10 +1598,7 @@ body.light-mode .waiver-block { background: rgba(44,36,22,0.04); border-color: r
 body.light-mode .waiver-text { color: rgba(44,36,22,0.65); }
 body.light-mode .waiver-full { background: rgba(44,36,22,0.03); border-color: rgba(44,36,22,0.08); color: rgba(44,36,22,0.65); }
 
-/* Footer */
-body.light-mode footer { background: #E4DFD6; border-color: rgba(44,36,22,0.1); }
-/* Footer always dark bg — light text regardless of page theme */
-body.light-mode .footer-logo-text { color: #E8DDC5; }
+/* Footer — stone gray bg, charcoal text (set in base rules, no override needed) */
 
 /* Buttons — ghost needs contrast on light bg */
 /* btn-ghost is now solid dark red — no light-mode override needed */
@@ -1773,15 +1772,15 @@ body.light-mode .back-to-top { box-shadow: 0 4px 16px rgba(192,57,43,0.25); }
 .footer-social a {
   display: flex; align-items: center; justify-content: center;
   width: 38px; height: 38px;
-  border: 1px solid rgba(232,221,197,0.35);
+  border: 1px solid rgba(23,23,25,0.3);
   border-radius: 50%;
-  color: #E8DDC5;
+  color: #171719;
   transition: var(--transition);
   text-decoration: none;
 }
 .footer-social a:hover {
   border-color: var(--red);
-  color: var(--cream);
+  color: #FFFFFF;
   background: var(--red);
 }
 .footer-social svg { width: 17px; height: 17px; fill: currentColor; }
@@ -1804,7 +1803,7 @@ body.light-mode .back-to-top { box-shadow: 0 4px 16px rgba(192,57,43,0.25); }
 .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; flex-shrink:0; }
 body.light-mode .social-icon-link { color: rgba(23,23,25,0.65); }
 body.light-mode .social-icon-link:hover { color: #7A171B; }
-body.light-mode .footer-social a { border-color: rgba(232,221,197,0.4); color: #E8DDC5; }
+body.light-mode .footer-social a { border-color: rgba(23,23,25,0.25); color: #171719; }
 
 /* ── Saturday competition note ── */
 .saturday-note {
