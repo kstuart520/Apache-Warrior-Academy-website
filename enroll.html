@@ -13,30 +13,36 @@
 /* ── Enroll page layout ── */
 .enroll-hero {
   padding: 9rem 2rem 4rem;
-  background: var(--black);
+  background: #EDE5D5;  /* light mode default — matches all inner page banners */
   position: relative; overflow: hidden;
 }
 .enroll-hero-geo {
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 85% 40%, rgba(192,57,43,0.14) 0%, transparent 55%);
+  background: radial-gradient(ellipse at 85% 40%, rgba(139,26,26,0.07) 0%, transparent 55%);
 }
 .enroll-hero-geo .geo-ring-1 { width: 520px; height: 520px; right: -100px; top: 50%; transform: translateY(-50%); }
-.enroll-hero-geo .geo-ring-2 { width: 340px; height: 340px; right: 0; top: 50%; transform: translateY(-50%); border-color: rgba(201,168,76,0.07); animation-direction: reverse; animation-duration: 60s; }
+.enroll-hero-geo .geo-ring-2 { width: 340px; height: 340px; right: 0; top: 50%; transform: translateY(-50%); border-color: rgba(44,36,22,0.05); animation-direction: reverse; animation-duration: 60s; }
 .enroll-hero-geo .geo-ring-3 { width: 170px; height: 170px; right: 85px; top: 50%; transform: translateY(-50%); animation-duration: 25s; }
 
 .enroll-hero-content { position: relative; z-index: 2; max-width: 1180px; margin: 0 auto; }
 .enroll-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(3rem, 8vw, 6.5rem);
-  line-height: 0.92; color: var(--cream);
+  line-height: 0.92; color: #2C2416;
   margin-bottom: 1rem;
 }
 .enroll-hero h1 em { color: var(--red); font-style: normal; }
 .enroll-hero p {
   font-size: 1.1rem; font-weight: 300;
-  color: var(--cream-dim); max-width: 540px;
+  color: rgba(44,36,22,0.7); max-width: 540px;
   line-height: 1.75; margin-bottom: 0;
 }
+/* Dark mode enroll hero — charcoal bg, cream text */
+body.dark-mode .enroll-hero { background: #2C2416 !important; }
+body.dark-mode .enroll-hero-geo { background: radial-gradient(ellipse at 85% 40%, rgba(192,57,43,0.14) 0%, transparent 55%) !important; }
+body.dark-mode .enroll-hero h1 { color: #EDE5D5 !important; }
+body.dark-mode .enroll-hero p { color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .enroll-hero .label { color: #C8B89A !important; }
 
 /* ── Main enroll grid ── */
 .enroll-section { padding: 5rem 0 7rem; }
@@ -364,7 +370,7 @@
         </div>
 
         <div class="enroll-schedule-mini">
-          <span class="esm-label">📍 Current Class Schedule — Diamond Gymnastics, 803 Oil Patch Ln</span>
+          <span class="esm-label">Current Class Schedule — Diamond Gymnastics, 803 Oil Patch Ln</span>
           <div class="esm-row">
             <span class="esm-day">Tuesday</span>
             <span class="esm-time">6:15–7:00 PM</span>
