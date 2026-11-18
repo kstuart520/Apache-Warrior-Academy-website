@@ -1483,18 +1483,7 @@ body.light-mode .hero-bg {
     radial-gradient(ellipse at 85% 20%, rgba(192,57,43,0.06) 0%, transparent 40%),
     #F7F4EF;
 }
-body.light-mode .hero-overlay {
-  background: rgba(247,244,239,0.25);
-}
-body.light-mode .hero-bg-img + .hero-geo ~ .hero-overlay,
-body.light-mode .hero-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(247,244,239,0.92) 0%,
-    rgba(247,244,239,0.5) 40%,
-    rgba(247,244,239,0.15) 100%
-  );
-}
+/* Hero overlay handled by unified hero CSS block — no light-mode override needed */
 body.light-mode .hero-eyebrow { color: var(--cream); }
 body.light-mode .dot { background: var(--cream); }
 body.light-mode .hero-sub { color: rgba(232,221,197,0.85); }
@@ -1894,9 +1883,11 @@ body.light-mode .saturday-note { color: #7A171B; }
   text-transform: uppercase;
   color: rgba(232,221,197,0.6);
 }
-.hero-meta a { color: rgba(232,221,197,0.8); text-decoration: none; border-bottom: 1px solid rgba(232,221,197,0.3); transition: color var(--transition), border-color var(--transition); }
-.hero-meta a:hover { color: #E8DDC5; border-color: #E8DDC5; }
+.hero-meta a { color: rgba(23,23,25,0.7); text-decoration: none; border-bottom: 1px solid rgba(23,23,25,0.25); transition: color var(--transition), border-color var(--transition); }
+.hero-meta a:hover { color: var(--red); border-color: var(--red); }
+.hero-meta { color: rgba(23,23,25,0.6); }
 .hero-meta-sep { opacity: 0.4; }
+.hero-meta-addr { color: rgba(23,23,25,0.6); }
 
 /* ============================================================
    REVIEWS SECTION
@@ -2029,17 +2020,17 @@ body.light-mode .saturday-note { color: #7A171B; }
   padding-top: 2rem;
 }
 
-/* Location pill */
+/* Location pill — white frosted, dark text */
 .hero-location-pill {
   display: inline-flex; align-items: center; gap: 0.4rem;
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.75);
   backdrop-filter: blur(8px);
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid rgba(23,23,25,0.15);
   border-radius: 100px;
   padding: 0.4rem 1.1rem;
   font-family: var(--font-cond);
   font-size: 0.8rem; letter-spacing: 0.18em;
-  text-transform: uppercase; color: #FFFFFF;
+  text-transform: uppercase; color: #171719;
   margin-bottom: 1.2rem;
 }
 .hero-location-dot { font-size: 0.85rem; }
@@ -2049,7 +2040,7 @@ body.light-mode .saturday-note { color: #7A171B; }
   font-family: var(--font-cond);
   font-size: clamp(0.75rem, 1.8vw, 1rem);
   letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(232,221,197,0.75);
+  color: rgba(23,23,25,0.7);
   margin-bottom: 0.4rem;
 }
 
@@ -2062,13 +2053,13 @@ body.light-mode .saturday-note { color: #7A171B; }
   margin-bottom: 1.4rem;
 }
 
-/* Main headline — mixed serif-feel via italic */
+/* Main headline — dark charcoal, red accent */
 .hero-title--unified {
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 8vw, 7rem);
   line-height: 1.0;
   letter-spacing: 0.02em;
-  color: #FFFFFF;
+  color: #171719;
   margin-bottom: 1.4rem;
 }
 .hero-title--unified em {
@@ -2076,11 +2067,11 @@ body.light-mode .saturday-note { color: #7A171B; }
   font-style: normal;
 }
 
-/* Sub — slightly wider max on centered layout */
+/* Sub — dark text on light overlay */
 .hero-content--centered .hero-sub {
   max-width: 580px;
   text-align: center;
-  color: rgba(232,221,197,0.88);
+  color: rgba(23,23,25,0.75);
   margin-bottom: 2rem;
   font-size: clamp(0.95rem, 2vw, 1.15rem);
 }
@@ -2090,16 +2081,19 @@ body.light-mode .saturday-note { color: #7A171B; }
   padding: 0.9rem 2.2rem;
   font-size: 0.9rem;
 }
+/* View Schedule — white card button like Unified */
 .hero-btn-ghost {
   padding: 0.9rem 2.2rem;
   font-size: 0.9rem;
-  background: rgba(255,255,255,0.12) !important;
-  color: #FFFFFF !important;
-  border-color: rgba(255,255,255,0.4) !important;
+  background: rgba(255,255,255,0.85) !important;
+  color: #171719 !important;
+  border-color: rgba(23,23,25,0.2) !important;
+  backdrop-filter: blur(4px);
 }
 .hero-btn-ghost:hover {
-  background: rgba(255,255,255,0.22) !important;
-  border-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  border-color: rgba(23,23,25,0.4) !important;
+  color: #171719 !important;
 }
 
 /* Meta line centered */
@@ -2108,13 +2102,13 @@ body.light-mode .saturday-note { color: #7A171B; }
   margin-top: 1.6rem;
 }
 
-/* Stronger overlay so text stays legible over bright photos */
+/* Light white overlay — photo shows through, dark text on top */
 .hero-overlay {
   background: linear-gradient(
     to bottom,
-    rgba(12,12,12,0.55) 0%,
-    rgba(12,12,12,0.45) 50%,
-    rgba(12,12,12,0.65) 100%
+    rgba(255,255,255,0.30) 0%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.40) 100%
   );
 }
 
