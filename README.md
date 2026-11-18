@@ -45,13 +45,16 @@ Live at **[apachewarrioracademy.com](https://apachewarrioracademy.com)**
 
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--red` | `#7A171B` | Accents, buttons, labels |
-| `--red-dark` | `#5a1014` | Hover states, gradients |
-| `--black` | `#171719` | Primary text, footer bg |
-| `--cream` | `#E8DDC5` | Page background, light text on dark |
-| `--stone` | `#A39A8E` | Secondary/subtle text |
+| `--red` | `#8B1A1A` | Deep crimson — from logo burst panels |
+| `--red-dark` | `#5C0F0F` | Dark red shadows — hover states |
+| `--black` | `#2C2416` | Dark charcoal — from logo stone texture |
+| `--cream` | `#C8B89A` | Aged parchment — from logo background |
+| `--cream-light` | `#EDE5D5` | Light mode page background |
+| `--stone` | `#A89070` | Mid-tone stone — secondary text |
 | `--surface` | `#FFFFFF` | Cards, form backgrounds |
-| `--surface-alt` | `#F2ECE0` | Section alt backgrounds |
+| `--surface-alt` | `#F0EAE0` | Card lift color on cream bg |
+
+> **Note:** Colors matched to AWA logo (November 2026). Update if logo changes.
 
 **Fonts:** Bebas Neue (display) · Barlow Condensed (labels/nav) · Barlow (body)
 
@@ -135,6 +138,12 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 - Footer copyright updated to 2026 across all pages (index, about, programs, pricing, schedule, contact, enroll) — update annually
 - Light/Dark mode toggle added to nav — saves user preference in localStorage; ☀️ Light / 🌙 Dark
 - Kenny's photo: upload as `images/kenneth.jpg` — geometric placeholder shows until file is present
+- Brand colors updated to match AWA logo: red #8B1A1A, charcoal #2C2416, cream #C8B89A
+- Light mode: uniform cream background (#EDE5D5) top to bottom, no alternating section colors
+- Dark mode: uniform charcoal background (#2C2416) top to bottom, cream text (#EDE5D5), fully readable
+- Theme toggle button updated: reads "Light Mode" / "Dark Mode", no emoji
+- Theme toggle added to all pages (index, about, programs, pricing, schedule, contact, enroll)
+- MFSLogo.JPG affiliation section: upload logo to images/ folder — section ready to build when you have local partners
 - Three Pillars strip added after marquee (Train · Compete · Grow) — dark band, centered, 3 tiles
 - Google Reviews section added before Instructor section — 3 real reviews (Christina McCoy, Laura Romo, Ryan Switzer)
 - Sticky mobile bar added (Get Started · Class Times · 📞 Call) — visible on mobile only

@@ -46,8 +46,7 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-      <span class="theme-toggle-icon">☀️</span>
-      <span class="theme-toggle-label">Light</span>
+      <span class="theme-toggle-label">Light Mode</span>
     </button>
     <a href="enroll.html" class="nav-cta" id="navCta">Enroll Now</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -717,11 +716,9 @@
 // ── Dark / Light mode toggle ──
 (function() {
   const btn = document.getElementById('themeToggle');
-  const icon = btn.querySelector('.theme-toggle-icon');
   const label = btn.querySelector('.theme-toggle-label');
   const body = document.body;
 
-  // Load saved preference
   const saved = localStorage.getItem('awa-theme') || 'light';
   applyTheme(saved);
 
@@ -735,13 +732,11 @@
     if (mode === 'dark') {
       body.classList.remove('light-mode');
       body.classList.add('dark-mode');
-      icon.textContent = '🌙';
-      label.textContent = 'Dark';
+      label.textContent = 'Dark Mode';
     } else {
       body.classList.remove('dark-mode');
       body.classList.add('light-mode');
-      icon.textContent = '☀️';
-      label.textContent = 'Light';
+      label.textContent = 'Light Mode';
     }
   }
 })();

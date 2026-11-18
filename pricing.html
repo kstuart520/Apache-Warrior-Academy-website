@@ -37,6 +37,8 @@
       <li><a href="instructor.html">Instructor</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="theme-toggle-label">Light Mode</span></button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="theme-toggle-label">Light Mode</span></button>
     <a href="enroll.html" class="nav-cta">Enroll Now</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
@@ -230,5 +232,23 @@ document.querySelectorAll('.price-tab').forEach(tab => {
     if(panel){ panel.classList.add('active'); panel.querySelectorAll('.reveal:not(.visible)').forEach(el=>setTimeout(()=>el.classList.add('visible'),80)); }
   });
 });
+</script>
+<script>
+(function(){
+  var btn=document.getElementById("themeToggle");
+  var label=btn.querySelector(".theme-toggle-label");
+  var body=document.body;
+  var saved=localStorage.getItem("awa-theme")||"light";
+  applyTheme(saved);
+  btn.addEventListener("click",function(){
+    var next=body.classList.contains("dark-mode")?"light":"dark";
+    applyTheme(next);
+    localStorage.setItem("awa-theme",next);
+  });
+  function applyTheme(mode){
+    if(mode==="dark"){body.classList.remove("light-mode");body.classList.add("dark-mode");label.textContent="Dark Mode";}
+    else{body.classList.remove("dark-mode");body.classList.add("light-mode");label.textContent="Light Mode";}
+  }
+})();
 </script>
 </body></html>

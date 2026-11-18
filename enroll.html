@@ -677,5 +677,23 @@ if (enrollForm) {
   });
 }
 </script>
+<script>
+(function(){
+  var btn=document.getElementById("themeToggle");
+  var label=btn.querySelector(".theme-toggle-label");
+  var body=document.body;
+  var saved=localStorage.getItem("awa-theme")||"light";
+  applyTheme(saved);
+  btn.addEventListener("click",function(){
+    var next=body.classList.contains("dark-mode")?"light":"dark";
+    applyTheme(next);
+    localStorage.setItem("awa-theme",next);
+  });
+  function applyTheme(mode){
+    if(mode==="dark"){body.classList.remove("light-mode");body.classList.add("dark-mode");label.textContent="Dark Mode";}
+    else{body.classList.remove("dark-mode");body.classList.add("light-mode");label.textContent="Light Mode";}
+  }
+})();
+</script>
 </body>
 </html>

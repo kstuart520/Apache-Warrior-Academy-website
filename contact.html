@@ -20,7 +20,9 @@
       <li><a href="pricing.html">Pricing</a></li>
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="instructor.html">Instructor</a></li>
-      <li><a href="contact.html" class="active-page">Contact</a></li></ul><a href="enroll.html" class="nav-cta">Enroll Now</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
+      <li><a href="contact.html" class="active-page">Contact</a></li></ul><button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="theme-toggle-label">Light Mode</span></button>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><span class="theme-toggle-label">Light Mode</span></button>
+    <a href="enroll.html" class="nav-cta">Enroll Now</a><button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button></div></nav>
 <div class="page-hero"><div class="page-hero-bg"><div class="page-hero-geo" style="--geo-pos:80% 50%;"><div class="geo-ring geo-ring-1"></div><div class="geo-ring geo-ring-2"></div><div class="geo-ring geo-ring-3"></div></div><div class="hero-overlay"></div></div><div class="page-hero-content container"><span class="label">Get In Touch</span><h1>CONTACT<br><em>US</em></h1><p class="page-hero-sub">Questions, enrollment inquiries, or just want to say hello — we respond within 24 hours.</p></div></div>
 <div class="marquee-strip"><div class="marquee-track"><span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span><span>Kids &amp; Adults</span><span class="sep">✦</span><span>Veteran-Owned</span><span class="sep">✦</span><span>Gonzales, TX</span><span class="sep">✦</span><span>Self-Defense</span><span class="sep">✦</span><span>First Class Free</span><span class="sep">✦</span><span>Brazilian Jiu-Jitsu</span><span class="sep">✦</span><span>Kids &amp; Adults</span><span class="sep">✦</span><span>First Class Free</span><span class="sep">✦</span></div></div>
 <main class="page-body"><div class="container">
@@ -161,5 +163,23 @@ if(f) f.addEventListener('submit',async e=>{
     else{alert('Something went wrong. Please email apachewarrioracademy@gmail.com');b.textContent=ot;b.disabled=false;}
   }catch{alert('Network error. Please call (508) 905-9867');b.textContent=ot;b.disabled=false;}
 });
+</script>
+<script>
+(function(){
+  var btn=document.getElementById("themeToggle");
+  var label=btn.querySelector(".theme-toggle-label");
+  var body=document.body;
+  var saved=localStorage.getItem("awa-theme")||"light";
+  applyTheme(saved);
+  btn.addEventListener("click",function(){
+    var next=body.classList.contains("dark-mode")?"light":"dark";
+    applyTheme(next);
+    localStorage.setItem("awa-theme",next);
+  });
+  function applyTheme(mode){
+    if(mode==="dark"){body.classList.remove("light-mode");body.classList.add("dark-mode");label.textContent="Dark Mode";}
+    else{body.classList.remove("dark-mode");body.classList.add("light-mode");label.textContent="Light Mode";}
+  }
+})();
 </script>
 </body></html>
