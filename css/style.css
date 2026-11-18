@@ -197,6 +197,32 @@ h2 em {
 }
 .nav-cta:hover { background: var(--red-dark); }
 
+/* ── Theme toggle button ── */
+.theme-toggle {
+  display: flex; align-items: center; gap: 0.4rem;
+  background: none; border: 1px solid rgba(23,23,25,0.2);
+  border-radius: 100px; padding: 0.3rem 0.75rem;
+  cursor: pointer; font-family: var(--font-cond);
+  font-size: 0.72rem; letter-spacing: 0.1em;
+  text-transform: uppercase; color: #171719;
+  transition: background var(--transition), color var(--transition);
+}
+.theme-toggle:hover { background: rgba(23,23,25,0.08); }
+.theme-toggle-icon { font-size: 0.85rem; }
+
+/* Dark mode base overrides */
+body.dark-mode {
+  background: #171719;
+  color: #E8DDC5;
+}
+body.dark-mode nav {
+  background: rgba(23,23,25,0.97);
+  border-bottom-color: rgba(232,221,197,0.08);
+}
+body.dark-mode .nav-links a { color: #E8DDC5; }
+body.dark-mode .theme-toggle { border-color: rgba(232,221,197,0.25); color: #E8DDC5; }
+body.dark-mode .theme-toggle:hover { background: rgba(232,221,197,0.08); }
+
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
   flex-direction: column; gap: 6px; padding: 4px;
