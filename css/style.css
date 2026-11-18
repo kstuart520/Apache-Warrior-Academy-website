@@ -394,6 +394,51 @@ body.dark-mode .contact-form-wrap .btn-primary:focus { background: #8B1A1A !impo
 body.light-mode .chip.selected,
 body.dark-mode .chip.selected { background: rgba(139,26,26,0.12) !important; border-color: #8B1A1A !important; color: #8B1A1A !important; }
 
+/* ── Enroll form — LIGHT MODE ── */
+body.light-mode .enroll-form-wrap { background: #F0EAE0 !important; border-color: rgba(44,36,22,0.2) !important; }
+body.light-mode .enroll-form-title { color: #1E1A10 !important; }
+body.light-mode .enroll-form-sub { color: rgba(30,26,16,0.5) !important; }
+body.light-mode .enroll-form input,
+body.light-mode .enroll-form select,
+body.light-mode .enroll-form textarea { background: #F0EAE0 !important; color: #1E1A10 !important; border-color: rgba(44,36,22,0.2) !important; }
+body.light-mode .enroll-form input:focus,
+body.light-mode .enroll-form select:focus,
+body.light-mode .enroll-form textarea:focus { background: #F0EAE0 !important; }
+body.light-mode .enroll-form input::placeholder,
+body.light-mode .enroll-form textarea::placeholder { color: rgba(30,26,16,0.4) !important; }
+body.light-mode .ef-label { color: #1E1A10 !important; }
+body.light-mode .ef-hint { color: rgba(30,26,16,0.5) !important; }
+body.light-mode .enroll-submit .btn-primary { background: #8B1A1A !important; color: #FFFFFF !important; border-color: #8B1A1A !important; }
+body.light-mode .enroll-submit .btn-primary:hover,
+body.light-mode .enroll-submit .btn-primary:focus { background: #5C0F0F !important; border-color: #5C0F0F !important; }
+body.light-mode .enroll-waiver-text { color: #1E1A10 !important; }
+body.light-mode .enroll-waiver-full { color: #1E1A10 !important; }
+
+/* ── Enroll form — DARK MODE ── */
+body.dark-mode .enroll-form-wrap { background: #3A3020 !important; border-color: rgba(200,184,154,0.15) !important; }
+body.dark-mode .enroll-form-title { color: #EDE5D5 !important; }
+body.dark-mode .enroll-form-sub { color: rgba(200,184,154,0.6) !important; }
+body.dark-mode .enroll-form input,
+body.dark-mode .enroll-form select,
+body.dark-mode .enroll-form textarea { background: #2C2416 !important; color: #F0EAE0 !important; border-color: rgba(200,184,154,0.2) !important; }
+body.dark-mode .enroll-form input:focus,
+body.dark-mode .enroll-form select:focus,
+body.dark-mode .enroll-form textarea:focus { background: #2C2416 !important; }
+body.dark-mode .enroll-form input::placeholder,
+body.dark-mode .enroll-form textarea::placeholder { color: rgba(200,184,154,0.4) !important; }
+body.dark-mode .enroll-form select option { background: #2C2416 !important; color: #F0EAE0 !important; }
+body.dark-mode .ef-label { color: #C8B89A !important; }
+body.dark-mode .ef-hint { color: rgba(200,184,154,0.5) !important; }
+body.dark-mode .ef-divider { color: #C8B89A !important; border-top-color: rgba(200,184,154,0.15) !important; }
+body.dark-mode .enroll-submit .btn-primary { background: #5C0F0F !important; color: #FFFFFF !important; border-color: #5C0F0F !important; }
+body.dark-mode .enroll-submit .btn-primary:hover,
+body.dark-mode .enroll-submit .btn-primary:focus { background: #8B1A1A !important; border-color: #8B1A1A !important; }
+body.dark-mode .enroll-waiver-block { background: rgba(200,184,154,0.05) !important; border-color: rgba(200,184,154,0.12) !important; }
+body.dark-mode .enroll-waiver-text { color: rgba(237,229,213,0.75) !important; }
+body.dark-mode .enroll-waiver-full { background: rgba(44,36,22,0.5) !important; border-color: rgba(200,184,154,0.1) !important; color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .enroll-waiver-full strong { color: #EDE5D5 !important; }
+body.dark-mode .enroll-disclaimer { color: rgba(200,184,154,0.5) !important; opacity: 1 !important; }
+
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
   flex-direction: column; gap: 6px; padding: 4px;
