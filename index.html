@@ -45,6 +45,10 @@
       <li><a href="instructor.html">Instructor</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <span class="theme-toggle-icon">☀️</span>
+      <span class="theme-toggle-label">Light</span>
+    </button>
     <a href="enroll.html" class="nav-cta" id="navCta">Enroll Now</a>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -696,7 +700,7 @@
       
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="footer-copy">© 2025 Apache Warrior Academy. All rights reserved.</div>
+    <div class="footer-copy">© 2026 Apache Warrior Academy. All rights reserved.</div>
   </div>
 </footer>
 
@@ -709,6 +713,39 @@
 </div>
 
 <script src="js/main.js"></script>
+<script>
+// ── Dark / Light mode toggle ──
+(function() {
+  const btn = document.getElementById('themeToggle');
+  const icon = btn.querySelector('.theme-toggle-icon');
+  const label = btn.querySelector('.theme-toggle-label');
+  const body = document.body;
+
+  // Load saved preference
+  const saved = localStorage.getItem('awa-theme') || 'light';
+  applyTheme(saved);
+
+  btn.addEventListener('click', function() {
+    const next = body.classList.contains('dark-mode') ? 'light' : 'dark';
+    applyTheme(next);
+    localStorage.setItem('awa-theme', next);
+  });
+
+  function applyTheme(mode) {
+    if (mode === 'dark') {
+      body.classList.remove('light-mode');
+      body.classList.add('dark-mode');
+      icon.textContent = '🌙';
+      label.textContent = 'Dark';
+    } else {
+      body.classList.remove('dark-mode');
+      body.classList.add('light-mode');
+      icon.textContent = '☀️';
+      label.textContent = 'Light';
+    }
+  }
+})();
+</script>
 
 <!-- Back to Top -->
 <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>

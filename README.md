@@ -130,7 +130,11 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 - Hero text switched to dark charcoal (#171719) with red accent; subtext dark; meta line dark
 - Location pill updated to white frosted glass with dark text
 - View Schedule button updated to white card style (matches Unified layout)
-- Hero photo object-position set to center center
+- Hero photo object-position set to center bottom
+- "Claim Your Free Class" CTA button (above contact section) relinked from Facebook to enroll.html
+- Footer copyright updated to 2026 across all pages (index, about, programs, pricing, schedule, contact, enroll) — update annually
+- Light/Dark mode toggle added to nav — saves user preference in localStorage; ☀️ Light / 🌙 Dark
+- Kenny's photo: upload as `images/kenneth.jpg` — geometric placeholder shows until file is present
 - Three Pillars strip added after marquee (Train · Compete · Grow) — dark band, centered, 3 tiles
 - Google Reviews section added before Instructor section — 3 real reviews (Christina McCoy, Laura Romo, Ryan Switzer)
 - Sticky mobile bar added (Get Started · Class Times · 📞 Call) — visible on mobile only
