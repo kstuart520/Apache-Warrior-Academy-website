@@ -246,6 +246,15 @@ body.dark-mode .review-card { background: #3A3020 !important; border-color: rgba
 body.dark-mode .prog-card:hover,
 body.dark-mode .price-card:hover { border-color: rgba(139,26,26,0.4) !important; }
 
+/* Schedule calendar cards in dark mode */
+body.dark-mode .cal-day { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
+body.dark-mode .cal-day-header { background: rgba(200,184,154,0.06) !important; border-color: rgba(200,184,154,0.1) !important; }
+body.dark-mode .cal-day-name { color: #EDE5D5 !important; }
+body.dark-mode .cal-slot-name { color: #EDE5D5 !important; }
+body.dark-mode .cal-slot-time { color: rgba(200,184,154,0.7) !important; opacity: 1 !important; }
+body.dark-mode .cal-slot-ages { color: rgba(200,184,154,0.6) !important; opacity: 1 !important; }
+body.dark-mode .cal-legend-item { color: #EDE5D5 !important; }
+
 /* Text */
 body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
 body.dark-mode h4, body.dark-mode h5 { color: #EDE5D5 !important; }
@@ -273,6 +282,7 @@ body.dark-mode .footer-nav a:hover { color: #EDE5D5 !important; }
 body.dark-mode .footer-social a { color: #EDE5D5 !important; border-color: rgba(237,229,213,0.3) !important; }
 
 /* Inner page hero banner — light mode: cream bg, dark text */
+/* Inner page banners — light mode: cream bg, dark text */
 body.light-mode .page-hero { background: #EDE5D5 !important; }
 body.light-mode .page-hero .hero-overlay { background: rgba(237,229,213,0.0) !important; }
 body.light-mode .page-hero-content h1 { color: #2C2416 !important; }
@@ -280,6 +290,14 @@ body.light-mode .page-hero-content h1 em { color: #8B1A1A !important; }
 body.light-mode .page-hero-sub { color: rgba(44,36,22,0.7) !important; }
 body.light-mode .label { color: #8B1A1A !important; }
 body.light-mode .page-hero-geo .geo-ring { border-color: rgba(139,26,26,0.12) !important; }
+
+/* Inner page banners — dark mode: dark charcoal bg, cream text */
+body.dark-mode .page-hero { background: #2C2416 !important; }
+body.dark-mode .page-hero .hero-overlay { background: rgba(44,36,22,0.0) !important; }
+body.dark-mode .page-hero-content h1 { color: #EDE5D5 !important; }
+body.dark-mode .page-hero-content h1 em { color: #8B1A1A !important; }
+body.dark-mode .page-hero-sub { color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .page-hero-geo .geo-ring { border-color: rgba(139,26,26,0.2) !important; }
 
 /* Forms */
 body.dark-mode input,
@@ -302,6 +320,12 @@ body.light-mode .cta-banner { background: linear-gradient(135deg, #5C0F0F 0%, #8
 body.light-mode .cta-banner .label,
 body.dark-mode .cta-banner .label { color: rgba(255,255,255,0.85) !important; }
 
+/* CTA banner "FREE" em — dark charcoal so it pops on red in dark mode */
+body.dark-mode .cta-banner h2 em { color: #2C2416 !important; -webkit-text-stroke: 0 !important; }
+body.light-mode .cta-banner h2 { color: #FFFFFF !important; }
+body.light-mode .cta-banner h2 em { color: #2C2416 !important; -webkit-text-stroke: 0 !important; }
+body.light-mode .cta-banner p { color: rgba(255,255,255,0.85) !important; }
+
 /* Hero text — dark mode: cream so it reads against the photo + overlay */
 body.dark-mode .hero-title--unified { color: #2C2416 !important; }
 body.dark-mode .hero-title--unified em { color: #8B1A1A !important; }
@@ -314,13 +338,32 @@ body.dark-mode .hero-location-pill { background: rgba(255,255,255,0.75) !importa
 body.dark-mode .hero-btn-ghost { background: rgba(255,255,255,0.8) !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.3) !important; }
 
 /* Contact form — match review card bg in both modes */
-body.dark-mode .contact-form-wrap { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
-body.light-mode .contact-form-wrap { background: #F5EFE3 !important; border-color: rgba(44,36,22,0.1) !important; }
+/* Contact form — neutral white background, black text, both modes */
+body.light-mode .contact-form-wrap,
+body.dark-mode .contact-form-wrap { background: #FFFFFF !important; border-color: rgba(44,36,22,0.15) !important; }
 body.light-mode .contact-form-wrap input,
 body.light-mode .contact-form-wrap select,
-body.light-mode .contact-form-wrap textarea { background: #FFFFFF !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.15) !important; }
+body.light-mode .contact-form-wrap textarea,
+body.dark-mode .contact-form-wrap input,
+body.dark-mode .contact-form-wrap select,
+body.dark-mode .contact-form-wrap textarea { background: #FFFFFF !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.2) !important; }
 body.light-mode .contact-form-wrap input::placeholder,
-body.light-mode .contact-form-wrap textarea::placeholder { color: rgba(44,36,22,0.35) !important; }
+body.light-mode .contact-form-wrap textarea::placeholder,
+body.dark-mode .contact-form-wrap input::placeholder,
+body.dark-mode .contact-form-wrap textarea::placeholder { color: rgba(44,36,22,0.35) !important; }
+/* Form labels in both modes — dark charcoal */
+body.light-mode .contact-form-wrap label,
+body.dark-mode .contact-form-wrap label { color: #2C2416 !important; }
+/* Submit button — red bg, white text; active/focus turns darker red */
+body.light-mode .contact-form-wrap .btn-primary,
+body.dark-mode .contact-form-wrap .btn-primary { background: #8B1A1A !important; color: #FFFFFF !important; border-color: #8B1A1A !important; }
+body.light-mode .contact-form-wrap .btn-primary:hover,
+body.dark-mode .contact-form-wrap .btn-primary:hover,
+body.light-mode .contact-form-wrap .btn-primary:focus,
+body.dark-mode .contact-form-wrap .btn-primary:focus { background: #5C0F0F !important; border-color: #5C0F0F !important; }
+/* Chips — turn red when selected */
+body.light-mode .chip.selected,
+body.dark-mode .chip.selected { background: rgba(139,26,26,0.12) !important; border-color: #8B1A1A !important; color: #8B1A1A !important; }
 
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
@@ -1039,13 +1082,13 @@ footer {
   font-family: var(--font-cond);
   font-size: 0.85rem; font-weight: 600;
   letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--cream-dim);
+  color: var(--cream-light);
   padding: 0.75rem 1.5rem;
   border-bottom: 3px solid transparent;
   margin-bottom: -1px;
   transition: color var(--transition), border-color var(--transition);
 }
-.price-tab:hover { color: var(--cream); }
+.price-tab:hover { color: var(--white); }
 .price-tab.active { color: var(--red); border-bottom-color: var(--red); }
 
 .price-panel { display: none; }
@@ -1661,6 +1704,18 @@ body.light-mode .family-example strong { color: #2C2416; }
 body.light-mode .sched-view-toggle { background: rgba(44,36,22,0.05); border-color: rgba(44,36,22,0.1); }
 body.light-mode .sched-toggle { color: rgba(44,36,22,0.55); }
 body.light-mode .sched-toggle.active { background: #8B1A1A; color: #EDE5D5; }
+
+/* Price tabs — light mode: charcoal default, red active */
+body.light-mode .price-tab { color: #2C2416 !important; }
+body.light-mode .price-tab:hover { color: #8B1A1A !important; }
+body.light-mode .price-tab.active { color: #8B1A1A !important; border-bottom-color: #8B1A1A !important; }
+body.light-mode .price-tabs { border-bottom-color: rgba(44,36,22,0.15) !important; }
+
+/* Price tabs — dark mode: cream default, red active */
+body.dark-mode .price-tab { color: #EDE5D5 !important; }
+body.dark-mode .price-tab:hover { color: #FFFFFF !important; }
+body.dark-mode .price-tab.active { color: #8B1A1A !important; border-bottom-color: #8B1A1A !important; }
+body.dark-mode .price-tabs { border-bottom-color: rgba(200,184,154,0.15) !important; }
 body.light-mode .cal-day { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
 body.light-mode .cal-day-header { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.08); }
 body.light-mode .cal-day-name,

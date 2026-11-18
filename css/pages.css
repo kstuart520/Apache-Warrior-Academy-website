@@ -356,6 +356,86 @@
   .page-hero { padding: 8rem 1.5rem 4rem; min-height: 32vh; }
 }
 
+/* ============================================================
+   LIGHT / DARK MODE — inner page elements
+   ============================================================ */
+
+/* Page body background follows mode */
+body.light-mode .page-body { background: #EDE5D5; }
+body.dark-mode  .page-body { background: #2C2416; }
+body.light-mode .page-body.alt-bg { background: #E5DCCC; border-color: rgba(44,36,22,0.08); }
+body.dark-mode  .page-body.alt-bg { background: #261E12; border-color: rgba(200,184,154,0.08); }
+
+/* General text */
+body.light-mode .page-body h2,
+body.light-mode .page-body h3,
+body.light-mode .page-body h4 { color: #2C2416 !important; }
+body.light-mode .page-body p,
+body.light-mode .page-body li { color: rgba(44,36,22,0.75) !important; }
+body.dark-mode  .page-body h2,
+body.dark-mode  .page-body h3,
+body.dark-mode  .page-body h4 { color: #EDE5D5 !important; }
+body.dark-mode  .page-body p,
+body.dark-mode  .page-body li { color: rgba(237,229,213,0.78) !important; }
+
+/* Value cards (About) */
+body.light-mode .value-card { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode .value-card h3 { color: #2C2416 !important; }
+body.light-mode .value-card p  { color: rgba(44,36,22,0.65) !important; }
+body.dark-mode  .value-card { background: #3A3020; border-color: rgba(200,184,154,0.12); }
+body.dark-mode  .value-card h3 { color: #EDE5D5 !important; }
+body.dark-mode  .value-card p  { color: rgba(237,229,213,0.65) !important; }
+
+/* Program detail cards */
+body.light-mode .program-detail-card { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode .program-detail-card h3 { color: #2C2416 !important; }
+body.light-mode .program-detail-card p,
+body.light-mode .pdc-details li { color: rgba(44,36,22,0.65) !important; }
+body.dark-mode  .program-detail-card { background: #3A3020; border-color: rgba(200,184,154,0.12); }
+body.dark-mode  .program-detail-card h3 { color: #EDE5D5 !important; }
+body.dark-mode  .program-detail-card p,
+body.dark-mode  .pdc-details li { color: rgba(237,229,213,0.65) !important; }
+
+/* Schedule page day cards */
+body.light-mode .day-card { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode .day-card-header { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.08); }
+body.light-mode .day-card-name { color: #2C2416 !important; }
+body.light-mode .slot-name  { color: #2C2416 !important; }
+body.light-mode .slot-time,
+body.light-mode .slot-ages  { color: rgba(44,36,22,0.5) !important; opacity: 1; }
+body.light-mode .slot-reserve { background: rgba(44,36,22,0.05); border-color: rgba(44,36,22,0.15); color: #2C2416; }
+body.dark-mode  .day-card { background: #3A3020; border-color: rgba(200,184,154,0.12); }
+body.dark-mode  .day-card-header { background: rgba(200,184,154,0.06); border-color: rgba(200,184,154,0.1); }
+body.dark-mode  .day-card-name { color: #EDE5D5 !important; }
+body.dark-mode  .slot-name  { color: #EDE5D5 !important; }
+body.dark-mode  .slot-time,
+body.dark-mode  .slot-ages  { color: rgba(200,184,154,0.6) !important; opacity: 1; }
+body.dark-mode  .slot-reserve { background: rgba(200,184,154,0.06); border-color: rgba(200,184,154,0.2); color: #EDE5D5; }
+
+/* Schedule note box */
+body.light-mode .schedule-note-box { background: rgba(139,26,26,0.04); border-color: rgba(139,26,26,0.12); color: rgba(44,36,22,0.7); }
+body.dark-mode  .schedule-note-box { background: rgba(139,26,26,0.08); border-color: rgba(139,26,26,0.2); color: rgba(237,229,213,0.7); }
+
+/* Instructor page */
+body.light-mode .instructor-photo { background: #E8DFCF; border-color: rgba(44,36,22,0.1); }
+body.light-mode .inp-name { color: #2C2416 !important; }
+body.light-mode .instructor-bio p { color: rgba(44,36,22,0.7) !important; }
+body.light-mode .cred-tag { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.1); color: rgba(44,36,22,0.65); }
+body.light-mode .phil-block p { color: rgba(44,36,22,0.7) !important; }
+body.dark-mode  .instructor-photo { background: #3A3020; border-color: rgba(200,184,154,0.12); }
+body.dark-mode  .inp-name { color: #EDE5D5 !important; }
+body.dark-mode  .instructor-bio p { color: rgba(237,229,213,0.72) !important; }
+body.dark-mode  .cred-tag { background: rgba(200,184,154,0.06); border-color: rgba(200,184,154,0.12); color: rgba(200,184,154,0.65); }
+body.dark-mode  .phil-block p { color: rgba(237,229,213,0.72) !important; }
+
+/* Contact page map area */
+body.light-mode .contact-map-embed { background: #E8DFCF; border-color: rgba(44,36,22,0.1); }
+body.dark-mode  .contact-map-embed { background: #3A3020; border-color: rgba(200,184,154,0.12); }
+
+/* Inner page CTA strip — always red in both modes */
+body.light-mode .page-cta-strip,
+body.dark-mode  .page-cta-strip { background: linear-gradient(135deg, #5C0F0F 0%, #8B1A1A 100%) !important; }
+
 /* Three-column schedule grid (Tue + Wed + Sat) */
 .schedule-page-grid.three-col {
   grid-template-columns: repeat(3, 1fr);
