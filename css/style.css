@@ -246,6 +246,23 @@ body.dark-mode .review-card { background: #3A3020 !important; border-color: rgba
 body.dark-mode .prog-card:hover,
 body.dark-mode .price-card:hover { border-color: rgba(139,26,26,0.4) !important; }
 
+/* Pricing card text — dark mode */
+body.dark-mode .price-header h3 { color: #EDE5D5 !important; }
+body.dark-mode .price-tag { color: #EDE5D5 !important; }
+body.dark-mode .price-tag sup,
+body.dark-mode .price-tag span { color: #C8B89A !important; }
+body.dark-mode .price-period { color: rgba(237,229,213,0.6) !important; }
+body.dark-mode .price-list li { color: rgba(237,229,213,0.75) !important; border-color: rgba(200,184,154,0.08) !important; }
+body.dark-mode .price-note { color: rgba(237,229,213,0.6) !important; }
+body.dark-mode .price-card.featured { background: rgba(139,26,26,0.2) !important; border-color: rgba(139,26,26,0.5) !important; }
+/* Family table in dark mode */
+body.dark-mode .family-table { background: #3A3020 !important; border-color: rgba(200,184,154,0.1) !important; }
+body.dark-mode .family-header h3 { color: #EDE5D5 !important; }
+body.dark-mode .family-header p { color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .family-row { color: rgba(237,229,213,0.7) !important; border-color: rgba(200,184,154,0.08) !important; }
+body.dark-mode .family-example { color: rgba(237,229,213,0.65) !important; border-color: rgba(139,26,26,0.2) !important; }
+body.dark-mode .family-example strong { color: #EDE5D5 !important; }
+
 /* Schedule calendar cards in dark mode */
 body.dark-mode .cal-day { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
 body.dark-mode .cal-day-header { background: rgba(200,184,154,0.06) !important; border-color: rgba(200,184,154,0.1) !important; }
@@ -272,8 +289,8 @@ body.dark-mode .sched-table thead th { background: rgba(139,26,26,0.3) !importan
 body.dark-mode .sched-table tbody td { color: rgba(237,229,213,0.75) !important; border-color: rgba(200,184,154,0.08) !important; }
 body.dark-mode .sched-table tbody tr:hover td { background: rgba(139,26,26,0.08) !important; }
 
-/* Footer — red in both modes, text color differs */
-body.dark-mode footer { background: #5C0F0F !important; border-top: none !important; }
+/* Footer — matches mode background */
+body.dark-mode footer { background: #1E1A10 !important; border-top: none !important; }
 body.dark-mode .footer-logo-text { color: #EDE5D5 !important; }
 body.dark-mode .footer-tagline,
 body.dark-mode .footer-copy { color: rgba(237,229,213,0.65) !important; }
@@ -984,7 +1001,7 @@ body.dark-mode .chip.selected { background: rgba(139,26,26,0.12) !important; bor
 
 /* ===== FOOTER ===== */
 footer {
-  background: #8B1A1A;
+  background: #EDE5D5;
   border-top: none;
   padding: 3rem 2rem;
   text-align: center;
@@ -1823,7 +1840,7 @@ body.light-mode .sched-table thead th { color: #8B6914; }
 body.light-mode .schedule-note-box strong { color: #8B6914; }
 
 /* Footer — light mode: red bg, dark text */
-body.light-mode footer { background: #C8B89A !important; border-top: none !important; }
+body.light-mode footer { background: #EDE5D5 !important; border-top: none !important; }
 body.light-mode .footer-logo-text { color: #2C2416 !important; }
 body.light-mode .footer-tagline { color: rgba(44,36,22,0.7) !important; }
 body.light-mode .footer-nav a { color: rgba(44,36,22,0.75) !important; }
