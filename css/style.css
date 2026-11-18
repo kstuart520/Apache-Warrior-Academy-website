@@ -227,13 +227,7 @@ h2 em {
     var(--black);
 }
 .hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.30) 0%,
-    rgba(255,255,255,0.18) 50%,
-    rgba(255,255,255,0.40) 100%
-  );
+  display: none;
 }
 
 /* Geometric hero elements */
