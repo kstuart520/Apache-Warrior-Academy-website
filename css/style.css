@@ -264,7 +264,7 @@ body.dark-mode .sched-table tbody td { color: rgba(237,229,213,0.75) !important;
 body.dark-mode .sched-table tbody tr:hover td { background: rgba(139,26,26,0.08) !important; }
 
 /* Footer — red in both modes, text color differs */
-body.dark-mode footer { background: #5C0F0F !important; }
+body.dark-mode footer { background: #5C0F0F !important; border-top: none !important; }
 body.dark-mode .footer-logo-text { color: #EDE5D5 !important; }
 body.dark-mode .footer-tagline,
 body.dark-mode .footer-copy { color: rgba(237,229,213,0.65) !important; }
@@ -298,16 +298,20 @@ body.dark-mode .info-val, body.dark-mode .info-val a { color: #EDE5D5 !important
 body.dark-mode .cta-banner,
 body.light-mode .cta-banner { background: linear-gradient(135deg, #5C0F0F 0%, #8B1A1A 100%) !important; }
 
+/* CTA banner label — always white on red background */
+body.light-mode .cta-banner .label,
+body.dark-mode .cta-banner .label { color: rgba(255,255,255,0.85) !important; }
+
 /* Hero text — dark mode: cream so it reads against the photo + overlay */
-body.dark-mode .hero-title--unified { color: #EDE5D5 !important; }
-body.dark-mode .hero-title--unified em { color: #C8B89A !important; }
-body.dark-mode .hero-academy-name { color: rgba(237,229,213,0.8) !important; }
-body.dark-mode .hero-tagline { color: rgba(237,229,213,0.7) !important; }
-body.dark-mode .hero-content--centered .hero-sub { color: rgba(237,229,213,0.8) !important; }
-body.dark-mode .hero-meta { color: rgba(237,229,213,0.6) !important; }
-body.dark-mode .hero-meta a { color: rgba(237,229,213,0.75) !important; border-bottom-color: rgba(237,229,213,0.25) !important; }
-body.dark-mode .hero-location-pill { background: rgba(44,36,22,0.7) !important; color: #EDE5D5 !important; border-color: rgba(237,229,213,0.2) !important; }
-body.dark-mode .hero-btn-ghost { background: rgba(44,36,22,0.7) !important; color: #EDE5D5 !important; border-color: rgba(237,229,213,0.3) !important; }
+body.dark-mode .hero-title--unified { color: #2C2416 !important; }
+body.dark-mode .hero-title--unified em { color: #8B1A1A !important; }
+body.dark-mode .hero-academy-name { color: rgba(44,36,22,0.8) !important; }
+body.dark-mode .hero-tagline { color: rgba(44,36,22,0.7) !important; }
+body.dark-mode .hero-content--centered .hero-sub { color: rgba(44,36,22,0.8) !important; }
+body.dark-mode .hero-meta { color: rgba(44,36,22,0.6) !important; }
+body.dark-mode .hero-meta a { color: rgba(44,36,22,0.75) !important; border-bottom-color: rgba(44,36,22,0.25) !important; }
+body.dark-mode .hero-location-pill { background: rgba(255,255,255,0.75) !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.2) !important; }
+body.dark-mode .hero-btn-ghost { background: rgba(255,255,255,0.8) !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.3) !important; }
 
 /* Contact form — match review card bg in both modes */
 body.dark-mode .contact-form-wrap { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
@@ -1764,13 +1768,13 @@ body.light-mode .sched-table thead th { color: #8B6914; }
 body.light-mode .schedule-note-box strong { color: #8B6914; }
 
 /* Footer — light mode: red bg, dark text */
-body.light-mode footer { background: #8B1A1A !important; }
-body.light-mode .footer-logo-text { color: #EDE5D5 !important; }
-body.light-mode .footer-tagline { color: rgba(237,229,213,0.75) !important; }
-body.light-mode .footer-nav a { color: rgba(237,229,213,0.8) !important; }
-body.light-mode .footer-nav a:hover { color: #FFFFFF !important; }
-body.light-mode .footer-copy { color: rgba(237,229,213,0.55) !important; }
-body.light-mode .footer-social a { color: #EDE5D5 !important; border-color: rgba(237,229,213,0.3) !important; }
+body.light-mode footer { background: #C8B89A !important; border-top: none !important; }
+body.light-mode .footer-logo-text { color: #2C2416 !important; }
+body.light-mode .footer-tagline { color: rgba(44,36,22,0.7) !important; }
+body.light-mode .footer-nav a { color: rgba(44,36,22,0.75) !important; }
+body.light-mode .footer-nav a:hover { color: #2C2416 !important; }
+body.light-mode .footer-copy { color: rgba(44,36,22,0.55) !important; }
+body.light-mode .footer-social a { color: #2C2416 !important; border-color: rgba(44,36,22,0.3) !important; }
 
 /* Two-card grid — centers 2 cards instead of 3-column stretch */
 .programs-grid.two-only {
@@ -1885,9 +1889,9 @@ body.light-mode .back-to-top { box-shadow: 0 4px 16px rgba(192,57,43,0.25); }
 }
 .social-icon-link:hover { color: var(--red); }
 .social-icon-link svg { width: 18px; height: 18px; fill: currentColor; flex-shrink:0; }
-body.light-mode .social-icon-link { color: rgba(23,23,25,0.65); }
-body.light-mode .social-icon-link:hover { color: #7A171B; }
-body.light-mode .footer-social a { border-color: rgba(23,23,25,0.25); color: #171719; }
+body.light-mode .social-icon-link { color: rgba(44,36,22,0.65); }
+body.light-mode .social-icon-link:hover { color: #8B1A1A; }
+body.light-mode .footer-social a { border-color: rgba(44,36,22,0.25); color: #2C2416; }
 
 /* ── Saturday competition note ── */
 .saturday-note {
