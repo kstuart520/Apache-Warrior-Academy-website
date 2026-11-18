@@ -23,14 +23,16 @@ Live at **[apachewarrioracademy.com](https://apachewarrioracademy.com)**
 ├── programs.html       # Youth & Adult BJJ programs
 ├── pricing.html        # Membership pricing + drop-in
 ├── schedule.html       # Class schedule (standalone page)
+├── instructor.html     # Coach Kenny bio + credentials
 ├── enroll.html         # Enrollment form
 ├── contact.html        # Contact + map
 ├── CNAME               # Custom domain (apachewarrioracademy.com)
 ├── css/
-│   ├── style.css       # Global styles, brand tokens, components
-│   └── pages.css       # Inner page layouts (hero, cards, grids)
+│   ├── style.css       # Global styles, brand tokens, components, theme modes
+│   └── pages.css       # Inner page layouts (hero, cards, grids) + theme mode overrides
 ├── js/
-│   └── main.js         # Shared JS (lightbox, scroll effects)
+│   └── main.js         # Scroll-reveal (IntersectionObserver), nav scroll, hamburger,
+│                       # price tabs, schedule toggle, chip selectors, back-to-top
 └── images/
     ├── hero.PNG            # Desktop hero image
     ├── hero-mobile.PNG     # Mobile hero image (≤768px)
@@ -124,6 +126,21 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 ---
 
 ## Changelog
+
+### November 2026 (continued)
+- **js/main.js created** — scroll-reveal IntersectionObserver, nav scroll state, hamburger toggle, price tabs, schedule view toggle, chip selectors, back-to-top; was referenced in index.html but file did not exist (elements were invisible at load due to `opacity:0` on `.reveal` with no observer to fire `.visible`)
+- **instructor.html created** — full Coach Kenny page: photo, bio, credentials, philosophy blocks, red CTA strip, footer; includes light/dark toggle, scroll-reveal, back-to-top; linked from all nav menus
+- **Scroll-reveal animation active on all pages** — `.reveal` elements fade + slide up as they enter the viewport
+- **Pricing tabs** — default text `#EDE5D5` (readable on dark section bg); light mode: charcoal `#2C2416` default, red `#8B1A1A` when active; dark mode: cream default, red when active
+- **Dark mode schedule cards** — `.cal-day` now `#3A3020` (matches other dark mode cards); "Youth Classes" / "Adult Classes" legend text forced cream
+- **CTA "FREE" em text** — `#2C2416` dark charcoal in both modes (pops against red gradient)
+- **Inner-page banners** — dark mode now matches charcoal `#2C2416` background with cream text (light mode was already cream); no more red banner in either mode
+- **pages.css theme rules added** — comprehensive light/dark overrides for all inner page elements: value cards, program detail cards, schedule day cards, instructor section, contact map, schedule note box, page-cta-strip
+- **Contact form reset to neutral** — white `#FFFFFF` background, `#2C2416` text, both modes; submit button red with darker red on hover/active; chips turn red `#8B1A1A` when selected
+- **"No Commitment. No Pressure." label** — forced white `rgba(255,255,255,0.85)` on red CTA banner in both modes
+- **Footer light mode** — changed from red `#8B1A1A` to parchment `#C8B89A` with dark charcoal `#2C2416` text, links, social icons
+- **Footer dark mode** — `border-top: none` to remove visible seam above footer
+- **enroll.html** — added missing theme toggle button to nav (JS was present but button element was absent)
 
 ### November 2026
 - Hero redesigned to Unified JJ-style centered layout: location pill → academy name → tagline → headline → subtext → Get Started + View Schedule buttons → pricing/address meta line
