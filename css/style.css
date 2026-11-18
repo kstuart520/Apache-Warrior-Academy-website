@@ -228,7 +228,12 @@ h2 em {
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: rgba(12,12,12,0.35);
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.30) 0%,
+    rgba(255,255,255,0.18) 50%,
+    rgba(255,255,255,0.40) 100%
+  );
 }
 
 /* Geometric hero elements */
@@ -1448,12 +1453,7 @@ footer {
     max-width: 100%;
   }
 }
-/* Darken overlay more when photo is present */
-.hero-bg:has(.hero-bg-img:not([style*="none"])) .hero-overlay {
-  background:
-    linear-gradient(to right, rgba(12,12,12,0.88) 40%, rgba(12,12,12,0.5) 100%),
-    linear-gradient(to top, rgba(12,12,12,0.7) 0%, transparent 60%);
-}
+/* Photo-present overlay handled by base .hero-overlay rule above */
 
 
 /* ============================================================
@@ -2102,15 +2102,7 @@ body.light-mode .saturday-note { color: #7A171B; }
   margin-top: 1.6rem;
 }
 
-/* Light white overlay — photo shows through, dark text on top */
-.hero-overlay {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.30) 0%,
-    rgba(255,255,255,0.18) 50%,
-    rgba(255,255,255,0.40) 100%
-  );
-}
+/* Hero overlay: white/transparent set in base .hero-overlay rule (line ~229) */
 
 /* Mobile tweaks */
 @media (max-width: 640px) {
