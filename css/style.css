@@ -2013,3 +2013,117 @@ body.light-mode .saturday-note { color: #7A171B; }
   /* Add padding to body so footer content isn't hidden behind bar */
   body { padding-bottom: 68px; }
 }
+
+/* ============================================================
+   HERO — UNIFIED-STYLE CENTERED LAYOUT
+   ============================================================ */
+
+/* Center the content like Unified */
+.hero-content--centered {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+/* Location pill */
+.hero-location-pill {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 100px;
+  padding: 0.4rem 1.1rem;
+  font-family: var(--font-cond);
+  font-size: 0.8rem; letter-spacing: 0.18em;
+  text-transform: uppercase; color: #FFFFFF;
+  margin-bottom: 1.2rem;
+}
+.hero-location-dot { font-size: 0.85rem; }
+
+/* Academy name line */
+.hero-academy-name {
+  font-family: var(--font-cond);
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(232,221,197,0.75);
+  margin-bottom: 0.4rem;
+}
+
+/* Tagline */
+.hero-tagline {
+  font-family: var(--font-cond);
+  font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+  letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 1.4rem;
+}
+
+/* Main headline — mixed serif-feel via italic */
+.hero-title--unified {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 7rem);
+  line-height: 1.0;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin-bottom: 1.4rem;
+}
+.hero-title--unified em {
+  color: var(--red);
+  font-style: normal;
+}
+
+/* Sub — slightly wider max on centered layout */
+.hero-content--centered .hero-sub {
+  max-width: 580px;
+  text-align: center;
+  color: rgba(232,221,197,0.88);
+  margin-bottom: 2rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+}
+
+/* Buttons */
+.hero-btn-primary {
+  padding: 0.9rem 2.2rem;
+  font-size: 0.9rem;
+}
+.hero-btn-ghost {
+  padding: 0.9rem 2.2rem;
+  font-size: 0.9rem;
+  background: rgba(255,255,255,0.12) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(255,255,255,0.4) !important;
+}
+.hero-btn-ghost:hover {
+  background: rgba(255,255,255,0.22) !important;
+  border-color: #FFFFFF !important;
+}
+
+/* Meta line centered */
+.hero-content--centered .hero-meta {
+  justify-content: center;
+  margin-top: 1.6rem;
+}
+
+/* Stronger overlay so text stays legible over bright photos */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(12,12,12,0.55) 0%,
+    rgba(12,12,12,0.45) 50%,
+    rgba(12,12,12,0.65) 100%
+  );
+}
+
+/* Mobile tweaks */
+@media (max-width: 640px) {
+  .hero-title--unified { font-size: clamp(2.6rem, 11vw, 4rem); }
+  .hero-content--centered .hero-sub { font-size: 0.95rem; }
+  .hero-actions { flex-direction: column; align-items: center; width: 100%; }
+  .hero-btn-primary, .hero-btn-ghost { width: 100%; text-align: center; }
+  .hero-content--centered .hero-meta { flex-direction: column; align-items: center; gap: 0.3rem; }
+  .hero-meta-sep { display: none; }
+}
