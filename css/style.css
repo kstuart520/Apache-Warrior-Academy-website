@@ -284,6 +284,30 @@ body.dark-mode .founder-photo { background: #3A3020 !important; }
 body.dark-mode .info-label { color: rgba(200,184,154,0.6) !important; }
 body.dark-mode .info-val, body.dark-mode .info-val a { color: #EDE5D5 !important; }
 
+/* CTA banner — always red regardless of mode */
+body.dark-mode .cta-banner,
+body.light-mode .cta-banner { background: linear-gradient(135deg, #5C0F0F 0%, #8B1A1A 100%) !important; }
+
+/* Hero text — dark mode: cream so it reads against the photo + overlay */
+body.dark-mode .hero-title--unified { color: #EDE5D5 !important; }
+body.dark-mode .hero-title--unified em { color: #C8B89A !important; }
+body.dark-mode .hero-academy-name { color: rgba(237,229,213,0.8) !important; }
+body.dark-mode .hero-tagline { color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .hero-content--centered .hero-sub { color: rgba(237,229,213,0.8) !important; }
+body.dark-mode .hero-meta { color: rgba(237,229,213,0.6) !important; }
+body.dark-mode .hero-meta a { color: rgba(237,229,213,0.75) !important; border-bottom-color: rgba(237,229,213,0.25) !important; }
+body.dark-mode .hero-location-pill { background: rgba(44,36,22,0.7) !important; color: #EDE5D5 !important; border-color: rgba(237,229,213,0.2) !important; }
+body.dark-mode .hero-btn-ghost { background: rgba(44,36,22,0.7) !important; color: #EDE5D5 !important; border-color: rgba(237,229,213,0.3) !important; }
+
+/* Contact form — match review card bg in both modes */
+body.dark-mode .contact-form-wrap { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
+body.light-mode .contact-form-wrap { background: #F5EFE3 !important; border-color: rgba(44,36,22,0.1) !important; }
+body.light-mode .contact-form-wrap input,
+body.light-mode .contact-form-wrap select,
+body.light-mode .contact-form-wrap textarea { background: #FFFFFF !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.15) !important; }
+body.light-mode .contact-form-wrap input::placeholder,
+body.light-mode .contact-form-wrap textarea::placeholder { color: rgba(44,36,22,0.35) !important; }
+
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
   flex-direction: column; gap: 6px; padding: 4px;
