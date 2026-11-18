@@ -113,8 +113,8 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 
 | File | Used for |
 |------|----------|
-| `hero.png` | Desktop hero (all screens > 768px) |
-| `hero-mobile.png` | Mobile hero (≤ 768px) |
+| `hero.JPG` | Desktop hero (all screens > 768px) |
+| `hero-mobile.JPG` | Mobile hero (≤ 768px) |
 
 > GitHub Pages is case-sensitive. Use `.png` lowercase. No text overlay needed — the site adds the headline text on top.
 
@@ -124,7 +124,8 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 
 ### November 2026
 - Hero redesigned to Unified JJ-style centered layout: location pill → academy name → tagline → headline → subtext → Get Started + View Schedule buttons → pricing/address meta line
-- Hero image references updated to `hero.png` / `hero-mobile.png` (lowercase) — upload class photos with these exact names
+- Hero image references updated to `hero.JPG` / `hero-mobile.JPG` — upload class photos with these exact names
+- Three Pillars strip (Train · Compete · Grow) removed from homepage
 - Three Pillars strip added after marquee (Train · Compete · Grow) — dark band, centered, 3 tiles
 - Google Reviews section added before Instructor section — 3 real reviews (Christina McCoy, Laura Romo, Ryan Switzer)
 - Sticky mobile bar added (Get Started · Class Times · 📞 Call) — visible on mobile only
