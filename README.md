@@ -126,6 +126,11 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 - Hero redesigned to Unified JJ-style centered layout: location pill → academy name → tagline → headline → subtext → Get Started + View Schedule buttons → pricing/address meta line
 - Hero image references updated to `hero.JPG` / `hero-mobile.JPG` — upload class photos with these exact names
 - Three Pillars strip (Train · Compete · Grow) removed from homepage
+- Hero overlay switched from dark to light/white transparent — photo now visible through overlay
+- Hero text switched to dark charcoal (#171719) with red accent; subtext dark; meta line dark
+- Location pill updated to white frosted glass with dark text
+- View Schedule button updated to white card style (matches Unified layout)
+- Hero photo object-position set to center center
 - Three Pillars strip added after marquee (Train · Compete · Grow) — dark band, centered, 3 tiles
 - Google Reviews section added before Instructor section — 3 real reviews (Christina McCoy, Laura Romo, Ryan Switzer)
 - Sticky mobile bar added (Get Started · Class Times · 📞 Call) — visible on mobile only
