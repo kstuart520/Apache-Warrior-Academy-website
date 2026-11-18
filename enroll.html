@@ -53,7 +53,7 @@
 .enroll-info h2 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1; color: var(--cream);
+  line-height: 1; color: #171719;
   margin-bottom: 1.5rem;
 }
 .enroll-info h2 em { color: var(--red); font-style: normal; }
@@ -70,12 +70,12 @@
 .enroll-benefit-text strong {
   font-family: var(--font-cond);
   font-size: 0.9rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--cream);
+  text-transform: uppercase; color: #171719;
   display: block; margin-bottom: 0.2rem;
 }
 .enroll-benefit-text p {
   font-size: 0.88rem; font-weight: 300;
-  color: var(--cream-dim); line-height: 1.6;
+  color: #A39A8E; line-height: 1.6;
 }
 
 .enroll-schedule-mini {
@@ -97,25 +97,26 @@
   font-size: 0.9rem;
 }
 .esm-row:last-child { border-bottom: none; }
-.esm-day { font-family: var(--font-cond); font-weight: 600; letter-spacing: 0.08em; color: var(--cream); }
-.esm-time { font-weight: 300; color: var(--cream-dim); font-size: 0.85rem; }
+.esm-day { font-family: var(--font-cond); font-weight: 600; letter-spacing: 0.08em; color: #171719; }
+.esm-time { font-weight: 300; color: #A39A8E; font-size: 0.85rem; }
 .esm-tag { }
 
 /* Right form panel */
 .enroll-form-wrap {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: #FFFFFF;
+  border: 1px solid rgba(23,23,25,0.12);
   border-radius: 6px; padding: 2.5rem;
+  box-shadow: 0 4px 24px rgba(23,23,25,0.08);
 }
 .enroll-form-title {
   font-family: var(--font-display);
   font-size: 1.8rem; letter-spacing: 0.05em;
-  text-transform: uppercase; color: var(--cream);
+  text-transform: uppercase; color: #171719;
   margin-bottom: 0.4rem;
 }
 .enroll-form-sub {
   font-size: 0.88rem; font-weight: 300;
-  color: var(--cream-dim); line-height: 1.6;
+  color: #A39A8E; line-height: 1.6;
   margin-bottom: 1.8rem;
 }
 
@@ -124,25 +125,26 @@
 .enroll-form select,
 .enroll-form textarea {
   width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border);
+  background: #FFFFFF;
+  border: 1.5px solid rgba(23,23,25,0.2);
   border-radius: var(--radius);
   padding: 0.9rem 1rem;
-  color: var(--cream);
+  color: #171719;
   font-family: var(--font-body);
-  font-size: 0.95rem; font-weight: 300;
-  transition: border-color var(--transition);
+  font-size: 0.95rem; font-weight: 400;
+  transition: border-color var(--transition), box-shadow var(--transition);
   -webkit-appearance: none;
 }
 .enroll-form input:focus,
 .enroll-form select:focus,
 .enroll-form textarea:focus {
   outline: none; border-color: var(--red);
-  background: rgba(192,57,43,0.04);
+  box-shadow: 0 0 0 3px rgba(122,23,27,0.1);
+  background: #fff;
 }
 .enroll-form input::placeholder,
-.enroll-form textarea::placeholder { color: rgba(242,237,228,0.25); }
-.enroll-form select option { background: var(--near-black); }
+.enroll-form textarea::placeholder { color: rgba(23,23,25,0.4); }
+.enroll-form select option { background: #fff; color: #171719; }
 .ef-two { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; }
 .enroll-form textarea { min-height: 90px; resize: vertical; }
 
@@ -161,8 +163,8 @@
 
 /* Waiver */
 .enroll-waiver-block {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid var(--border);
+  background: rgba(122,23,27,0.04);
+  border: 1px solid rgba(122,23,27,0.15);
   border-radius: 4px; padding: 1.2rem;
 }
 .enroll-waiver-check {
@@ -174,7 +176,7 @@
 }
 .enroll-waiver-text {
   font-size: 0.82rem; font-weight: 300;
-  color: var(--cream-dim); line-height: 1.65;
+  color: #171719; line-height: 1.65;
 }
 .enroll-waiver-link {
   background: none; border: none; cursor: pointer;
@@ -184,14 +186,14 @@
 .enroll-waiver-full {
   display: none;
   margin-top: 1rem;
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(23,23,25,0.03);
+  border: 1px solid rgba(23,23,25,0.1);
   border-radius: 4px; padding: 1.2rem;
   font-size: 0.78rem; font-weight: 300;
-  color: var(--cream-dim); line-height: 1.8;
+  color: #171719; line-height: 1.8;
   max-height: 320px; overflow-y: auto;
 }
-.enroll-waiver-full strong { color: var(--cream); display: block; margin-top: 0.8rem; }
+.enroll-waiver-full strong { color: #171719; display: block; margin-top: 0.8rem; }
 .enroll-waiver-full strong:first-child { margin-top: 0; }
 .waiver-close-btn {
   background: none; border: none; cursor: pointer;
@@ -220,6 +222,27 @@
   margin-bottom: 0.5rem; text-transform: uppercase;
 }
 .enroll-success p { font-size: 0.9rem; font-weight: 300; color: var(--cream-dim); }
+
+
+/* ── Visible field labels ── */
+.ef-label {
+  display: flex; flex-direction: column; gap: 0.35rem;
+  font-family: var(--font-cond);
+  font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: #171719;
+}
+.ef-req { color: var(--red); }
+.ef-hint { font-weight: 300; text-transform: none; letter-spacing: 0; color: #A39A8E; font-size: 0.75rem; }
+.ef-label input,
+.ef-label select,
+.ef-label textarea { margin-top: 0; }
+
+/* Fix ef-divider for light bg */
+.ef-divider { color: var(--red); }
+
+/* Disclaimer + disclaimer text */
+.enroll-disclaimer { color: #A39A8E; opacity: 1; }
 
 @media (max-width: 900px) {
   .enroll-grid { grid-template-columns: 1fr; gap: 3rem; }
@@ -385,16 +408,30 @@
 
           <div class="ef-divider">Your Information</div>
           <div class="ef-two">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="date" name="dob" title="Date of Birth" aria-label="Date of Birth" required>
+            <label class="ef-label">Full Name <span class="ef-req">*</span>
+              <input type="text" name="name" placeholder="e.g. John Smith" required>
+            </label>
+            <label class="ef-label">Date of Birth <span class="ef-req">*</span>
+              <input type="date" name="dob" title="Date of Birth" aria-label="Date of Birth" required>
+            </label>
           </div>
           <div class="ef-two">
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="tel" name="phone" placeholder="Phone Number">
+            <label class="ef-label">Email Address <span class="ef-req">*</span>
+              <input type="email" name="email" placeholder="you@example.com" required>
+            </label>
+            <label class="ef-label">Phone Number
+              <input type="tel" name="phone" placeholder="(555) 555-5555">
+            </label>
           </div>
-          <input type="text" name="address" placeholder="Address (Street, City, State, ZIP)">
-          <input type="text" name="emergency_contact" placeholder="Emergency Contact Name & Phone">
-          <input type="text" name="medical_conditions" placeholder="Medical Conditions / Allergies (or 'None')">
+          <label class="ef-label">Home Address
+            <input type="text" name="address" placeholder="Street, City, State, ZIP">
+          </label>
+          <label class="ef-label">Emergency Contact <span class="ef-hint">(name &amp; phone)</span>
+            <input type="text" name="emergency_contact" placeholder="e.g. Jane Smith — (555) 123-4567">
+          </label>
+          <label class="ef-label">Medical Conditions / Allergies <span class="ef-hint">(enter "None" if none)</span>
+            <input type="text" name="medical_conditions" placeholder="e.g. asthma, penicillin allergy, or None">
+          </label>
 
           <div class="ef-divider">Enrollment Details</div>
 
@@ -412,11 +449,19 @@
           <!-- Guardian block — shown when child is selected -->
           <div class="guardian-block" id="guardianBlock">
             <div class="ef-divider">Parent / Guardian Information (Required for Minors)</div>
-            <input type="text" name="participant_name" placeholder="Child's Full Name">
-            <input type="date" name="participant_dob" aria-label="Child's Date of Birth" title="Child's Date of Birth">
+            <label class="ef-label">Child's Full Name
+              <input type="text" name="participant_name" placeholder="e.g. Tyler Smith">
+            </label>
+            <label class="ef-label">Child's Date of Birth
+              <input type="date" name="participant_dob" aria-label="Child's Date of Birth" title="Child's Date of Birth">
+            </label>
             <div class="ef-two">
-              <input type="text" name="guardian_name" placeholder="Parent / Guardian Name">
-              <input type="text" name="guardian_relationship" placeholder="Relationship to Minor">
+              <label class="ef-label">Parent / Guardian Name
+                <input type="text" name="guardian_name" placeholder="Full name">
+              </label>
+              <label class="ef-label">Relationship to Minor
+                <input type="text" name="guardian_relationship" placeholder="e.g. Mother, Father">
+              </label>
             </div>
           </div>
 
@@ -443,7 +488,9 @@
             <input type="hidden" name="goal" id="val-enroll-goal">
           </div>
 
-          <textarea name="message" placeholder="Any questions or anything we should know? (optional)" rows="3"></textarea>
+          <label class="ef-label">Questions or Notes <span class="ef-hint">(optional)</span>
+            <textarea name="message" placeholder="Anything we should know before your first class?" rows="3"></textarea>
+          </label>
 
           <!-- Full official waiver -->
           <div class="ef-divider">Waiver &amp; Release of Liability</div>
