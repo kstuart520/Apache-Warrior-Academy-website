@@ -390,9 +390,15 @@ body.dark-mode .contact-form-wrap .btn-primary { background: #5C0F0F !important;
 body.dark-mode .contact-form-wrap .btn-primary:hover,
 body.dark-mode .contact-form-wrap .btn-primary:focus { background: #8B1A1A !important; border-color: #8B1A1A !important; }
 
-/* ── Chips — red when selected, both modes ── */
-body.light-mode .chip.selected,
-body.dark-mode .chip.selected { background: rgba(139,26,26,0.12) !important; border-color: #8B1A1A !important; color: #8B1A1A !important; }
+/* ── Chips — unselected default per mode ── */
+body.light-mode .chip { color: #2C2416 !important; border-color: rgba(44,36,22,0.25) !important; background: transparent !important; }
+body.light-mode .chip:hover { border-color: rgba(139,26,26,0.4) !important; color: #8B1A1A !important; }
+body.dark-mode .chip { color: #C8B89A !important; border-color: rgba(200,184,154,0.3) !important; background: rgba(200,184,154,0.05) !important; }
+body.dark-mode .chip:hover { border-color: #C8B89A !important; color: #F0EAE0 !important; }
+
+/* ── Chips — selected per mode ── */
+body.light-mode .chip.selected { background: rgba(139,26,26,0.12) !important; border-color: #8B1A1A !important; color: #8B1A1A !important; }
+body.dark-mode .chip.selected { background: rgba(200,184,154,0.12) !important; border-color: #C8B89A !important; color: #F0EAE0 !important; }
 
 /* ── Enroll form — LIGHT MODE ── */
 body.light-mode .enroll-form-wrap { background: #F0EAE0 !important; border-color: rgba(44,36,22,0.2) !important; }
