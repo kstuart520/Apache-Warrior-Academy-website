@@ -81,8 +81,7 @@ First class is always free.
 
 ## Class Schedule
 
-**Location:** Inside Diamond Gymnastics — 803 Oil Patch Ln, Gonzales, TX 78629  
-**Effective:** August 11, 2025
+**Location:** Inside Diamond Gymnastics — 803 Oil Patch Ln, Gonzales, TX 78629
 
 | Day | Youth BJJ | Adult BJJ |
 |-----|-----------|-----------|
