@@ -6,19 +6,20 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  /* ── Brand palette ── */
-  --red:        #7A171B;
-  --red-dark:   #5a1014;
-  --red-light:  rgba(122,23,27,0.12);
-  --black:      #171719;
-  --near-black: #1e1e20;
+  /* ── Brand palette — matched to AWA logo ── */
+  --red:        #8B1A1A;   /* deep crimson from logo burst panels */
+  --red-dark:   #5C0F0F;   /* dark red shadows in logo */
+  --red-light:  rgba(139,26,26,0.12);
+  --black:      #2C2416;   /* dark charcoal from logo stone texture */
+  --near-black: #1E1A10;
   --surface:    #FFFFFF;
-  --surface-alt:#F2ECE0;
-  --border:     rgba(23,23,25,0.12);
-  --cream:      #E8DDC5;
-  --cream-dim:  #171719;
-  --stone:      #A39A8E;
-  --gold:       #7A171B;   /* dark red as label/accent on light bg */
+  --surface-alt:#F0EAE0;   /* warm off-white, matches logo parchment */
+  --border:     rgba(44,36,22,0.12);
+  --cream:      #C8B89A;   /* aged parchment/stone from logo background */
+  --cream-light:#EDE5D5;   /* lighter tint for page backgrounds */
+  --cream-dim:  #2C2416;
+  --stone:      #A89070;   /* mid-tone stone from logo */
+  --gold:       #8B1A1A;
   --white:      #FFFFFF;
   --font-display: 'Bebas Neue', sans-serif;
   --font-cond:    'Barlow Condensed', sans-serif;
@@ -31,8 +32,8 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--font-body);
-  background: #E8DDC5;
-  color: #171719;
+  background: var(--cream-light);  /* uniform light cream top to bottom */
+  color: var(--black);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -200,28 +201,88 @@ h2 em {
 /* ── Theme toggle button ── */
 .theme-toggle {
   display: flex; align-items: center; gap: 0.4rem;
-  background: none; border: 1px solid rgba(23,23,25,0.2);
-  border-radius: 100px; padding: 0.3rem 0.75rem;
+  background: none; border: 1px solid rgba(44,36,22,0.25);
+  border-radius: 100px; padding: 0.3rem 0.9rem;
   cursor: pointer; font-family: var(--font-cond);
-  font-size: 0.72rem; letter-spacing: 0.1em;
-  text-transform: uppercase; color: #171719;
-  transition: background var(--transition), color var(--transition);
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--black);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+  white-space: nowrap;
 }
-.theme-toggle:hover { background: rgba(23,23,25,0.08); }
-.theme-toggle-icon { font-size: 0.85rem; }
+.theme-toggle:hover { background: rgba(44,36,22,0.07); }
 
-/* Dark mode base overrides */
+/* ══════════════════════════════════════════════
+   DARK MODE — uniform charcoal bg, cream text
+   ══════════════════════════════════════════════ */
 body.dark-mode {
-  background: #171719;
-  color: #E8DDC5;
+  background: #2C2416 !important;
+  color: #EDE5D5 !important;
 }
-body.dark-mode nav {
-  background: rgba(23,23,25,0.97);
-  border-bottom-color: rgba(232,221,197,0.08);
-}
-body.dark-mode .nav-links a { color: #E8DDC5; }
-body.dark-mode .theme-toggle { border-color: rgba(232,221,197,0.25); color: #E8DDC5; }
-body.dark-mode .theme-toggle:hover { background: rgba(232,221,197,0.08); }
+
+/* Nav */
+body.dark-mode nav,
+body.dark-mode #navbar { background: rgba(30,26,16,0.98) !important; border-bottom-color: rgba(200,184,154,0.1) !important; }
+body.dark-mode .nav-links a { color: #EDE5D5 !important; }
+body.dark-mode .nav-links a:hover { color: #C8B89A !important; }
+body.dark-mode .hamburger span { background: #EDE5D5 !important; }
+body.dark-mode .theme-toggle { border-color: rgba(200,184,154,0.3) !important; color: #EDE5D5 !important; }
+body.dark-mode .theme-toggle:hover { background: rgba(200,184,154,0.1) !important; }
+
+/* Sections — all same dark bg */
+body.dark-mode section,
+body.dark-mode .programs,
+body.dark-mode .schedule,
+body.dark-mode .pricing,
+body.dark-mode .about,
+body.dark-mode .founder,
+body.dark-mode .reviews-section,
+body.dark-mode .contact-section,
+body.dark-mode .cta-section { background: #2C2416 !important; }
+
+/* Cards */
+body.dark-mode .prog-card,
+body.dark-mode .price-card,
+body.dark-mode .review-card { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
+body.dark-mode .prog-card:hover,
+body.dark-mode .price-card:hover { border-color: rgba(139,26,26,0.4) !important; }
+
+/* Text */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5 { color: #EDE5D5 !important; }
+body.dark-mode p { color: rgba(237,229,213,0.8) !important; }
+body.dark-mode .label { color: #C8B89A !important; }
+body.dark-mode .prog-card h3,
+body.dark-mode .price-tag,
+body.dark-mode .fn-name { color: #EDE5D5 !important; }
+body.dark-mode .prog-card p,
+body.dark-mode .price-list li,
+body.dark-mode .founder-text p { color: rgba(237,229,213,0.7) !important; }
+
+/* Tables */
+body.dark-mode .sched-table thead th { background: rgba(139,26,26,0.3) !important; color: #EDE5D5 !important; border-color: rgba(200,184,154,0.1) !important; }
+body.dark-mode .sched-table tbody td { color: rgba(237,229,213,0.75) !important; border-color: rgba(200,184,154,0.08) !important; }
+body.dark-mode .sched-table tbody tr:hover td { background: rgba(139,26,26,0.08) !important; }
+
+/* Footer */
+body.dark-mode footer { background: #1E1A10 !important; }
+body.dark-mode .footer-logo-text,
+body.dark-mode .footer-tagline,
+body.dark-mode .footer-copy { color: rgba(237,229,213,0.7) !important; }
+body.dark-mode .footer-nav a { color: rgba(237,229,213,0.65) !important; }
+body.dark-mode .footer-nav a:hover { color: #8B1A1A !important; }
+
+/* Forms */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea { background: #3A3020 !important; color: #EDE5D5 !important; border-color: rgba(200,184,154,0.2) !important; }
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder { color: rgba(200,184,154,0.4) !important; }
+
+/* Misc */
+body.dark-mode .cred { background: rgba(200,184,154,0.06) !important; border-color: rgba(200,184,154,0.12) !important; color: rgba(237,229,213,0.65) !important; }
+body.dark-mode .founder-photo { background: #3A3020 !important; }
+body.dark-mode .info-label { color: rgba(200,184,154,0.6) !important; }
+body.dark-mode .info-val, body.dark-mode .info-val a { color: #EDE5D5 !important; }
 
 .hamburger {
   display: none; background: none; border: none; cursor: pointer;
@@ -1477,141 +1538,113 @@ footer {
 /* Photo-present overlay handled by base .hero-overlay rule above */
 
 
-/* ============================================================
-   LIGHT BACKGROUND TEST — applied via <body class="light-mode">
-   Remove class from <body> to revert to dark theme
-   ============================================================ */
+/* ══════════════════════════════════════════════
+   LIGHT MODE — uniform cream bg, dark text
+   Primary bg: #EDE5D5 (cream-light) top to bottom
+   Text: #2C2416 (charcoal) · Accent: #8B1A1A (red)
+   ══════════════════════════════════════════════ */
 
 body.light-mode {
-  background: #E8DDC5;
-  color: #171719;
+  background: #EDE5D5;
+  color: #2C2416;
 }
 
 /* Nav */
-body.light-mode #navbar.scrolled {
-  background: rgba(232,221,197,0.98);
-  box-shadow: 0 1px 0 rgba(44,36,22,0.1);
-}
-body.light-mode .nav-links a { color: rgba(44,36,22,0.65); }
-body.light-mode .nav-links a:hover { color: #1C1712; }
-body.light-mode .nav-logo .logo-text { color: #1C1712; }
-body.light-mode .hamburger span { background: #1C1712; }
+body.light-mode nav,
+body.light-mode #navbar { background: rgba(237,229,213,0.98); border-bottom-color: rgba(44,36,22,0.1); }
+body.light-mode #navbar.scrolled { background: rgba(237,229,213,0.99); box-shadow: 0 1px 0 rgba(44,36,22,0.1); }
+body.light-mode .nav-links a { color: rgba(44,36,22,0.7); }
+body.light-mode .nav-links a:hover { color: #2C2416; }
+body.light-mode .nav-logo .logo-text { color: #2C2416; }
+body.light-mode .hamburger span { background: #2C2416; }
+body.light-mode .theme-toggle { border-color: rgba(44,36,22,0.25); color: #2C2416; }
 
-/* Hero */
-body.light-mode .hero-bg {
-  background:
-    radial-gradient(ellipse at 15% 70%, rgba(192,57,43,0.1) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 20%, rgba(192,57,43,0.06) 0%, transparent 40%),
-    #F7F4EF;
-}
-/* Hero overlay handled by unified hero CSS block — no light-mode override needed */
-body.light-mode .hero-eyebrow { color: var(--cream); }
-body.light-mode .dot { background: var(--cream); }
-body.light-mode .hero-sub { color: rgba(232,221,197,0.85); }
-body.light-mode .geo-ring { border-color: rgba(192,57,43,0.1); }
+/* Sections — all same cream bg (no alternating) */
+body.light-mode section,
+body.light-mode .programs,
+body.light-mode .schedule,
+body.light-mode .pricing,
+body.light-mode .about,
+body.light-mode .founder,
+body.light-mode .reviews-section,
+body.light-mode .contact-section { background: #EDE5D5; }
 
-/* Marquee — keep red */
-body.light-mode .marquee-strip { background: var(--red); }
+/* Cards — slightly warmer white to lift off bg */
+body.light-mode .prog-card,
+body.light-mode .price-card,
+body.light-mode .review-card { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode .prog-card:hover { border-color: rgba(139,26,26,0.3); }
+body.light-mode .price-card.featured { background: rgba(139,26,26,0.05); border-color: #8B1A1A; }
 
-/* Sections */
-body.light-mode .programs { background: #EDE9E1; border-color: rgba(44,36,22,0.08); }
-body.light-mode .schedule  { background: #EDE9E1; border-color: rgba(44,36,22,0.08); }
-body.light-mode .prog-card { background: #F7F4EF; border-color: rgba(44,36,22,0.1); }
-body.light-mode .prog-card:hover { background: #EDE9E1; border-color: rgba(192,57,43,0.25); }
-body.light-mode .prog-card h3 { color: #1C1712; }
-body.light-mode .prog-card p { color: rgba(44,36,22,0.65); }
-body.light-mode .prog-num { color: rgba(192,57,43,0.15); }
-
-/* Price cards */
-body.light-mode .price-card { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
-body.light-mode .price-card.featured { background: rgba(192,57,43,0.06); border-color: var(--red); }
-body.light-mode .price-tag { color: #1C1712; }
-body.light-mode .price-list li { color: rgba(44,36,22,0.7); border-color: rgba(44,36,22,0.08); }
-body.light-mode .price-header h3 { color: rgba(44,36,22,0.55); }
-
-/* Stats */
+/* Text */
+body.light-mode h1, body.light-mode h2, body.light-mode h3,
+body.light-mode h4, body.light-mode h5 { color: #2C2416; }
+body.light-mode p { color: rgba(44,36,22,0.75); }
+body.light-mode .label { color: #8B1A1A; }
+body.light-mode .prog-card h3,
+body.light-mode .price-tag,
+body.light-mode .fn-name { color: #2C2416; }
+body.light-mode .prog-card p,
+body.light-mode .price-list li,
+body.light-mode .founder-text p { color: rgba(44,36,22,0.65); }
 body.light-mode .stat-lbl { color: rgba(44,36,22,0.5); }
+body.light-mode .price-header h3 { color: rgba(44,36,22,0.5); }
+body.light-mode .price-list li { border-color: rgba(44,36,22,0.08); }
 
-/* About image */
-body.light-mode .about-img-wrap { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
-
-/* Schedule table */
-body.light-mode .sched-table thead th { border-color: rgba(44,36,22,0.15); }
+/* Tables */
+body.light-mode .sched-table thead th { border-color: rgba(44,36,22,0.15); color: #2C2416; }
 body.light-mode .sched-table tbody td { color: rgba(44,36,22,0.7); border-color: rgba(44,36,22,0.08); }
-body.light-mode .sched-table tbody tr:hover td { background: rgba(192,57,43,0.04); }
+body.light-mode .sched-table tbody tr:hover td { background: rgba(139,26,26,0.04); }
 body.light-mode .sched-note { color: rgba(44,36,22,0.5); }
 
 /* Founder */
-body.light-mode .founder-photo { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
-body.light-mode .fn-name { color: #1C1712; }
+body.light-mode .founder-photo { background: #E8DFCF; border-color: rgba(44,36,22,0.1); }
 body.light-mode .cred { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.1); color: rgba(44,36,22,0.65); }
-body.light-mode .founder-text p { color: rgba(44,36,22,0.65); }
 
-/* Contact form */
-body.light-mode .contact-form-wrap { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
-body.light-mode .contact-form input,
-body.light-mode .contact-form select,
-body.light-mode .contact-form textarea {
-  background: #F7F4EF;
-  border-color: rgba(44,36,22,0.15);
-  color: #1C1712;
-}
-body.light-mode .contact-form input::placeholder,
-body.light-mode .contact-form textarea::placeholder { color: rgba(44,36,22,0.3); }
+/* Forms */
+body.light-mode .contact-form-wrap { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode input,
+body.light-mode select,
+body.light-mode textarea { background: #FFFFFF; border-color: rgba(44,36,22,0.15); color: #2C2416; }
+body.light-mode input::placeholder,
+body.light-mode textarea::placeholder { color: rgba(44,36,22,0.3); }
 body.light-mode .info-val { color: rgba(44,36,22,0.65); }
-body.light-mode .info-val a { color: #1C1712; border-color: rgba(44,36,22,0.2); }
+body.light-mode .info-val a { color: #2C2416; border-color: rgba(44,36,22,0.2); }
 
 /* Chips */
 body.light-mode .chip { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.12); color: rgba(44,36,22,0.65); }
-body.light-mode .chip.selected { background: rgba(192,57,43,0.1); border-color: var(--red); color: #1C1712; }
+body.light-mode .chip.selected { background: rgba(139,26,26,0.1); border-color: #8B1A1A; color: #2C2416; }
 
-/* Contact info */
-body.light-mode .about-text p { color: rgba(44,36,22,0.65); }
-
-/* Discount pills */
-body.light-mode .discount-pill { background: rgba(139,105,20,0.08); border-color: rgba(139,105,20,0.2); }
-
-/* Founding banner */
-body.light-mode .founding-banner { background: rgba(139,105,20,0.07); border-color: rgba(139,105,20,0.2); }
-body.light-mode .founding-inner p { color: rgba(44,36,22,0.65); }
-
-/* Family table */
-body.light-mode .family-table { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
-body.light-mode .family-header h3 { color: #1C1712; }
-body.light-mode .family-header p { color: rgba(44,36,22,0.65); }
+/* Family / schedule tables */
+body.light-mode .family-table { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
+body.light-mode .family-header h3 { color: #2C2416; }
+body.light-mode .family-header p,
 body.light-mode .family-row { color: rgba(44,36,22,0.7); border-color: rgba(44,36,22,0.08); }
-body.light-mode .family-example { color: rgba(44,36,22,0.65); border-color: rgba(192,57,43,0.15); }
-body.light-mode .family-example strong { color: #1C1712; }
-
-/* Schedule toggle */
+body.light-mode .family-example { color: rgba(44,36,22,0.65); border-color: rgba(139,26,26,0.15); }
+body.light-mode .family-example strong { color: #2C2416; }
 body.light-mode .sched-view-toggle { background: rgba(44,36,22,0.05); border-color: rgba(44,36,22,0.1); }
 body.light-mode .sched-toggle { color: rgba(44,36,22,0.55); }
-body.light-mode .sched-toggle.active { background: var(--red); color: white; }
-
-/* Calendar slots */
-body.light-mode .cal-day { background: #EDE9E1; border-color: rgba(44,36,22,0.1); }
+body.light-mode .sched-toggle.active { background: #8B1A1A; color: #EDE5D5; }
+body.light-mode .cal-day { background: #F5EFE3; border-color: rgba(44,36,22,0.1); }
 body.light-mode .cal-day-header { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.08); }
-body.light-mode .cal-day-name { color: #1C1712; }
-body.light-mode .cal-slot-name { color: #1C1712; }
-body.light-mode .register-btn { border-color: rgba(192,57,43,0.3); color: var(--red); }
+body.light-mode .cal-day-name,
+body.light-mode .cal-slot-name { color: #2C2416; }
+body.light-mode .register-btn { border-color: rgba(139,26,26,0.3); color: #8B1A1A; }
 
 /* Modal */
-body.light-mode .modal-box { background: #F7F4EF; border-color: rgba(44,36,22,0.12); }
-body.light-mode .modal-title { color: #1C1712; }
+body.light-mode .modal-box { background: #F5EFE3; border-color: rgba(44,36,22,0.12); }
+body.light-mode .modal-title { color: #2C2416; }
 body.light-mode .modal-sub { color: rgba(44,36,22,0.65); }
 body.light-mode .modal-form input,
 body.light-mode .modal-form select,
-body.light-mode .modal-form textarea {
-  background: #EDE9E1; border-color: rgba(44,36,22,0.15); color: #1C1712;
-}
+body.light-mode .modal-form textarea { background: #EDE5D5; border-color: rgba(44,36,22,0.15); color: #2C2416; }
 body.light-mode .waiver-block { background: rgba(44,36,22,0.04); border-color: rgba(44,36,22,0.1); }
-body.light-mode .waiver-text { color: rgba(44,36,22,0.65); }
-body.light-mode .waiver-full { background: rgba(44,36,22,0.03); border-color: rgba(44,36,22,0.08); color: rgba(44,36,22,0.65); }
+body.light-mode .waiver-text,
+body.light-mode .waiver-full { color: rgba(44,36,22,0.65); border-color: rgba(44,36,22,0.08); }
 
-/* Footer — stone gray bg, charcoal text (set in base rules, no override needed) */
-
-/* Buttons — ghost needs contrast on light bg */
-/* btn-ghost is now solid dark red — no light-mode override needed */
+/* About */
+body.light-mode .about-img-wrap { background: #E8DFCF; border-color: rgba(44,36,22,0.1); }
+body.light-mode .about-text p { color: rgba(44,36,22,0.65); }
 
 /* Scroll hint */
 body.light-mode .scroll-line { background: linear-gradient(to bottom, #1C1712, transparent); }
