@@ -366,31 +366,31 @@ body.dark-mode .hero-meta a { color: rgba(44,36,22,0.75) !important; border-bott
 body.dark-mode .hero-location-pill { background: rgba(255,255,255,0.75) !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.2) !important; }
 body.dark-mode .hero-btn-ghost { background: rgba(255,255,255,0.8) !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.3) !important; }
 
-/* Contact form — match review card bg in both modes */
-/* Contact form — neutral white background, black text, both modes */
-body.light-mode .contact-form-wrap,
-body.dark-mode .contact-form-wrap { background: #FFFFFF !important; border-color: rgba(44,36,22,0.15) !important; }
+/* ── Contact form — LIGHT MODE ── */
+body.light-mode .contact-form-wrap { background: #F0EAE0 !important; border-color: rgba(44,36,22,0.2) !important; }
 body.light-mode .contact-form-wrap input,
 body.light-mode .contact-form-wrap select,
-body.light-mode .contact-form-wrap textarea,
+body.light-mode .contact-form-wrap textarea { background: #F0EAE0 !important; color: #1E1A10 !important; border-color: rgba(44,36,22,0.2) !important; }
+body.light-mode .contact-form-wrap input::placeholder,
+body.light-mode .contact-form-wrap textarea::placeholder { color: rgba(30,26,16,0.4) !important; }
+body.light-mode .contact-form-wrap label { color: #1E1A10 !important; }
+body.light-mode .contact-form-wrap .btn-primary { background: #8B1A1A !important; color: #FFFFFF !important; border-color: #8B1A1A !important; }
+body.light-mode .contact-form-wrap .btn-primary:hover,
+body.light-mode .contact-form-wrap .btn-primary:focus { background: #5C0F0F !important; border-color: #5C0F0F !important; }
+
+/* ── Contact form — DARK MODE ── */
+body.dark-mode .contact-form-wrap { background: #3A3020 !important; border-color: rgba(200,184,154,0.15) !important; }
 body.dark-mode .contact-form-wrap input,
 body.dark-mode .contact-form-wrap select,
-body.dark-mode .contact-form-wrap textarea { background: #FFFFFF !important; color: #2C2416 !important; border-color: rgba(44,36,22,0.2) !important; }
-body.light-mode .contact-form-wrap input::placeholder,
-body.light-mode .contact-form-wrap textarea::placeholder,
+body.dark-mode .contact-form-wrap textarea { background: #2C2416 !important; color: #F0EAE0 !important; border-color: rgba(200,184,154,0.2) !important; }
 body.dark-mode .contact-form-wrap input::placeholder,
-body.dark-mode .contact-form-wrap textarea::placeholder { color: rgba(44,36,22,0.35) !important; }
-/* Form labels in both modes — dark charcoal */
-body.light-mode .contact-form-wrap label,
-body.dark-mode .contact-form-wrap label { color: #2C2416 !important; }
-/* Submit button — red bg, white text; active/focus turns darker red */
-body.light-mode .contact-form-wrap .btn-primary,
-body.dark-mode .contact-form-wrap .btn-primary { background: #8B1A1A !important; color: #FFFFFF !important; border-color: #8B1A1A !important; }
-body.light-mode .contact-form-wrap .btn-primary:hover,
+body.dark-mode .contact-form-wrap textarea::placeholder { color: rgba(200,184,154,0.4) !important; }
+body.dark-mode .contact-form-wrap label { color: #C8B89A !important; }
+body.dark-mode .contact-form-wrap .btn-primary { background: #5C0F0F !important; color: #FFFFFF !important; border-color: #5C0F0F !important; }
 body.dark-mode .contact-form-wrap .btn-primary:hover,
-body.light-mode .contact-form-wrap .btn-primary:focus,
-body.dark-mode .contact-form-wrap .btn-primary:focus { background: #5C0F0F !important; border-color: #5C0F0F !important; }
-/* Chips — turn red when selected */
+body.dark-mode .contact-form-wrap .btn-primary:focus { background: #8B1A1A !important; border-color: #8B1A1A !important; }
+
+/* ── Chips — red when selected, both modes ── */
 body.light-mode .chip.selected,
 body.dark-mode .chip.selected { background: rgba(139,26,26,0.12) !important; border-color: #8B1A1A !important; color: #8B1A1A !important; }
 
