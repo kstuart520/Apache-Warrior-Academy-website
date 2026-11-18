@@ -263,6 +263,18 @@ body.dark-mode .family-row { color: rgba(237,229,213,0.7) !important; border-col
 body.dark-mode .family-example { color: rgba(237,229,213,0.65) !important; border-color: rgba(139,26,26,0.2) !important; }
 body.dark-mode .family-example strong { color: #EDE5D5 !important; }
 
+/* Military/First Responder card in dark mode */
+body.dark-mode .mil-badge { color: #C8B89A !important; background: rgba(200,184,154,0.08) !important; border-color: rgba(200,184,154,0.25) !important; }
+body.dark-mode .military-solo .price-header h3 { color: #EDE5D5 !important; }
+body.dark-mode .military-solo .price-tag { color: #EDE5D5 !important; }
+body.dark-mode .military-solo .price-tag sup,
+body.dark-mode .military-solo .price-tag span { color: #C8B89A !important; }
+body.dark-mode .military-solo .price-period { color: rgba(237,229,213,0.6) !important; }
+body.dark-mode .military-solo .price-list li { color: rgba(237,229,213,0.75) !important; border-color: rgba(200,184,154,0.08) !important; }
+body.dark-mode .military-solo .price-note { color: rgba(237,229,213,0.6) !important; }
+body.dark-mode .mil-was { color: rgba(237,229,213,0.4) !important; }
+body.dark-mode .mil-save { color: #C8B89A !important; }
+
 /* Schedule calendar cards in dark mode */
 body.dark-mode .cal-day { background: #3A3020 !important; border-color: rgba(200,184,154,0.12) !important; }
 body.dark-mode .cal-day-header { background: rgba(200,184,154,0.06) !important; border-color: rgba(200,184,154,0.1) !important; }
