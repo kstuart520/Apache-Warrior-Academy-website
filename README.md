@@ -126,7 +126,19 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 
 ## Changelog
 
-### November 2026 (continued)
+### November 2026 (continued — session 3)
+- **Contact form theming** — light: `#F0EAE0` wrapper + `#1E1A10` text/labels; dark: `#3A3020` wrapper + `#2C2416` inputs + `#F0EAE0` text + `#C8B89A` labels; submit button `#8B1A1A` light / `#5C0F0F` dark, reversed on hover; chips red on select
+- **Enroll form theming** — same spec as contact form applied to `.enroll-form-wrap` / `.enroll-form` / `.ef-label`; dark mode overrides added to style.css; waiver block + disclaimer also themed
+- **Instructor CTA** — replaced `page-cta-strip` with `cta-banner` class to match homepage "YOUR FIRST CLASS IS FREE" section exactly (same red gradient, charcoal "FREE", white label/body)
+- **page-cta-strip em fix** — `h2 em` color changed from `rgba(255,255,255,0.8)` to `#2C2416` to match cta-banner; label style added
+- **Mil-badge dark mode** — `.mil-badge` chips now `#C8B89A` text on `rgba(200,184,154,0.08)` bg with cream border; all Military card text elements (price-tag, price-list, price-period) overridden for dark mode on both homepage and pricing page
+- **Programs hero text** — "Six programs" corrected to "Two programs — Youth BJJ and Adult BJJ"; meta description updated to match
+- **Emojis removed sitewide** — all pictograph emojis stripped from index, pricing, schedule, enroll pages (📍 🎖 🚔 🚒 🚑 🪖 ⚠ 📞 📱); kept: `✦` marquee separators, `★` review stars, `✓` form success
+- **Homepage headline** — "Gonzales County's / Brazilian Jiu-Jitsu / Academy" → "Brazilian Jiu-Jitsu / Academy in / Gonzales County" (BJJ line stays red)
+- **Enroll hero** — light mode: `#EDE5D5` cream bg + `#2C2416` charcoal text (matches all other inner-page banners); dark mode: `#2C2416` charcoal bg + cream text; replaces always-dark `var(--black)` background
+- **"Effective: August 11, 2025" removed** — all 5 instances removed across schedule.html (meta, hero sub, section head, note box) and index.html (sched-note paragraph); also removed from README
+
+### November 2026 (continued — session 2)
 - **js/main.js created** — scroll-reveal IntersectionObserver, nav scroll state, hamburger toggle, price tabs, schedule view toggle, chip selectors, back-to-top; was referenced in index.html but file did not exist (elements were invisible at load due to `opacity:0` on `.reveal` with no observer to fire `.visible`)
 - **instructor.html created** — full Coach Kenny page: photo, bio, credentials, philosophy blocks, red CTA strip, footer; includes light/dark toggle, scroll-reveal, back-to-top; linked from all nav menus
 - **Scroll-reveal animation active on all pages** — `.reveal` elements fade + slide up as they enter the viewport
@@ -135,10 +147,10 @@ Upload class photos to the `images/` folder with these exact names (lowercase):
 - **CTA "FREE" em text** — `#2C2416` dark charcoal in both modes (pops against red gradient)
 - **Inner-page banners** — dark mode now matches charcoal `#2C2416` background with cream text (light mode was already cream); no more red banner in either mode
 - **pages.css theme rules added** — comprehensive light/dark overrides for all inner page elements: value cards, program detail cards, schedule day cards, instructor section, contact map, schedule note box, page-cta-strip
-- **Contact form reset to neutral** — white `#FFFFFF` background, `#2C2416` text, both modes; submit button red with darker red on hover/active; chips turn red `#8B1A1A` when selected
+- **Contact form** — white `#FFFFFF` background, `#2C2416` text, both modes (later updated — see session 3)
 - **"No Commitment. No Pressure." label** — forced white `rgba(255,255,255,0.85)` on red CTA banner in both modes
-- **Footer light mode** — changed from red `#8B1A1A` to parchment `#C8B89A` with dark charcoal `#2C2416` text, links, social icons
-- **Footer dark mode** — `border-top: none` to remove visible seam above footer
+- **Footer light mode** — changed from red `#8B1A1A` to cream-light `#EDE5D5` with dark charcoal text, links, social icons
+- **Footer dark mode** — changed from `#5C0F0F` to `#1E1A10` near-black; `border-top: none`
 - **enroll.html** — added missing theme toggle button to nav (JS was present but button element was absent)
 
 ### November 2026
