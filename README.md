@@ -38,6 +38,7 @@ No build step. Push to main → live within ~60 seconds.
 ├── instructor.html     # Coach Kenny bio + credentials
 ├── enroll.html         # Enrollment form
 ├── contact.html        # Contact + map
+├── merch.html          # Merch store — COMING SOON (noindex, not in nav yet)
 ├── CNAME               # Custom domain (apachewarrioracademy.com)
 ├── css/
 │   ├── style.css       # Global styles, brand tokens, components, theme modes
@@ -227,6 +228,10 @@ Saturday classes may be cancelled during competitions — check Facebook for upd
 ## Changelog
 
 ### November 2026 (session 3 — continued)
+- **"World-class" text removed** — replaced in 3 locations (index.html, about.html, enroll.html) with "serious BJJ instruction right here in Gonzales County" variants
+- **CTA banner text — always white** — `h2`, `h2 em`, and `p` on both `.cta-banner` and `.page-cta-strip` forced `#FFFFFF` / `rgba(255,255,255,0.85)` in both light and dark mode via explicit overrides in `style.css` and `pages.css`
+- **merch.html created** — full coming-soon page: hero banner, email notify form (front-end only — no backend yet), 4 product placeholder cards; `noindex` meta so it won't rank until ready; not yet linked in nav
+- **Class photo gallery added to programs.html** — 6-cell CSS grid (3-col desktop / 2-col tablet / 1-col mobile); placeholder tiles with dashed border until real photos are uploaded; lightbox-ready (`data-full` attribute); gallery CSS added to `pages.css`
 - **Location pill → Google Maps link** — `.hero-location-pill` on homepage hero is now an `<a>` tag linking to `https://maps.google.com/?q=803+Oil+Patch+Ln,+Gonzales,+TX+78629`; hover lifts 2px with shadow; `a.hero-location-pill` link styles added to `style.css`
 - **README rewritten** — now serves as a full session handoff doc with component reference, theming architecture, and all current specs
 
