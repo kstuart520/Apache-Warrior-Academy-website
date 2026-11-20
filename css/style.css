@@ -349,11 +349,13 @@ body.light-mode .cta-banner { background: linear-gradient(135deg, #5C0F0F 0%, #8
 body.light-mode .cta-banner .label,
 body.dark-mode .cta-banner .label { color: rgba(255,255,255,0.85) !important; }
 
-/* CTA banner "FREE" em — dark charcoal so it pops on red in dark mode */
-body.dark-mode .cta-banner h2 em { color: #2C2416 !important; -webkit-text-stroke: 0 !important; }
-body.light-mode .cta-banner h2 { color: #FFFFFF !important; }
-body.light-mode .cta-banner h2 em { color: #2C2416 !important; -webkit-text-stroke: 0 !important; }
-body.light-mode .cta-banner p { color: rgba(255,255,255,0.85) !important; }
+/* CTA banner text — always white on red background, both modes */
+body.light-mode .cta-banner h2,
+body.dark-mode  .cta-banner h2  { color: #FFFFFF !important; }
+body.light-mode .cta-banner h2 em,
+body.dark-mode  .cta-banner h2 em { color: #FFFFFF !important; -webkit-text-stroke: 0 !important; font-style: normal; }
+body.light-mode .cta-banner p,
+body.dark-mode  .cta-banner p   { color: rgba(255,255,255,0.85) !important; }
 
 /* Hero text — dark mode: cream so it reads against the photo + overlay */
 body.dark-mode .hero-title--unified { color: #2C2416 !important; }

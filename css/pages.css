@@ -437,6 +437,14 @@ body.dark-mode  .contact-map-embed { background: #3A3020; border-color: rgba(200
 body.light-mode .page-cta-strip,
 body.dark-mode  .page-cta-strip { background: linear-gradient(135deg, #5C0F0F 0%, #8B1A1A 100%) !important; }
 
+/* page-cta-strip text — always white on red, both modes */
+body.light-mode .page-cta-strip h2,
+body.dark-mode  .page-cta-strip h2  { color: #FFFFFF !important; }
+body.light-mode .page-cta-strip h2 em,
+body.dark-mode  .page-cta-strip h2 em { color: #FFFFFF !important; -webkit-text-stroke: 0 !important; font-style: normal; }
+body.light-mode .page-cta-strip p,
+body.dark-mode  .page-cta-strip p   { color: rgba(255,255,255,0.85) !important; }
+
 /* Three-column schedule grid (Tue + Wed + Sat) */
 .schedule-page-grid.three-col {
   grid-template-columns: repeat(3, 1fr);
