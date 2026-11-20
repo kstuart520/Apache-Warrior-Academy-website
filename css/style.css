@@ -2268,6 +2268,9 @@ body.light-mode .saturday-note { color: #7A171B; }
   margin-bottom: 1.2rem;
 }
 .hero-location-dot { font-size: 0.85rem; }
+a.hero-location-pill { text-decoration: none; cursor: pointer; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+a.hero-location-pill:hover { background: rgba(255,255,255,0.92); transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
+a.hero-location-pill:active { transform: translateY(0); }
 
 /* Academy name line */
 .hero-academy-name {
